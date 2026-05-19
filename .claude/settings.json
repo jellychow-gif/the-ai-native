@@ -1,0 +1,55 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sS *)",
+      "Bash(curl -s *)",
+      "Bash(curl -sSL *)",
+      "Bash(curl -L *)",
+
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(node *)",
+      "Bash(node -v)",
+
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(npx -y *)",
+
+      "Bash(git *)",
+
+      "Bash(brew *)",
+
+      "Bash(source *)",
+      "Bash(mkdir *)",
+      "Bash(rm *)",
+      "Bash(rmdir *)",
+      "Bash(touch *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(ln *)",
+      "Bash(chmod *)",
+
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(jq *)",
+      "Bash(sed *)",
+      "Bash(awk *)",
+
+      "Bash(pdftotext *)",
+      "Bash(pdfinfo *)",
+
+      "Bash(env)",
+      "Bash(printenv *)",
+      "Bash(open *)",
+      "Bash(killall *)",
+      "Bash(lsof *)",
+
+      "Write",
+      "Edit",
+      "Read",
+      "TodoWrite"
+    ]
+  }
+}
