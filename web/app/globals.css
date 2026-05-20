@@ -1,3 +1,262 @@
-/* Step 4: no custom styling — relying on browser defaults so the structure is visible.
-   Step 5 will introduce the Stripe Press / Linear aesthetic. */
-@import "tailwindcss";
+/* The AI Native — visual styling ported from Issue 01 mockup.
+   Aesthetic targets per PRD §7: Stripe Press, Linear changelog, a16z Future.
+   Lots of white space, strong typographic hierarchy, almost no decoration. */
+
+:root {
+  --bg: #FAFAF8;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5C5C5C;
+  --text-tertiary: #999999;
+  --accent: #1B3A5C;
+  --border: #E5E3DD;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: "Newsreader", "Noto Serif SC", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 112px 48px;
+  }
+}
+
+/* ── Masthead ───────────────────────────────────────────────────── */
+
+.masthead {
+  margin-bottom: 96px;
+}
+
+.meta-top {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 76px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+
+.subtitle-en {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.subtitle-zh {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.update-promise {
+  margin-top: 56px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+}
+
+/* ── 本周观察 / Weekly Observation ──────────────────────────────── */
+
+.observation {
+  margin-bottom: 112px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.observation-label {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.observation-text {
+  font-family: "Noto Serif SC", serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .observation-text {
+    font-size: 24px;
+  }
+}
+
+/* ── Section header ─────────────────────────────────────────────── */
+
+.section-header {
+  margin-top: 112px;
+  margin-bottom: 8px;
+}
+
+.section-en {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.section-zh {
+  margin-top: 4px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+/* ── Signal item ────────────────────────────────────────────────── */
+
+.signal {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+
+.signal-tag {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.signal-title {
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.signal-title a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.signal-title a:hover {
+  border-bottom-color: var(--text-primary);
+}
+
+.signal-source {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.signal-summary {
+  font-family: "Noto Serif SC", serif;
+  font-size: 17px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+/* ── "对组织变革的含义" block — visually distinct per PRD §7.1 ──── */
+
+.implication {
+  margin-top: 32px;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent);
+}
+
+.implication-label {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.implication-text {
+  font-family: "Noto Serif SC", serif;
+  font-size: 15px;
+  line-height: 1.85;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* ── Read original link ─────────────────────────────────────────── */
+
+.readmore {
+  display: inline-block;
+  margin-top: 32px;
+  color: var(--accent);
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* ── Empty section ──────────────────────────────────────────────── */
+
+.empty {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+
+.empty p {
+  font-family: "Noto Serif SC", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--text-tertiary);
+}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+
+.site-footer {
+  margin-top: 160px;
+  padding-top: 56px;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
