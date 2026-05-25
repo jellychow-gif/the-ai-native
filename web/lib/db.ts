@@ -59,6 +59,7 @@ export type Item = {
   insight_class: InsightClass | null;
   author: string | null;
   published_at: string | null;
+  issue_number: number | null;
   perspective_score: number | null;
   practice_score: number | null;
   frontier_score: number | null;
@@ -71,6 +72,16 @@ export type Issue = {
   number: string;
   date_iso: string;
   date_label: string;
+};
+
+/** Full issue record with bound items — used by /issues/[number] pages. */
+export type IssueRecord = {
+  number: number;
+  date_iso: string;
+  date_label: string;
+  frozen_at: string;
+  item_count: number;
+  item_ids: number[];
 };
 
 export type Skill = {
@@ -86,6 +97,8 @@ export type Skill = {
 
 export type Payload = {
   issue: Issue;
+  issues: IssueRecord[];
+  current_issue_number: number | null;
   generated_at: string;
   min_score_threshold: number;
   item_count: number;
@@ -127,6 +140,31 @@ export function getSkills(): Skill[] {
 
 export function getFeaturedSkill(): Skill | undefined {
   return loadPayload().skills.find((s) => s.featured);
+}
+
+// ── Issues ─────────────────────────────────────────────────────────
+
+export function getAllIssues(): IssueRecord[] {
+  return loadPayload().issues;
+}
+
+export function getCurrentIssue(): IssueRecord | null {
+  const issues = loadPayload().issues;
+  return issues[0] ?? null;
+}
+
+export function getIssueByNumber(n: number): IssueRecord | undefined {
+  return loadPayload().issues.find((i) => i.number === n);
+}
+
+/** Items bound to a specific issue, in display order. */
+export function getIssueItems(issueNumber: number): Item[] {
+  const issue = getIssueByNumber(issueNumber);
+  if (!issue) return [];
+  const byId = new Map(loadPayload().items.map((i) => [i.id, i]));
+  return issue.item_ids
+    .map((id) => byId.get(id))
+    .filter((x): x is Item => !!x);
 }
 
 /**

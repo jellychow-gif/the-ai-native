@@ -34,12 +34,30 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "web" / "data" / "items.json"
 SKILLS_PATH = ROOT / "data" / "skills.json"
 
-# Phase 1 demo issue values — will be auto-derived from publish state later.
-ISSUE = {
-    "number": "01",
-    "date_iso": "2026-05-25",
-    "date_label": "May 25, 2026",
-}
+def _load_issues(conn) -> list[dict]:
+    """All frozen issues, newest first. Each carries metadata + item IDs."""
+    issues = conn.execute(
+        "SELECT number, date_iso, date_label, frozen_at, item_count "
+        "FROM issues ORDER BY number DESC"
+    ).fetchall()
+    out = []
+    for issue in issues:
+        item_ids = [
+            r["id"] for r in conn.execute(
+                "SELECT id FROM items WHERE issue_number = ? "
+                "ORDER BY (perspective_score+practice_score+frontier_score) DESC, id DESC",
+                (issue["number"],),
+            ).fetchall()
+        ]
+        out.append({
+            "number": issue["number"],
+            "date_iso": issue["date_iso"],
+            "date_label": issue["date_label"],
+            "frozen_at": issue["frozen_at"],
+            "item_count": issue["item_count"],
+            "item_ids": item_ids,
+        })
+    return out
 
 
 def _row_to_item(row, featured_ids: set[int]) -> dict:
@@ -57,7 +75,7 @@ def main() -> None:
               sub_tag, hook, summary, implication,
               what_happened, why_matters, org_implication, talent_implication,
               hr_operating_implication, prediction, insight_class,
-              author, published_at,
+              author, published_at, issue_number,
               perspective_score, practice_score, frontier_score, score_reasoning,
               COALESCE(perspective_score, 0)
                 + COALESCE(practice_score, 0)
@@ -105,6 +123,11 @@ def main() -> None:
 
     items = [_row_to_item(r, featured_ids) for r in rows]
 
+    # Issues: pull table + current (latest) issue for masthead
+    with get_conn() as conn:
+        issues = _load_issues(conn)
+    current_issue = issues[0] if issues else None
+
     # Load curated skills (editor-maintained file)
     skills_data = {"skills": []}
     if SKILLS_PATH.exists():
@@ -112,8 +135,21 @@ def main() -> None:
             raw = json.load(f)
             skills_data = {"skills": raw.get("skills", [])}
 
+    # Backward-compat: "issue" key still exposed at top level (latest issue)
+    issue_payload = (
+        {
+            "number": f"{current_issue['number']:02d}",
+            "date_iso": current_issue["date_iso"],
+            "date_label": current_issue["date_label"],
+        }
+        if current_issue
+        else {"number": "00", "date_iso": "", "date_label": "Pre-launch"}
+    )
+
     payload = {
-        "issue": ISSUE,
+        "issue": issue_payload,
+        "issues": issues,
+        "current_issue_number": current_issue["number"] if current_issue else None,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "min_score_threshold": MIN_SCORE,
         "item_count": len(items),

@@ -36,6 +36,16 @@ jobs:
         run: python scripts/summarize.py
         working-directory: ${{ github.workspace }}
 
+      - name: Classify HR items into sub-modules
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/classify_hr.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Freeze next Issue (binds top items by section + freshness)
+        run: python scripts/freeze_issue.py
+        working-directory: ${{ github.workspace }}
+
       - name: Export JSON snapshot for frontend
         run: python scripts/export.py
         working-directory: ${{ github.workspace }}

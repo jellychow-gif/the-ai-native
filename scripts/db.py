@@ -60,7 +60,22 @@ MIGRATIONS = [
     "ALTER TABLE items ADD COLUMN prediction TEXT",
     # 10-category classifier (PRD v2 §3 Insight Classification)
     "ALTER TABLE items ADD COLUMN insight_class TEXT",
+    # Issue 化 — items get bound to a specific weekly issue at Thursday's
+    # freeze. Once set, the binding is permanent so issue archives don't
+    # mutate over time. NULL = not yet bound (still in candidate pool).
+    "ALTER TABLE items ADD COLUMN issue_number INTEGER",
 ]
+
+# Issue metadata table — tracks each weekly issue's masthead info.
+ISSUES_SCHEMA = """
+CREATE TABLE IF NOT EXISTS issues (
+    number      INTEGER PRIMARY KEY,
+    date_iso    TEXT    NOT NULL,
+    date_label  TEXT    NOT NULL,
+    frozen_at   TEXT    NOT NULL DEFAULT (datetime('now')),
+    item_count  INTEGER NOT NULL DEFAULT 0
+);
+"""
 
 
 def get_conn() -> sqlite3.Connection:
@@ -73,6 +88,7 @@ def get_conn() -> sqlite3.Connection:
 def init_db() -> None:
     with get_conn() as conn:
         conn.executescript(SCHEMA)
+        conn.executescript(ISSUES_SCHEMA)
         for stmt in MIGRATIONS:
             try:
                 conn.execute(stmt)

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import {
-  getFeatured,
-  getIssue,
+  getCurrentIssue,
+  getIssueItems,
   getBySection,
+  getIssue,
   SECTION_META,
   type Section,
+  type Item,
 } from "@/lib/db";
 import { Signal } from "./components/Signal";
 import { StatStrip } from "./components/StatStrip";
@@ -14,6 +16,10 @@ const SECTION_ORDER: Section[] = ["Organization", "HR", "Industry"];
 
 export default async function Home() {
   const issue = getIssue();
+  const currentIssue = getCurrentIssue();
+  // Items bound to the latest frozen issue (homepage shows current issue only,
+  // per Issue 化 design). Section archives still hold the full historical pool.
+  const issueItems: Item[] = currentIssue ? getIssueItems(currentIssue.number) : [];
 
   return (
     <div className="container">
@@ -38,21 +44,20 @@ export default async function Home() {
           systems work as one operating model.
         </p>
         <StatStrip />
+        <Link href="/issues" className="masthead-issues-link">
+          View all issues →
+        </Link>
       </header>
 
-      {/* Top Signals hero — PRD v2 §4 (analyst-feed format).
-          This is the homepage's only "above-section" content. Skills moved
-          to dedicated /skills page per editor: homepage must stay 100%
-          about weekly frontier signals — anything evergreen dilutes the
-          freshness promise. */}
+      {/* Top Signals hero — PRD v2 §4 (analyst-feed format). */}
       <TopSignals />
 
-      {/* Three sections, featured signals only — full archive on section pages */}
+      {/* Three sections showing this issue's frozen picks per section.
+          Section archive pages hold the full historical pool. */}
       {SECTION_ORDER.map((key) => {
         const meta = SECTION_META[key];
-        const featured = getFeatured(key);
+        const inIssue = issueItems.filter((i) => i.section === key);
         const totalInSection = getBySection(key).length;
-        const archiveCount = totalInSection - featured.length;
         const path = `/${key.toLowerCase()}`;
 
         return (
@@ -62,17 +67,17 @@ export default async function Home() {
               <div className="section-zh">{meta.zh}</div>
             </header>
 
-            {featured.length === 0 ? (
+            {inIssue.length === 0 ? (
               <div className="empty">
                 <p>本期暂无入选内容 / Awaiting next week&rsquo;s signals.</p>
               </div>
             ) : (
-              featured.map((item) => <Signal key={item.id} item={item} />)
+              inIssue.map((item) => <Signal key={item.id} item={item} />)
             )}
 
-            {archiveCount > 0 && (
+            {totalInSection > inIssue.length && (
               <Link href={path} className="section-archive-link">
-                查看 {key} 全部 {totalInSection} 条 →
+                查看 {key} 全部 {totalInSection} 条历史归档 →
               </Link>
             )}
           </section>
