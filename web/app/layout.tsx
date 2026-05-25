@@ -4,9 +4,9 @@ import { BackToTop } from "./components/BackToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The AI Native",
+  title: "The AI Native · Organization Observatory",
   description:
-    "Weekly signals on how organizations are being rebuilt around AI.",
+    "Tracking how frontier companies redesign talent, coordination, and management in the age of intelligent systems.",
 };
 
 export default function RootLayout({

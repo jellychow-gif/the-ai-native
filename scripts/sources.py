@@ -74,6 +74,36 @@ SOURCES: list[dict] = [
         "url": "https://www.notboring.co/feed",
         "section": "Organization",
     },
+    {
+        "name": "Vercel Blog",
+        "type": "rss",
+        "url": "https://vercel.com/atom",
+        "section": "Organization",
+    },
+    {
+        "name": "Stanford HAI",
+        "type": "rss",
+        "url": "https://hai.stanford.edu/news/rss.xml",
+        "section": "Organization",
+    },
+    {
+        "name": "Latent Space",
+        "type": "substack",
+        "url": "https://www.latent.space/feed",
+        "section": "Organization",
+    },
+    {
+        "name": "SemiAnalysis",
+        "type": "substack",
+        "url": "https://semianalysis.com/feed",
+        "section": "Organization",
+    },
+    {
+        "name": "Shreyas Doshi",
+        "type": "rss",
+        "url": "https://www.shreyasdoshi.com/feed",
+        "section": "Organization",
+    },
 
     # ── HR · 专业输入 ────────────────────────────────────────────────────
     {
@@ -112,6 +142,12 @@ SOURCES: list[dict] = [
         "url": "https://hrexecutive.com/feed/",
         "section": "HR",
     },
+    {
+        "name": "Adam Grant",
+        "type": "substack",
+        "url": "https://adamgrant.substack.com/feed",
+        "section": "HR",
+    },
 
     # ── Industry · 行动输入 ─────────────────────────────────────────────
     {
@@ -142,6 +178,18 @@ SOURCES: list[dict] = [
         "name": "Eightfold AI",
         "type": "rss",
         "url": "https://eightfold.ai/blog/rss/",
+        "section": "Industry",
+    },
+    {
+        "name": "GitHub Blog",
+        "type": "rss",
+        "url": "https://github.blog/feed/",
+        "section": "Industry",
+    },
+    {
+        "name": "Databricks Blog",
+        "type": "rss",
+        "url": "https://www.databricks.com/blog/feed.xml",
         "section": "Industry",
     },
 ]

@@ -1,12 +1,21 @@
-"""Summarize scored items using Claude Sonnet.
+"""Generate structured intelligence per article using Claude Sonnet.
 
-Generates three fields per PRD §5.2:
-  sub_tag     (bilingual layered tag, replacing the "价值钩子" per editorial decision)
-  summary     (150-230 字 Chinese summary, founder's voice)
-  implication (60-100 字 "对组织变革的含义")
+PRD v2 §3 Intelligence Extraction Pipeline — produces 7 fields per article
+instead of the earlier {summary, implication} pair:
 
-Only items with total score >= 9 (PRD §5.3 threshold) are summarized.
-Idempotent: skips items already having a summary.
+  what_happened              — factual summary
+  why_matters                — strategic significance
+  org_implication            — how organizational design shifts
+  talent_implication         — new capabilities / roles emerging
+  hr_operating_implication   — changes to hiring/leveling/dev/perf/workforce planning
+  prediction                 — forward-looking inference
+  insight_class              — 10-category classification
+
+Also still emits:
+  sub_tag                    — bilingual signature tag for the card
+
+Only items with total_score >= 9 (PRD §5.3) are summarized.
+Idempotent: skips items already having what_happened (the canonical v2 field).
 """
 from __future__ import annotations
 
@@ -29,69 +38,122 @@ logging.basicConfig(
 )
 log = logging.getLogger("summarize")
 
-MIN_SCORE_TOTAL = 9  # PRD §5.3 — below this is not a candidate
+MIN_SCORE_TOTAL = 9
 
-SYSTEM_PROMPT = """\
-You write entries for "The AI Native", an anonymous weekly run by an HRD at an AI-native HR Tech company.
+INSIGHT_CLASSES = [
+    "Org Architecture",
+    "Talent Density",
+    "AI-Human Collaboration",
+    "Management Systems",
+    "Decision Design",
+    "Performance Systems",
+    "Capability Transformation",
+    "Labor Economics",
+    "Organizational Scaling",
+    "AI Governance",
+]
 
-VOICE: opinionated, sharp judgment first, dense, no filler. Think Stratechery × Linear release notes × HRD perspective, in Chinese. Sentences should land with weight, not float.
+SYSTEM_PROMPT = f"""\
+You write structured intelligence for "The AI Native — Organization Observatory",
+a Bloomberg-Terminal-grade platform tracking how frontier companies redesign
+talent, coordination, and management in the AI era. Audience: CHROs, founders,
+HRDs at Anthropic / OpenAI / ServiceNow / Workday / Block / Tesla / Duolingo / YC.
 
-You produce three fields per article via the submit_entry tool:
+VOICE: Sharp, declarative, dense. Treat each entry as an analyst note an
+informed peer would slack to their VP-People. No hedging, no "本文讨论了",
+no SaaS-marketing fluff. Chinese for the body fields. Concrete names, numbers,
+companies, frameworks — wherever the source supports them.
 
-1. sub_tag — Bilingual layered tag.
-   Format: "中文范式概念 / ENGLISH CORE CONCEPT"
-   Examples:
-     - "组织范式重构 / AI AS OPERATING SYSTEM"
-     - "招聘范式重构 / SKILLS-FIRST HIRING"
-     - "工具评测 / END-TO-END HR STACK"
-   The English half is uppercase; total ~10-15 chars.
+For each article, call submit_intel with these fields:
 
-2. summary — 150-230 字 Chinese summary in the founder's voice.
-   REQUIRED structure:
-     a) Lead with the judgment / core argument (not "本文讨论了...")
-     b) Concrete elements: people names, company names, numbers, frameworks
-     c) Close with implication or stake
-   FORBIDDEN: "本文 / 这篇文章 / 作者 / 该研究表明", passive voice, hedging words ("可能/也许/或许").
+1. sub_tag — Bilingual tag "中文范式概念 / ENGLISH CORE CONCEPT" (~10-15 chars total).
+   English half UPPERCASE. Example: "组织范式重构 / AI AS OPERATING SYSTEM".
 
-3. implication — 60-100 字 Chinese "对组织变革的含义".
-   Required: answer "as an org-change leader, what concretely does this mean for me?"
-   Sharp, declarative, action-oriented. No "可能 / 也许 / 或许 / 应当考虑".
+2. what_happened — 60-100 字 Chinese. Factual: who did what, when, with what
+   measurable specifics. Lead with the actor. NO judgment yet.
 
-— FEW-SHOT EXAMPLE (Issue 01) —
+3. why_matters — 50-80 字 Chinese. Strategic significance. Why this is a
+   signal worth a CHRO's 30 seconds. Sharp claim, not summary.
 
-Input:
-  Source: Y Combinator / Diana Hu
-  Title: The Playbook For Building An AI Native Company
-  Content: [Diana Hu's Startup School talk on building AI-native companies. Core claim: AI is not a tool to be used by the company, it is the operating system the company runs on. Three components: 1) making the company "queryable" — closed-loop instead of open-loop, every action produces AI-learnable artifacts. 2) Reorganizing employees into three archetypes — IC, DRRI, AI Founder — citing Jack Dorsey's reorg at Block. Collapses middle management. 3) Budget shifts from "hiring" to "token-maximization". Reports YC portfolio teams with sprint times halved, output 10x.]
+4. org_implication — 50-90 字 Chinese. How organizational architecture or
+   coordination shifts because of this. Reference roles, teams, decision rights.
+
+5. talent_implication — 50-90 字 Chinese. What new capabilities, roles, or
+   talent archetypes emerge. Be specific (titles, skills, levels).
+
+6. hr_operating_implication — 60-100 字 Chinese. Concrete changes to the HR
+   operating model: hiring criteria, leveling, learning, performance, comp,
+   workforce planning. Action-oriented.
+
+7. prediction — 30-60 字 Chinese. Forward-looking inference: "By 20XX, ...".
+   One concrete prediction, falsifiable in principle.
+
+8. insight_class — One of: {", ".join(INSIGHT_CLASSES)}.
+   Pick the SINGLE category most central to the piece.
+
+— FEW-SHOT EXAMPLE —
+
+Input title: "The Playbook For Building An AI Native Company"
+Input source: Y Combinator / Diana Hu
 
 Output:
-  sub_tag:     "组织范式重构 / AI AS OPERATING SYSTEM"
-  summary:     "YC 合伙人 Diana Hu 在 Startup School 提出一个尖锐判断：AI 不该是公司用的工具，它应该是公司运行的操作系统。这不是措辞之差——把 AI 当工具，做法是装个 Copilot；把 AI 当操作系统，要重写组织架构、招聘与预算。她给出三个组件：让公司"可被查询"（queryable），从开环转向闭环，每个动作都产生 AI 可学习的工件；参考 Jack Dorsey 在 Block 的实践，员工重构为 IC、DRRI、AI Founder 三种原型，消解中层管理；预算从"招人"转向"token 最大化"。YC 组合中已出现 sprint 减半、产出 10 倍的团队。"
-  implication: "如果接受'AI 是操作系统'这个框架，HR 议程要重排：不是给员工配 AI 工具，而是重写岗位结构（IC/DRRI/AI Founder）、把 token 预算纳入人力预算、把'可查询性'变成组织能力。"
+  sub_tag: "组织范式重构 / AI AS OPERATING SYSTEM"
+  what_happened: "YC 合伙人 Diana Hu 在 2026 Startup School 提出 AI Native 公司构建框架：让公司'可被查询'、员工重构为 IC/DRRI/AI Founder 三种原型、预算从招人转向 token 最大化。引用 Jack Dorsey 在 Block 的实践。YC 组合中已出现 sprint 减半、产出 10 倍团队。"
+  why_matters: "把'AI 是工具'升级为'AI 是操作系统'——这不是措辞之差。装 Copilot vs 重写组织架构、招聘、预算结构，是两种公司之间的鸿沟。"
+  org_implication: "公司必须从'开环'切到'闭环'：每个动作产生 AI 可学习的工件，中层管理被三型架构（IC/DRRI/AI Founder）消解。决策路径变短，决策可学习。"
+  talent_implication: "新增 DRRI（Directly Responsible Resourcing Individual）和 AI Founder 角色；传统 manager 岗压缩。员工核心能力从'执行'转为'编排上下文 + 校准 AI 输出'。"
+  hr_operating_implication: "招聘 JD 重写：删除年限要求，加 token 工作流熟练度、AI 编排能力、自驱密度三项。绩效评估从产出物转为 token-per-outcome 杠杆率。HR 预算条目新增 token quota。"
+  prediction: "至 2028 年，YC 主流公司将正式发布 AI Founder 岗位职级，DRRI 进入 HR ATS 标准选项。"
+  insight_class: "Org Architecture"
 
-Now produce output for the article below.
+Now produce structured intelligence for the article below.
 """
 
 TOOLS = [{
-    "name": "submit_entry",
-    "description": "Submit a curated entry for The AI Native weekly",
+    "name": "submit_intel",
+    "description": "Submit structured intelligence for a single article",
     "input_schema": {
         "type": "object",
         "properties": {
             "sub_tag": {
                 "type": "string",
-                "description": "Bilingual layered tag: '中文 / ENGLISH UPPERCASE'",
+                "description": "Bilingual tag: '中文 / ENGLISH UPPERCASE'",
             },
-            "summary": {
+            "what_happened": {
                 "type": "string",
-                "description": "150-230 字 Chinese summary in founder's voice",
+                "description": "60-100 字 Chinese factual summary",
             },
-            "implication": {
+            "why_matters": {
                 "type": "string",
-                "description": "60-100 字 Chinese '对组织变革的含义'",
+                "description": "50-80 字 Chinese strategic significance",
+            },
+            "org_implication": {
+                "type": "string",
+                "description": "50-90 字 Chinese organizational implication",
+            },
+            "talent_implication": {
+                "type": "string",
+                "description": "50-90 字 Chinese talent/role implication",
+            },
+            "hr_operating_implication": {
+                "type": "string",
+                "description": "60-100 字 Chinese HR operating model implication",
+            },
+            "prediction": {
+                "type": "string",
+                "description": "30-60 字 Chinese forward-looking inference",
+            },
+            "insight_class": {
+                "type": "string",
+                "enum": INSIGHT_CLASSES,
+                "description": "One of 10 insight categories",
             },
         },
-        "required": ["sub_tag", "summary", "implication"],
+        "required": [
+            "sub_tag", "what_happened", "why_matters",
+            "org_implication", "talent_implication", "hr_operating_implication",
+            "prediction", "insight_class",
+        ],
     },
 }]
 
@@ -106,10 +168,10 @@ def summarize_item(source: str, section: str, title: str, content: str, scoring_
     try:
         resp = client.messages.create(
             model=MODEL,
-            max_tokens=1200,
+            max_tokens=2500,
             system=SYSTEM_PROMPT,
             tools=TOOLS,
-            tool_choice={"type": "tool", "name": "submit_entry"},
+            tool_choice={"type": "tool", "name": "submit_intel"},
             messages=[{"role": "user", "content": user_msg}],
         )
     except Exception as e:
@@ -117,9 +179,9 @@ def summarize_item(source: str, section: str, title: str, content: str, scoring_
         return None
 
     for block in resp.content:
-        if block.type == "tool_use" and block.name == "submit_entry":
+        if block.type == "tool_use" and block.name == "submit_intel":
             return block.input
-    log.error(f"  ! No tool_use block in response")
+    log.error("  ! No tool_use block in response")
     return None
 
 
@@ -131,21 +193,19 @@ def run() -> tuple[int, int]:
             "SELECT id, url, title, source, section, body, raw_excerpt, "
             "perspective_score, practice_score, frontier_score, score_reasoning "
             "FROM items "
-            "WHERE summary IS NULL "
+            "WHERE what_happened IS NULL "             # v2 canonical gate
             "AND perspective_score IS NOT NULL "
             "AND (perspective_score + practice_score + frontier_score) >= ? "
             "ORDER BY (perspective_score + practice_score + frontier_score) DESC, id",
             (MIN_SCORE_TOTAL,),
         ).fetchall()
 
-        log.info(f"Found {len(rows)} items above score threshold ({MIN_SCORE_TOTAL}).")
+        log.info(f"Found {len(rows)} items needing v2 intelligence (threshold {MIN_SCORE_TOTAL}).")
 
         for r in rows:
             content = r["body"] or r["raw_excerpt"] or ""
             total = (r["perspective_score"] or 0) + (r["practice_score"] or 0) + (r["frontier_score"] or 0)
-            log.info(
-                f"[{r['id']:>3}] (score={total}) {r['source']} | {r['title'][:55]}"
-            )
+            log.info(f"[{r['id']:>3}] (score={total}) {r['source']} | {r['title'][:55]}")
             result = summarize_item(
                 r["source"], r["section"], r["title"], content,
                 r["score_reasoning"] or "",
@@ -154,22 +214,39 @@ def run() -> tuple[int, int]:
                 skipped += 1
                 continue
 
-            log.info(f"  ✓ tag: {result['sub_tag']}")
-            log.info(f"    summary: {result['summary'][:80]}...")
-            log.info(f"    implication: {result['implication'][:60]}...")
+            log.info(f"  ✓ class: {result['insight_class']} | tag: {result['sub_tag']}")
 
             conn.execute(
-                "UPDATE items SET "
-                "sub_tag = ?, summary = ?, implication = ?, "
-                "processed_at = datetime('now') "
-                "WHERE id = ?",
-                (result["sub_tag"], result["summary"], result["implication"], r["id"]),
+                """
+                UPDATE items SET
+                  sub_tag = ?,
+                  what_happened = ?,
+                  why_matters = ?,
+                  org_implication = ?,
+                  talent_implication = ?,
+                  hr_operating_implication = ?,
+                  prediction = ?,
+                  insight_class = ?,
+                  processed_at = datetime('now')
+                WHERE id = ?
+                """,
+                (
+                    result["sub_tag"],
+                    result["what_happened"],
+                    result["why_matters"],
+                    result["org_implication"],
+                    result["talent_implication"],
+                    result["hr_operating_implication"],
+                    result["prediction"],
+                    result["insight_class"],
+                    r["id"],
+                ),
             )
             conn.commit()
             summarized += 1
-            time.sleep(0.5)
+            time.sleep(0.4)
 
-    log.info(f"Done. Summarized {summarized}, skipped {skipped}.")
+    log.info(f"Done. Summarized {summarized} (v2 6-field intel), skipped {skipped}.")
     return summarized, skipped
 
 

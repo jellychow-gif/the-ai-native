@@ -34,8 +34,8 @@ SKILLS_PATH = ROOT / "data" / "skills.json"
 # Phase 1 demo issue values — will be auto-derived from publish state later.
 ISSUE = {
     "number": "01",
-    "date_iso": "2026-05-29",
-    "date_label": "May 29, 2026",
+    "date_iso": "2026-05-25",
+    "date_label": "May 25, 2026",
 }
 
 
@@ -52,6 +52,8 @@ def main() -> None:
             SELECT
               id, url, title, source, source_type, section, hr_module,
               sub_tag, hook, summary, implication,
+              what_happened, why_matters, org_implication, talent_implication,
+              hr_operating_implication, prediction, insight_class,
               author, published_at,
               perspective_score, practice_score, frontier_score, score_reasoning,
               COALESCE(perspective_score, 0)
@@ -60,8 +62,10 @@ def main() -> None:
             FROM items
             WHERE perspective_score IS NOT NULL
               AND (perspective_score + practice_score + frontier_score) >= ?
-              AND summary IS NOT NULL
-            ORDER BY total_score DESC, id DESC
+              AND (summary IS NOT NULL OR what_happened IS NOT NULL)
+            ORDER BY
+              CASE WHEN what_happened IS NOT NULL THEN 0 ELSE 1 END,
+              total_score DESC, id DESC
             """,
             (MIN_SCORE,),
         ).fetchall()

@@ -9,6 +9,7 @@ import {
 import { Signal } from "./components/Signal";
 import { SkillsBlock } from "./components/SkillsBlock";
 import { StatStrip } from "./components/StatStrip";
+import { TopSignals } from "./components/TopSignals";
 
 const SECTION_ORDER: Section[] = ["Organization", "HR", "Industry"];
 
@@ -23,14 +24,27 @@ export default async function Home() {
           Issue {issue.number} · {issue.date_label}
         </div>
         <h1 className="title">The AI Native</h1>
+        <div className="observatory-line">
+          AI Native Organization Observatory
+        </div>
         <p className="subtitle-en">
-          Weekly signals on how organizations are being rebuilt around AI.
+          Tracking how frontier companies redesign talent, coordination, and
+          management in the age of intelligent systems.
         </p>
-        <p className="subtitle-zh">每周筛选全球 AI 原生组织的前沿信号。</p>
+        <p className="subtitle-zh">
+          追踪前沿公司如何在智能系统时代重塑人才、协作与管理。
+        </p>
+        <p className="masthead-support">
+          Built for leaders designing organizations where humans and intelligent
+          systems work as one operating model.
+        </p>
         <StatStrip />
       </header>
 
-      {/* AI 工具速览 — replaces the editorial observation block */}
+      {/* Top Signals hero — PRD v2 §4 (analyst-feed format) */}
+      <TopSignals />
+
+      {/* AI 工具速览 — secondary block, surfaces curated tooling */}
       <SkillsBlock />
 
       {/* Three sections, featured signals only — full archive on section pages */}

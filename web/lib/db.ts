@@ -23,6 +23,19 @@ export const HR_MODULE_ORDER: HRModule[] = [
   "招聘",
 ];
 
+// 10-category insight classification (PRD v2 §3)
+export type InsightClass =
+  | "Org Architecture"
+  | "Talent Density"
+  | "AI-Human Collaboration"
+  | "Management Systems"
+  | "Decision Design"
+  | "Performance Systems"
+  | "Capability Transformation"
+  | "Labor Economics"
+  | "Organizational Scaling"
+  | "AI Governance";
+
 export type Item = {
   id: number;
   url: string;
@@ -33,8 +46,17 @@ export type Item = {
   hr_module: HRModule | null;
   sub_tag: string | null;
   hook: string | null;
+  // Legacy fields (v1) — kept for back-compat during migration
   summary: string | null;
   implication: string | null;
+  // v2 §3 structured intelligence fields
+  what_happened: string | null;
+  why_matters: string | null;
+  org_implication: string | null;
+  talent_implication: string | null;
+  hr_operating_implication: string | null;
+  prediction: string | null;
+  insight_class: InsightClass | null;
   author: string | null;
   published_at: string | null;
   perspective_score: number | null;
@@ -105,6 +127,13 @@ export function getSkills(): Skill[] {
 
 export function getFeaturedSkill(): Skill | undefined {
   return loadPayload().skills.find((s) => s.featured);
+}
+
+/** Top N signals across all sections by total_score — for the homepage hero */
+export function getTopSignals(n: number = 5): Item[] {
+  return loadPayload().items
+    .filter((i) => i.what_happened) // only items with v2 intel
+    .slice(0, n);
 }
 
 export function getStats(): { items: number; featured: number; skills: number; sources: number } {

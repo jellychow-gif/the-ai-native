@@ -182,6 +182,15 @@ a {
   margin-bottom: 32px;
 }
 
+.observatory-line {
+  margin-bottom: 32px;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
 .subtitle-en {
   font-style: italic;
   font-weight: 300;
@@ -189,6 +198,17 @@ a {
   color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 12px;
+}
+
+.masthead-support {
+  margin-top: 32px;
+  font-family: "Noto Serif SC", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  max-width: 560px;
 }
 
 .subtitle-zh {
@@ -205,6 +225,127 @@ a {
   font-size: 13px;
   font-weight: 300;
   color: var(--text-tertiary);
+}
+
+/* ── Top Signals hero (PRD v2 §4) ──────────────────────────────── */
+
+.topsignals {
+  margin: 72px 0 96px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.topsignals-header {
+  margin-bottom: 32px;
+}
+
+.topsignals-title {
+  font-family: "Newsreader", serif;
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 28px);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+.topsignals-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topsignals-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+
+.topsignals-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.topsignals-num {
+  font-family: "Newsreader", serif;
+  font-weight: 300;
+  font-size: 22px;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+
+.topsignals-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.topsignals-source {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.topsignals-title-link {
+  display: block;
+  font-family: "Newsreader", serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2.5vw, 24px);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-bottom: 12px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.topsignals-title-link:hover {
+  border-bottom-color: var(--text-primary);
+}
+
+.topsignals-why {
+  font-family: "Noto Serif SC", serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.topsignals-mini {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 16px;
+  row-gap: 6px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.topsignals-mini dt {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding-top: 4px;
+}
+
+.topsignals-mini dd {
+  margin: 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.topsignals-pred {
+  font-style: italic;
+  color: var(--accent);
 }
 
 /* ── Stat strip (under masthead) ───────────────────────────────── */
@@ -599,8 +740,35 @@ a {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+/* Top meta row (insight chip + sub_tag) */
+.signal-top-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 24px;
 }
+
+/* Insight classification chip — small pill */
+.insight-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(139, 92, 246, 0.08); /* fallback purple-tinted */
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+
+/* Each section's chip background uses its accent in low alpha */
+.section--organization .insight-chip { background: rgba(139, 92, 246, 0.08); }
+.section--hr           .insight-chip { background: rgba(232, 71, 168, 0.08); }
+.section--industry     .insight-chip { background: rgba(63, 184, 255, 0.10); }
 
 .signal-title {
   font-weight: 400;
@@ -652,6 +820,108 @@ a {
   font-size: 17px;
   line-height: 1.9;
   font-weight: 400;
+}
+
+/* ── v2 §3 Intelligence Card sections ──────────────────────────── */
+
+.intel-block {
+  margin-bottom: 28px;
+}
+
+.intel-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 10px;
+}
+
+.intel-label--accent {
+  color: var(--accent);
+}
+
+.intel-text {
+  font-family: "Noto Serif SC", serif;
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* Why It Matters — emphasized */
+.intel-text--why {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.intel-block--why {
+  margin-bottom: 32px;
+  padding: 20px 0 4px;
+  border-top: 1px solid var(--border);
+}
+
+/* 3-up implications grid — Bloomberg-Terminal style */
+.intel-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  margin-bottom: 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 720px) {
+  .intel-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.intel-cell .intel-label {
+  margin-bottom: 8px;
+}
+
+.intel-text--small {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Prediction — italicized, accent-treated */
+.intel-prediction {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 16px 18px;
+  background: linear-gradient(
+    to right,
+    rgba(139, 92, 246, 0.04),
+    transparent 80%
+  );
+  border-left: 2px solid var(--accent);
+}
+
+.intel-prediction-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.intel-prediction-text {
+  font-family: "Noto Serif SC", serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-primary);
 }
 
 /* ── "对组织变革的含义" block — visually distinct per PRD §7.1 ──── */
