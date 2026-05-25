@@ -249,6 +249,16 @@ a {
   margin-top: 12px;
 }
 
+.topsignals-criteria {
+  margin-top: 14px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-tertiary);
+  max-width: 580px;
+}
+
 .topsignals-list {
   list-style: none;
   padding: 0;
@@ -617,6 +627,22 @@ a {
   font-size: 24px;
   color: var(--text-primary);
   margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+.industry-subsection {
+  margin-bottom: 64px;
+}
+
+.industry-subhead {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-top: 56px;
+  margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--accent);
   display: inline-block;

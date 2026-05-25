@@ -4,7 +4,7 @@
     "date_iso": "2026-05-25",
     "date_label": "May 25, 2026"
   },
-  "generated_at": "2026-05-25T11:56:33.627293+00:00",
+  "generated_at": "2026-05-25T12:05:51.590723+00:00",
   "min_score_threshold": 9,
   "item_count": 40,
   "featured_count": 9,
@@ -15,7 +15,7 @@
       "title": "How Anthropic Rebuilt Its Sales Org From Scratch When Demand Went Vertical: 54% of New Enterprise Logos Now Come Self-Serve",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "销售组织重构 / AI-NATIVE SALES REBUILD",
       "hook": null,
@@ -43,7 +43,7 @@
       "title": "Forget “Would You Hire Them Again.” The Real Test Now Is Whether You’d Replace Them With an Agent.",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "人机替代决策框架 / AGENT REPLACEMENT TEST",
       "hook": null,
@@ -71,7 +71,7 @@
       "title": "The Agents Episode #005 is Out! Our 2 AI VPs Cost $257/Month, a Website Willed Itself Into Becoming an Agent, and QB Sent 83 Personalized Emails at 12:20am",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "AI代理取代中层 / AGENT-AS-EXECUTIVE",
       "hook": null,
@@ -91,7 +91,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI代理取代中层职能,成本极低($257/月),重构营销/运营团队架构",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 193,
@@ -127,7 +127,7 @@
       "title": "Even a Mediocre Prompt Can Build Pretty Good Software Today",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "创始人直接交付 / ZERO-ENGINEER SHIPPING",
       "hook": null,
@@ -147,7 +147,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI赋能非技术创始人直接交付产品,重塑组织人力结构和分工模式",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 152,
@@ -155,7 +155,7 @@
       "title": "Dear SaaStr: As a Startup, What Are Some Effective Ways For an Underdog to Take Down Their Competition?",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "AI原生竞争颠覆 / AI-NATIVE DISPLACEMENT",
       "hook": null,
@@ -183,7 +183,7 @@
       "title": "Why 95% of Customer Success Managers Can’t Be Turned into Forward Deployed Engineers. And What That Means.",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "部署工程化转型 / FORWARD DEPLOYED ENGINEER",
       "hook": null,
@@ -371,7 +371,7 @@
       "frontier_score": 4,
       "score_reasoning": "创业公司架构转向服务化的范式思考,多个真实案例和市场数据支撑,反映前沿组织模式演变",
       "total_score": 12,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 16,
@@ -735,7 +735,7 @@
       "frontier_score": 3,
       "score_reasoning": "高层揭示高量级招聘流程崩溃根因,但缺乏深度案例与数据支撑实现路径。",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 161,
@@ -763,7 +763,7 @@
       "frontier_score": 3,
       "score_reasoning": "招聘中的AI公平性产品设计,具体案例但非paradigm级新颖",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 119,
@@ -875,7 +875,7 @@
       "frontier_score": 3,
       "score_reasoning": "CEO级领导力范式解析,揭示非创始人如何获得组织权威与文化重建的深层机制",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 41,
@@ -903,7 +903,7 @@
       "frontier_score": 4,
       "score_reasoning": "CEO级宏观视角,涉及组织财富激励、人才流动、薪酬竞争、长期战略,缺乏深度案例数据",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 36,
@@ -931,7 +931,7 @@
       "frontier_score": 3,
       "score_reasoning": "AI重塑组织设计的CEO级思维框架,历史脉络清晰,但具体案例深度有限",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 19,
@@ -995,7 +995,7 @@
       "title": "Don’t Lose a Great CoFounder, Whatever It Takes",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Organization",
+      "section": "Industry",
       "hr_module": null,
       "sub_tag": "联创关系韧性 / COFOUNDER RETENTION",
       "hook": null,
@@ -1132,6 +1132,16 @@
   ],
   "skills": [
     {
+      "id": "anthropic-founder-playbook",
+      "name": "The Founder's Playbook: Building an AI-Native Startup",
+      "vendor": "Anthropic",
+      "category": "组织设计",
+      "one_line": "Anthropic 官方出品的 42 页 AI 原生创业者手册——CEO 一号位必读",
+      "summary": "Anthropic 2026 年发布的官方手册。把创业旅程按 Idea / MVP / Launch / Scale 四阶段重写为 AI 原生公司的行动方案。核心论点：创始人角色从'个人贡献者'变成'智能体的编排者'——AI 抹掉了'每进入一个新阶段都要更大团队、不同技能、新一轮融资'这种预期。42% 的创业公司死于'造了没人想要的东西'，Agentic Coding 让这数字只会向上爬。中文译版已在 HR 圈内自然传播。",
+      "url": "https://www.anthropic.com/founders-playbook",
+      "featured": true
+    },
+    {
       "id": "claude-cowork-hr-plugin",
       "name": "Claude Cowork · HR Plugin",
       "vendor": "Anthropic",
@@ -1139,7 +1149,7 @@
       "one_line": "把 Claude 当作可被 HR 工作流编排的同事，而非聊天对象",
       "summary": "Anthropic 在 Claude Cowork 里为 HR 场景开放了官方 Plugin 入口。一号位可以为团队定制专属的 Skill 与 Plugin：把招聘评估、绩效校准、培训追踪等流程封装成可调用的智能体，跨 Slack / Notion / 邮箱组合调度。它的关键不是工具数量，而是把 HR 系统从'操作软件'重构为'编排上下文'——HR 不再录入数据，而是配置 AI 同事的工作边界。",
       "url": "https://www.anthropic.com/news/cowork",
-      "featured": true
+      "featured": false
     },
     {
       "id": "anthropic-skills",

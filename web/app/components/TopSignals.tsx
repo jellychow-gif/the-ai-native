@@ -19,6 +19,10 @@ export function TopSignals() {
         <h2 className="topsignals-title">
           5 things every AI-native operator should know this week
         </h2>
+        <p className="topsignals-criteria">
+          入选标准：通过 AI Native 相关性过滤 · 范式视角 + 实践锚点 + 全球前沿三轴得分 ≥ 9 / 15 ·
+          发表于近 180 天 · 每源最多 1 条，强制多元化。
+        </p>
       </header>
 
       <ol className="topsignals-list">

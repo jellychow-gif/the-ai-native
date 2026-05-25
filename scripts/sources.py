@@ -108,39 +108,6 @@ SOURCES: list[dict] = [
         "url": "https://www.shreyasdoshi.com/feed",
         "section": "Organization",
     },
-    # Reclassified from Industry — these write paradigm-level content,
-    # not HR Tech product news. Belongs with CEO/founder-level voices.
-    {
-        "name": "SaaStr",
-        "type": "rss",
-        "url": "https://www.saastr.com/feed/",
-        "section": "Organization",
-    },
-    {
-        "name": "Stripe Blog",
-        "type": "rss",
-        "url": "https://stripe.com/blog/feed.rss",
-        "section": "Organization",
-    },
-    {
-        "name": "GitHub Blog",
-        "type": "rss",
-        "url": "https://github.blog/feed/",
-        "section": "Organization",
-    },
-    {
-        "name": "Databricks Blog",
-        "type": "rss",
-        "url": "https://www.databricks.com/blog/feed.xml",
-        "section": "Organization",
-    },
-    {
-        "name": "HubSpot Marketing",
-        "type": "rss",
-        "url": "https://blog.hubspot.com/marketing/rss.xml",
-        "section": "Organization",
-    },
-
     # ═════════════════════════════════════════════════════════════════
     # HR · HR 各模块的实践与重构
     # ═════════════════════════════════════════════════════════════════
@@ -188,9 +155,11 @@ SOURCES: list[dict] = [
     },
 
     # ═════════════════════════════════════════════════════════════════
-    # Industry · HR Tech 公司的 AI 产品动态 + HR 行业新闻
-    # NOT general SaaS thinking — that lives in Organization above.
+    # Industry · AI Native SaaS 公司产品动态
+    # HR Tech 公司优先（最直接命中受众），其次通用 SaaS / AI 基础设施。
+    # 板块页通过 lib/db.ts HR_TECH_SOURCES + industryPriority() 做显示排序。
     # ═════════════════════════════════════════════════════════════════
+    # HR Tech 公司（priority 1）
     {
         "name": "Rippling Blog",
         "type": "html",
@@ -219,6 +188,37 @@ SOURCES: list[dict] = [
         "name": "Workhuman",
         "type": "rss",
         "url": "https://www.workhuman.com/blog/feed/",
+        "section": "Industry",
+    },
+    # 通用 SaaS / AI 基础设施（priority 2）—— 仍属"产品动态"范畴
+    {
+        "name": "SaaStr",
+        "type": "rss",
+        "url": "https://www.saastr.com/feed/",
+        "section": "Industry",
+    },
+    {
+        "name": "Stripe Blog",
+        "type": "rss",
+        "url": "https://stripe.com/blog/feed.rss",
+        "section": "Industry",
+    },
+    {
+        "name": "GitHub Blog",
+        "type": "rss",
+        "url": "https://github.blog/feed/",
+        "section": "Industry",
+    },
+    {
+        "name": "Databricks Blog",
+        "type": "rss",
+        "url": "https://www.databricks.com/blog/feed.xml",
+        "section": "Industry",
+    },
+    {
+        "name": "HubSpot Marketing",
+        "type": "rss",
+        "url": "https://blog.hubspot.com/marketing/rss.xml",
         "section": "Industry",
     },
 ]

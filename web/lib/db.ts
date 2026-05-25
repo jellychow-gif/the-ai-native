@@ -129,11 +129,34 @@ export function getFeaturedSkill(): Skill | undefined {
   return loadPayload().skills.find((s) => s.featured);
 }
 
-/** Top N signals across all sections by total_score — for the homepage hero */
+/**
+ * Top N signals for the homepage hero — selection criteria:
+ *   1) passed AI Native relevance gate (~67% of raw input is filtered out)
+ *   2) total_score >= 9 across perspective / practice / frontier dimensions
+ *   3) summarized into 6-field structured intelligence
+ *   4) published in the last 180 days (freshness gate)
+ *   5) MAX 1 item per source — source diversity rule
+ *
+ * The diversity rule (5) is the practical insurance against any single
+ * source flooding the hero (e.g., SaaStr publishing 7 great pieces in
+ * one week).
+ */
 export function getTopSignals(n: number = 5): Item[] {
-  return loadPayload().items
-    .filter((i) => i.what_happened) // only items with v2 intel
-    .slice(0, n);
+  // Pull from `is_featured` only — that flag already enforces freshness
+  // (<180 days) and per-section caps in export.py. Then apply diversity
+  // rule: max 1 item per source.
+  const items = loadPayload().items.filter(
+    (i) => i.is_featured && i.what_happened,
+  );
+  const picked: Item[] = [];
+  const seenSources = new Set<string>();
+  for (const item of items) {
+    if (seenSources.has(item.source)) continue;
+    picked.push(item);
+    seenSources.add(item.source);
+    if (picked.length >= n) break;
+  }
+  return picked;
 }
 
 export function getStats(): { items: number; featured: number; skills: number; sources: number } {
@@ -151,9 +174,9 @@ export function getStats(): { items: number; featured: number; skills: number; s
 export const SECTION_META: Record<Section, { en: string; zh: string; tagline: string }> = {
   Organization: {
     en: "Organization",
-    zh: "组织 · 一号位输入",
+    zh: "组织 · AI Native 进化",
     tagline:
-      "面向 CEO / 创始人 / HRD 一号位的范式级输入——前沿运营者、组织设计思想家、深度长文。",
+      "AI Native 组织的打造与进化——面向 CEO 一号位、CHRO、组织设计专家。VC 合伙人、创始人、深度长文媒体对 Anthropic / OpenAI / YC 等的范式级解读。",
   },
   HR: {
     en: "HR",
@@ -163,8 +186,26 @@ export const SECTION_META: Record<Section, { en: string; zh: string; tagline: st
   },
   Industry: {
     en: "Industry",
-    zh: "行业 · HR Tech 产品动态",
+    zh: "行业 · SaaS / AI 产品动态",
     tagline:
-      "HR Tech 公司的 AI 新品发布与产品演进。Rippling / Eightfold / Workday / Glint 等的实时动态。",
+      "AI Native SaaS 公司的产品演进与组织实践——HR Tech 优先（Rippling / Eightfold / Workday / Glint / Workhuman），其次通用 SaaS 与 AI 基础设施（Stripe / SaaStr / GitHub / Databricks）。",
   },
 };
+
+/**
+ * HR Tech vendors get priority ordering in the Industry section — they're
+ * the most directly actionable signal for the audience. Keep this list in
+ * sync with sources.py when adding new vendors.
+ */
+export const HR_TECH_SOURCES = new Set<string>([
+  "Rippling Blog",
+  "Eightfold AI",
+  "HR Dive",
+  "Glint · LinkedIn",
+  "Workhuman",
+]);
+
+/** Sort key: HR Tech items (0) sort before other SaaS items (1). */
+export function industryPriority(item: { source: string }): number {
+  return HR_TECH_SOURCES.has(item.source) ? 0 : 1;
+}

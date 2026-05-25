@@ -2,6 +2,16 @@
   "$schema": "Manually curated. Edit by hand; will be re-bundled into web/data/items.json by scripts/export.py.",
   "skills": [
     {
+      "id": "anthropic-founder-playbook",
+      "name": "The Founder's Playbook: Building an AI-Native Startup",
+      "vendor": "Anthropic",
+      "category": "组织设计",
+      "one_line": "Anthropic 官方出品的 42 页 AI 原生创业者手册——CEO 一号位必读",
+      "summary": "Anthropic 2026 年发布的官方手册。把创业旅程按 Idea / MVP / Launch / Scale 四阶段重写为 AI 原生公司的行动方案。核心论点：创始人角色从'个人贡献者'变成'智能体的编排者'——AI 抹掉了'每进入一个新阶段都要更大团队、不同技能、新一轮融资'这种预期。42% 的创业公司死于'造了没人想要的东西'，Agentic Coding 让这数字只会向上爬。中文译版已在 HR 圈内自然传播。",
+      "url": "https://www.anthropic.com/founders-playbook",
+      "featured": true
+    },
+    {
       "id": "claude-cowork-hr-plugin",
       "name": "Claude Cowork · HR Plugin",
       "vendor": "Anthropic",
@@ -9,7 +19,7 @@
       "one_line": "把 Claude 当作可被 HR 工作流编排的同事，而非聊天对象",
       "summary": "Anthropic 在 Claude Cowork 里为 HR 场景开放了官方 Plugin 入口。一号位可以为团队定制专属的 Skill 与 Plugin：把招聘评估、绩效校准、培训追踪等流程封装成可调用的智能体，跨 Slack / Notion / 邮箱组合调度。它的关键不是工具数量，而是把 HR 系统从'操作软件'重构为'编排上下文'——HR 不再录入数据，而是配置 AI 同事的工作边界。",
       "url": "https://www.anthropic.com/news/cowork",
-      "featured": true
+      "featured": false
     },
     {
       "id": "anthropic-skills",
