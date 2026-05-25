@@ -1,0 +1,46 @@
+{
+  "$schema": "Manually curated. Edit by hand; will be re-bundled into web/data/items.json by scripts/export.py.",
+  "skills": [
+    {
+      "id": "claude-cowork-hr-plugin",
+      "name": "Claude Cowork · HR Plugin",
+      "vendor": "Anthropic",
+      "category": "组织设计",
+      "one_line": "把 Claude 当作可被 HR 工作流编排的同事，而非聊天对象",
+      "summary": "Anthropic 在 Claude Cowork 里为 HR 场景开放了官方 Plugin 入口。一号位可以为团队定制专属的 Skill 与 Plugin：把招聘评估、绩效校准、培训追踪等流程封装成可调用的智能体，跨 Slack / Notion / 邮箱组合调度。它的关键不是工具数量，而是把 HR 系统从'操作软件'重构为'编排上下文'——HR 不再录入数据，而是配置 AI 同事的工作边界。",
+      "url": "https://www.anthropic.com/news/cowork",
+      "featured": true
+    },
+    {
+      "id": "anthropic-skills",
+      "name": "Anthropic Skills (Claude)",
+      "vendor": "Anthropic",
+      "category": "组织设计",
+      "one_line": "Claude 的可调用专长包——HR 领域第一次有了'可装可卸的能力'",
+      "summary": "Skills 让一位 HRD 可以为公司定制可被复用的'能力包'：'校准全员绩效曲线'、'生成岗位胜任力地图'、'员工 1:1 复盘模板'——一次构建，全员调用。技术上是 Markdown + 工具组合；管理上是把 HR 的隐性方法论显性化、模块化、可继承化。",
+      "url": "https://www.anthropic.com/news/skills",
+      "featured": false
+    },
+    {
+      "id": "notion-ai-hr",
+      "name": "Notion AI Connectors",
+      "vendor": "Notion",
+      "category": "员工体验",
+      "one_line": "把 HR 文档变成可被搜索、问答、行动触发的活资产",
+      "summary": "Notion 把 HR 手册、福利政策、入职流程、SOP 都封进可被 AI Connector 跨库索引的统一接口。员工不再翻 PDF，而是问 Notion AI'我现在怎么发起年假申请'；HR 不再答重复问题，而是维护一份知识库。员工体验质变的关键不是给员工配 AI，而是让组织资产可被对话。",
+      "url": "https://www.notion.com/product/ai",
+      "featured": false
+    },
+    {
+      "id": "rippling-it-agents",
+      "name": "Rippling IT Agents",
+      "vendor": "Rippling",
+      "category": "员工体验",
+      "one_line": "新人入职的设备、账号、权限——全程零 IT 工单",
+      "summary": "Rippling 把员工入职/离职最痛的 IT 段落，封进了 Agent。新人 Day 0 收到机器，自动激活；Day 1 各 SaaS 自动开通；离职 24 小时全自动注销。HR 入职 NPS 从 60 跳到 88 不是因为 HR 团队变强，而是因为 HR 把这段权力让给了 Agent。"
+,
+      "url": "https://www.rippling.com/blog/it-agents",
+      "featured": false
+    }
+  ]
+}

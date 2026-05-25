@@ -1,13 +1,13 @@
 {
   "issue": {
     "number": "01",
-    "date_iso": "2026-05-15",
-    "date_label": "May 15, 2026",
-    "observation": "[本周观察 — 由发起人撰写，每周四晚审核改写。Step 7 接入后此字段从数据库读取。]"
+    "date_iso": "2026-05-29",
+    "date_label": "May 29, 2026"
   },
-  "generated_at": "2026-05-25T07:23:08.727999+00:00",
+  "generated_at": "2026-05-25T08:20:36.583411+00:00",
   "min_score_threshold": 9,
   "item_count": 64,
+  "featured_count": 9,
   "items": [
     {
       "id": 151,
@@ -16,6 +16,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "AI代理经济学 / AGENT COST COLLAPSE",
       "hook": null,
       "summary": "成本不再是 AI Agent 落地的阻力——这是 SaaStr 创始人 Jason Lemkin 用真实数字给出的判断。他们运行的两个\"AI VP\"：负责营销的 10K 与负责客户成功的 QB，合计每月仅花 $257。不是日费，是月费。两个 Agent 加在一起，替代的是此前需要真人的工作：10K 每天刷新票务数据、对比同比、起草 newsletter、写 tweet、快照 GAAP 财务；QB 管理 100+ 赞助商、发全定制 check-in 邮件、在现场支撑 100+ 承包商的实时问答。成本为何如此低？95% 的 LLM 调用跑在 GPT-4o mini 上，单次不足一分钱；真正贵的 Salesforce、Bizzabo 等 SaaS 的边际 API 成本接近零；Postgres 存储每月 10-30 美分。10K 自己描述得最准确：它替代的是营销团队的下半段——分析师、运营协调员、初级内容岗，以及 VP 职能的一个切片。那个切片每个月都在变大。更值得注意的是第三个 Agent：一个活动官网在两周内\"自我演化\"成了发邮件、管停车证、回答参会者问题的 Agent——没有规划，没有架构设计，只是不断被喂入上下文与能力。",
@@ -26,7 +27,8 @@
       "practice_score": 5,
       "frontier_score": 4,
       "score_reasoning": "深度案例展现AI agent替代知识工作的经济模型与可行性边界",
-      "total_score": 13
+      "total_score": 13,
+      "is_featured": true
     },
     {
       "id": 39,
@@ -35,6 +37,7 @@
       "source": "Sequoia Capital",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "创业范式重构 / AUTOPILOT EATS SERVICES",
       "hook": null,
       "summary": "Sequoia 的判断直接：下一家万亿美元公司是一家伪装成服务公司的软件公司。卖工具的人在跟模型赛跑——Claude 每升一个版本，你的产品就离 feature 更近一步；卖结果的人则相反，模型越强，服务越快越便宜，护城河越深。核心框架是 Intelligence vs Judgement：写代码是 Intelligence，决定造什么是 Judgement；Copilot 卖工具，Autopilot 卖结果。Harvey 卖给律所、Rogo 卖给投行，是 Copilot 逻辑；Crosby 直接卖给需要起草 NDA 的公司、WithCoverage 直接卖给需要投保的 CFO，是 Autopilot 逻辑——后者从第一天起就吃掉劳动力预算，而非工具预算。进攻路线是：从已外包的、Intelligence 密度高的任务切入（替换外包合同是换供应商，替换内部人头是组织变革），在数据积累后向内包的、Judgement 密集工作扩张。保险经纪（$140-200B）、会计审计（$50-80B）、医疗收费（$50-80B）、理赔处理（$50-80B）是优先级最高的战场，Rillet、Anterior、Pace、TaxGPT 等公司已在各自垂直入场。",
@@ -45,7 +48,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "Intelligence/Judgement框架重新定义AI创业策略，自动化vs工具、Copilot vs Autopilot二分法深刻",
-      "total_score": 13
+      "total_score": 13,
+      "is_featured": true
     },
     {
       "id": 159,
@@ -54,6 +58,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "销售组织重构 / AI-NATIVE GTM",
       "hook": null,
       "summary": "Anthropic 的真实教训：需求垂直拉升时，加人根本来不及。Claude Opus 4.6 在 2025 年 12 月上线，商业团队回来发现漏斗已经爆掉。Head of Industries Eleanor Dorfman 在 SaaStr AI Annual 2026 上给出的答案不是招聘，而是在 2026 年 1 月从头重建整个销售组织——以 AI 为骨架。四个月后，54% 的新企业客户通过自助完成签约：真实 ACV、真实合同条款、真实开票，全程无 AE 介入。四项核心投资：第一，打掉 PLG vs. SLG 的宗教信仰，企业客户自助漏斗由 Intercom Fin 承接引导；第二，Claude 不是第七个工具，而是串联 Clay、Salesforce、Gong、Ironclad、Slack、Jira 等六大工具的结缔组织，AE 的晨会简报、通话准备、提案生成、销售预测全部由 Skills 驱动；第三，Slack 成为法务、deal desk、合规等支持函数的统一入口，Claude 分诊、解决、附上全上下文再升级；第四，把最优秀的 AE 的判断固化为 Skills，让新人从第一天起就站在顶级选手的肩膀上。Eleanor 的定性：销售领导者正在从\"交易策略家\"变成\"系统设计师\"。",
@@ -64,7 +69,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "深度案例展现AI如何改造sales组织架构,超越PLG/SLG二元论,具有founder层思维。",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 156,
@@ -73,6 +79,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "人力资本决策重构 / AGENT REPLACEMENT TEST",
       "hook": null,
       "summary": "判断一个人是否该留在团队，旧问题是\"你会再雇一次他吗\"——新问题是\"你会用 Agent 替掉他吗\"。SaaStr 提出这个框架不是玩文字游戏：前者默认对手是另一个人类，后者直面的是 $200/月能覆盖 60-80% 知识工作的 Agent 现实。SaaStr 自己用 3 个人类 + 20 个 Agent 跑公司，年收入增速从 -19% 翻到 +47%，用了 Artisan、Agentforce、自研 AI CS 负责人 QBee。具体操作框架分三层：定义岗位产出而非任务清单、精确评估 Agent 当前生产可用能力（SDR 约 80-90%，CMO 约 40%，CFO 约 30%，CEO 接近 0）、算清剩余人类工作的全加载成本是否合算。核心论断：未来 18 个月，Agent 构建能力将商品化，真正稀缺的管理技能是\"判断哪个人类应该被 Agent 取代\"。Agent 还有一条隐性收益：它消除了人类组织里几乎所有的情绪摩擦——离职、晋升拉锯、绩效 PIP、周末怨气——这些从不上 P&L，却是最贵的运营成本之一。",
@@ -83,7 +90,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "CEO级重构思维:用替代性问题重新定义人力资本决策,实战案例清晰,业界前沿",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 155,
@@ -92,6 +100,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "竞争威胁评估 / BIGCO THREAT SIGNALS",
       "hook": null,
       "summary": "判断大厂竞品是否认真，光数销售头数已经不够用了。SaaStr 给出 2026 版八维信号体系，核心论断是：AI 时代的 GTM 杠杆让大厂可以用更少的专职销售打出更重的拳，所以旧指标必须升级。经典信号仍然有效——LinkedIn 上能找到 20+ 专职销售、有独立汇报线的 VP of Sales，说明对方已过实验期；但新信号更具决定性：M&A 是最强信号，Salesforce 买 Qualified、买 Momentum，Google 以 320 亿美元级别砸钱，写支票比内部孵化贵一个数量级，直接标注了战略赛道；Agentforce 第一年 1.85 万单、ARR 达 5.4 亿美元，Salesforce 靠的是把新产品塞进存量续约、叠加 AI SDR、派 FDE 上门配置，而非百人销售团队；ServiceNow 2026 年 AI ARR 目标直接写进财报，CEO 点名产品就是董事会级承诺。对初创公司的真正威胁是\"捆绑续约\"——用户说\"续费时顺带来的\"，那一刻竞争已经变成渠道碾压。大厂仍然慢，Agentforce 全力推一年只覆盖 8% 客户，窗口还在，但比 2022 年小得多。",
@@ -102,7 +111,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "BigCo竞争威胁评估框架升级,2026年新信号体系,多案例验证,CEO-level决策价值",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 153,
@@ -111,6 +121,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "技能范式重构 / TASTE OVER PROMPTING",
       "hook": null,
       "summary": "提示工程已死——SaaStr 创始人 Jason Lemkin 用一句不成体统的烂句子，五分钟内在 Replit 上把一个完整产品功能推上了生产环境：headshot 上传、圆形裁剪、三套背景、1080×1080 PNG 导出，全部自动完成，连 Next.js 路由都接好了。他的结论不是\"AI 变强了\"这种废话，而是一个结构性判断：瓶颈从\"怎么写提示\"彻底转移到了\"你想构建什么、你能判断输出对不对\"。那套 C.R.E.A.T.E. / R.I.S.E. 框架、提示工程认证课程，现在的价值约等于零。真正的稀缺能力只剩三件事：清晰的产品意图（AI 不能替你想明白要做什么）、识别错误输出的眼力（\"logo 没显示出来\"就够了，不需要懂 CORS）、以及品味——背景怎么选、文字默认值怎么定、头像圆圈多大。SaaStr 3 个人加 20+ AI agent 跑整个公司，Lemkin 本人近 15 年没写过生产代码，过去一年在 Replit 上线了 10+ 个产品，其中一个游戏超过 47,000 行代码。能交付软件的人口，正在从几百万跳到几亿。",
@@ -121,7 +132,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "深刻洞察：AI能力边界转移，从工程化提示到产品品味，重构组织技能需求。",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 152,
@@ -130,6 +142,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "竞争范式重构 / AI-NATIVE DISRUPTION",
       "hook": null,
       "summary": "SaaStr 给出一个清醒判断：2026 年之前，B2B 领域超过 $8M-$10M ARR 且增速尚可的对手，基本无法正面撼动——那需要数十年。但 AI 原住民公司已经打破这条规律。Cursor、Lovable、Replit、Harvey、Glean、Clay，全部在 18 个月内完成了过去需要 5-7 年才能达到的里程碑。2021 年 vintage 的 400+ B2B 独角兽尚未退出，正是最脆弱的猎物。\n\n后发者的新打法有六条，其中最具破坏力的是\"真正的 AI 原住民\"策略：2018-2022 年的 B2B 巨头正在把 AI 功能硬焊到为\"人工介入\"工作流设计的产品上，架构债无法清零——而你可以从 day one 就围绕 AI agent 重建，采用 outcome-based 定价而非按座席收费。PagerDuty 已经被这样击穿，Mixmax 正在被击穿。其余五条同样被 AI 重新赋能：vibe coding 把\"10x 功能\"的交付周期压缩 5-10 倍；AI 让服务 SMB 的边际成本坍塌；outcome-based 定价把价格比较变成苹果对橙子；周级发布节奏对上公共公司 12 个月的发布周期，18 个月后产品差距不可逆。",
@@ -140,7 +153,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "AI原住民vs前AI架构的竞争动态,多个具体案例论证初创如何颠覆,CEO视角战略框架",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 139,
@@ -149,6 +163,7 @@
       "source": "Stripe Blog",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "智能体商务基建 / AGENTIC COMMERCE INFRA",
       "hook": null,
       "summary": "Stripe 用六个月真实生产数据给出结论：AI 智能体商务的瓶颈不在模型，在基础设施。他们联合 OpenAI 推出 Agentic Commerce Protocol（ACP）和 Agentic Commerce Suite，接入 Etsy、URBN、Coach、Kate Spade、Ashley Furniture 等品牌后，梳理出十条第一代经验。核心矛盾清晰：同一份商品目录要为六个不同 AI 渠道分别格式化，库存核验必须精确到毫秒级，协议本身已迭代四个版本——任何一个环节断掉，交易链路即崩。Stripe 的回应是做协议无关层（兼容 Google UCP），用 Shared Payment Token 替代明文凭证，用 Stripe 网络密度替代传统浏览器指纹来做反欺诈。结果：主要零售商欺诈率接近零。这不是支付公司在讲支付故事，是一家基础设施公司在重新定义\"商务操作系统\"的边界。",
@@ -159,7 +174,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "系统揭示AI商务底层架构挑战,多案例验证,触及组织重建核心",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 138,
@@ -168,6 +184,7 @@
       "source": "Stripe Blog",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "代理经济基础设施 / MACHINE PAYMENTS PROTOCOL",
       "hook": null,
       "summary": "Stripe 联合 Tempo 推出 Machine Payments Protocol（MPP）——一个面向 AI 代理的开放支付标准，判断直接：现有金融工具为人类设计，AI 代理无法自主完成注册、定价选择、账单设置等流程，代理经济的商业闭环因此断裂。MPP 通过 HTTP 可寻址端点实现代理与服务之间的程序化支付协调，支持微交易、循环付款，兼容稳定币与法币（含 BNPL）。Stripe 用户通过 PaymentIntents API 数行代码即可接入。已上线的场景包括：Browserbase 按 session 向代理收费、PostalForm 让代理付费发实体邮件、Prospect Butcher Co. 让代理直接下单三明治外卖。Parallel Web Systems 创始人 Parag Agrawal 证实，代理已可自主按 API 调用次数付费。这不是支付产品的小迭代——这是企业客户分类（B2B/B2C）之外第三极\"B2Agent\"商业模式的基础设施开闸。",
@@ -178,7 +195,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "AI代理经济支付基础设施,展示企业如何重建商业模式以适应代理交易",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 121,
@@ -187,6 +205,7 @@
       "source": "HR Executive",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "员工体验",
       "sub_tag": "心理健康治理 / WELLBEING GOVERNANCE",
       "hook": null,
       "summary": "Howden Employee Benefits 2026年亚洲数据给出一个刺耳的判断：企业心理健康福利的失效不是资源问题，是信任赤字。数据摊开来看：过去12个月寻求心理健康支持的员工中，只有28%使用了雇主提供的渠道；18%明确表示对使用雇主医疗资源感到不适，原因是隐私顾虑、职业影响与职场污名化。Howden亚洲医疗总监 Dr. Maria S. Suva 的诊断直接：员工在求助前已完成一套风险预判——\"会保密吗？会影响晋升吗？\"这道计算题的答案，决定了福利能否被触达。解法不是传播，是架构重设：临床服务与绩效管理的治理隔离、独立外部诊疗通道、非医疗前置入口、管理者转介能力框架。与此同时，AI带来的慢性认知负荷正在取代间歇性压力，成为新的主要临床风险。跨市场部署上，她的框架是临床标准一致、信任机制本土化——新加坡用绩效语言、日本强调集体框架与外部渠道、印度连接家庭稳定与长期就业能力。Howden数据还给出商业压力：70%员工因健康福利决定去留，心理健康已是2026年企业健康计划最大成本驱动项。",
@@ -197,7 +216,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "信任赤字而非资源缺口是亚洲心理健康的核心;系统设计优于营销传播,HRD战略层洞察。",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 113,
@@ -206,6 +226,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "企业软件重构 / SYSTEM-OF-RECORD TO AGENT PLATFORM",
       "hook": null,
       "summary": "Workday 正在做一件生死攸关的事：把自己从记录系统重新定义为 Agent 的运行基础设施。联合创始人 Aneel Bhusri 在 2024 年重新出任 CEO，坦承公司丢失了初创文化、AI 战略混乱——然后用近 30 亿美元收购（HiredScore、Evisort、Paradox、Sana）和全新管理层重启棋局。核心论点只有一个：Agent 能推理，但不能跑薪资、不能执行合规审批、不能理解你公司二十年积累的业务规则——这些\"铁轨\"存在于 Workday 里，从外部重建成本极高且风险极大。Workday 将这套护城河产品化为五层：AI 与企业软件互补而非替代、业务规则即企业本身、Agent 身份与权限管理（已有 1200+ 客户注册 Agent）、Sana 作为统一前门取代 Copilot、商业模式从按席位收费转向 Flex Credits 消费计量。Josh Bersin 对此明确看多。这不是传统软件厂商的防守，而是一次基础设施层的重新占位。",
@@ -216,7 +237,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "Workday从记录系统向Agent平台转型,展现企业软件在AI时代的生存逻辑与竞争策略重塑",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 84,
@@ -225,6 +247,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "反向创新战略 / NATURE-FIRST R&D",
       "hook": null,
       "summary": "Enveda Biosciences 创始人 Viswa Colluru 提出一个反行业直觉的判断：过去数十年制药业抛弃自然、转向纯生物学优先的路线，是一个代价惨重的战略失误。吗啡、阿司匹林、二甲双胍——改变人类命运的药物大多起源于自然，但系统探索自然化学的基础设施从未被认真建立。Colluru 的答案是用 AI 和质谱技术构建一套\"自然化学搜索引擎\"，从 2019 年自掏 5.5 万美元起步，目前已累计融资逾 5 亿美元。更关键的数字：Enveda 将单个药物候选物的开发成本压至约 100 万美元，而行业均价是 1000–1500 万美元，已识别 18 个候选分子，其中 3 个进入临床，靶向湿疹、肥胖症与溃疡性结肠炎。Colluru 本人的驱动力来自两个原点：父亲在印度经营的药店让他同时接触西医与阿育吠陀，母亲死于一种本可治愈的白血病——只因家庭负担不起 Gleevec 的费用。创新不等于新颖，最大的潜力往往藏在被遗忘的旧地图里。",
@@ -235,7 +258,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "创始人重塑行业思维:用古老智慧解决现代药物发现困境,展示反向创新的战略价值",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 79,
@@ -244,6 +268,7 @@
       "source": "Stratechery",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "算力架构异构化 / INFERENCE HARDWARE SHIFT",
       "hook": null,
       "summary": "训练与推理共用 GPU 的时代正在终结——这是 Ben Thompson 在分析 Cerebras IPO 时给出的核心判断。Cerebras 的 WSE-3 用整块晶圆做单芯片，44GB 片上 SRAM 配 21 PB/s 带宽，是 H100 的 6000 倍；代价是良率极低、成本极高、芯片间互联几乎无从扩展。这让它天然只适合推理，而非训练。推理的瓶颈在 decode 阶段：KV cache 与模型权重必须在每生成一个 token 时被完整读取，这是串行的、带宽受限的任务——GPU 的大量并行算力在此几乎浪费。Anthropic 与 SpaceX 签约拿下 Colossus 1 逾 22 万张 Nvidia GPU 做推理，证明 GPU 灵活性的商业价值依然存在；但 Cerebras 的崛起说明，当 agent 大规模运行、token 生成速度成为核心体验指标时，异构算力将从边缘走向主流。算力采购不再是\"买 Nvidia 还是不买\"的单选题。",
@@ -254,7 +279,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "GPU独占向异构计算转变,推翻训练推理统一架构假设",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 53,
@@ -263,6 +289,7 @@
       "source": "Sarah Tavel",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "组织基础设施重构 / CTO AS INTERNAL PAAS",
       "hook": null,
       "summary": "Rekki CTO Borislav Nikolov 给出了一个比\"AI工具化\"更激进的判断：当每个人都能写代码，CTO 的职责不再是带队执行任务，而是成为内部 PaaS 供应商。触发点是 GPT 3.5 发布后积压的运营需求——Borislav 意识到与其让工程师充当中介，不如直接让业务侧人员\"解决自己的问题\"。他把公司类比为 AWS 与用户的关系：工程师是\"不可信但必须赋能\"的开发者，CTO 的工作是提供 primitives（SQL转API、触发器、监控告警等基础件），而非定义别人能做什么。结果是公司结构从\"开发者/非开发者\"二元对立，演变为开发者、半开发者、少数非开发者（约10%）的三层分布。他的核心论断：如果某个员工做不到某件事，是 CTO 没给够正确的 primitives，责任在基础设施，不在人。",
@@ -273,7 +300,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "深入剖析AI原生组织的本质转变,从任务执行到基础设施赋能的CTO视角",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 38,
@@ -282,6 +310,7 @@
       "source": "Sequoia Capital",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "安全运维范式重构 / AGENTIC SECURITY OPS",
       "hook": null,
       "summary": "Sequoia 领投 Scanner A 轮，核心判断一句话说清：安全运维的下一个十年属于 AI Agent，而 Agent 能跑起来的前提是查询速度必须以秒计。Scanner 的创始人 Cliff Crosland 与 Steven Wu（Stanford CS，前 Accompany 工程负责人，后者被 Cisco 收购）从零重建了一套专为对象存储设计的日志搜索引擎——用倒排索引将字段值直接映射到 S3 文件区段，PB 级日志的查询从小时压缩到秒级。当前 SIEM 市场的核心矛盾是：Splunk 等方案太贵，企业只保留 10-30 天热数据，剩余全部冷冻在 S3，真正需要回溯时证据已不可达。Scanner 破解的正是这个僵局。客户名单已覆盖 Notion、Ramp、Benchling、Confluent、Lemonade、BeyondTrust；Ramp 从安全日志扩展到应用日志并降低了 SIEM 账单，Notion 安全团队在其上构建了自主运行调查的内部 AI Agent。MCP 发布数周内，近三分之一客户已在生产环境使用，Agent 查询量占平台总量的 80%——这不是 Beta，是提前到达的未来。",
@@ -292,7 +321,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "AI驱动安全运维的组织范式转变,多家头部公司案例验证,Agent驱动的查询已占80%",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 33,
@@ -301,6 +331,7 @@
       "source": "Sequoia Capital",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "智能体范式重构 / VIDEO-FIRST AGENTS",
       "hook": null,
       "summary": "Standard Intelligence 的核心押注是一句反共识的判断：通向通用计算机智能体的路，不经过语言模型、截图和 tool call，而经过原始视频预训练。创始人 Galen Mead（21岁）与 Devansh Pandey（20岁）2022年在 Atlas Fellowship 相识，随后双双从本科辍学，带领六人团队做出了行业最大规模的计算机操作数据集——1100万小时。他们自研的视频编码器比竞品 token 效率高 50 倍，让近两小时 30 FPS 视频塞进 100 万 token 上下文；30 PB 存储集群在旧金山本地搭建，成本不足 50 万美元，比云服务商便宜约 20 倍。首个基础模型 FDM-1 已能在 Blender 里挤出 CAD 齿轮、用一小时微调后驾车绕旧金山街区、像人类一样探索软件状态空间找 bug。这是 Tesla FSD 逻辑平移到知识工作的实验——不工程化 workflow，让泛化能力从数据规模中涌现。Sequoia 领投 Series A，Spark Capital 跟投。",
@@ -311,7 +342,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "视频预训练重构智能体范式，CEO级决策框架，具体模型与成果数据支撑",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 19,
@@ -320,6 +352,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "员工体验",
       "sub_tag": "设计流程重构 / DEMO-DRIVEN PROTOTYPING",
       "hook": null,
       "summary": "Stripe 设计经理 Owen Williams 造了一个内部工具 Protodash，直接重写了公司的原型设计流程。起点是一堆 Cursor rules 加 React 组件，最终长成了一套跑在 dev box 上的浏览器原型工作室——内置设计评审模式、多变体测试、AI 标注，设计师不用配本地环境，PM 零代码就能出高保真 Stripe dashboard 原型。最值得注意的信号：PM 的使用量已经追平设计师，这不是功能蔓延，而是\"demos, not memos\"文化的组织化落地——设计评审从文档驱动变成可交互 demo 驱动。Stripe Radar 的原型甚至直接改变了工程交接方式。Owen 的判断很明确：内部工具不需要生产级质量，够用就能变革流程。泛用 AI 设计工具产出\"blurple slop\"（品牌稀释的低质原型），根因是缺乏设计系统约束，而不是 AI 能力不足。",
@@ -330,7 +363,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "Stripe内部工具重塑设计流程,从抽象到Demo驱动转变,PMs意外成主力用户",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 17,
@@ -339,6 +373,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "薪酬",
       "sub_tag": "AI变现范式重构 / AI PAYWALL DESIGN",
       "hook": null,
       "summary": "Google AI 产品负责人 Vikas Kansal 给出一个刺耳结论：把传统 SaaS freemium 照搬到 AI 产品，会死得很快。SaaS 多服务一个免费用户成本趋近于零；AI 每次用户按下 Enter，GPU 就在烧钱。更危险的是，免费层做得越好，越直接蚕食付费意愿——Google Gemini 的免费版已能写出完美 Python、秒级总结邮件，用户理直气壮地问：\"我为什么要付 20 美元？\"\n\nKansal 团队打碎了旧框架，提出 AI paywall 的三根支柱：**一、封锁使用强度**，把订阅层拆成 Plus / Pro / Ultra，卖的是用量上限和 context window 大小，而非模型智能高低——Midjourney 的 Fast Mode vs. Relax Mode 是同类逻辑；**二、封锁结果交付**，免费层给答案，付费层消灭步骤——多步任务压缩为一键，卖的是时间回报率；**三、封锁 agentic 能力**，LLM 从文本生成器进化为自主 Agent，能调工具、保持记忆、跨应用执行，这才是真正值得设墙的价值层。单纯封功能的时代已过，用量×结果×自主性才是 AI 变现的新解剖结构。",
@@ -349,7 +384,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "Google AI产品负责人讲述AI商业化核心困境与解决框架，深度重塑SaaS变现认知。",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 12,
@@ -358,6 +394,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "工程管理范式重构 / SPEC-DRIVEN DEVELOPMENT",
       "hook": null,
       "summary": "Notion 工程师 Ryan Nystrom 给出一个清醒判断：AI 编码时代，工程管理的核心杠杆不是人员规模，而是 CI 速度与 spec 质量。Nystrom 管理 6-7 人团队、仍自己写代码，主导 Project Afterburner——目标是把 Notion CI 时间压缩至现有的四分之一。逻辑直接：AI agent 并发跑数十条 PR，CI 每慢一分钟，乘数效应放大成小时级延误。Notion 内部的 \"Boxy\" 系统让工程师在 Notion 评论里 @mention Codex，20 分钟内收到附截图的完整 PR。更关键的是 spec-first 工作流：用 Whisper 口述想法、Codex 格式化为规范 spec、提交进 repo，agent 自主实现并验证——spec 同时充当 changelog，版本化记录功能的真实演化逻辑。对标 Stripe \"minions\" 系统每周从 Slack reaction 触发 1,300 条 PR，这已是工业级 AI 原生工程范式，不是实验。",
@@ -368,7 +405,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "Notion工程师深度揭示AI原生开发范式转变,规范优先、自动化验证重构工程管理",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 11,
@@ -377,6 +415,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "学发",
       "sub_tag": "AI采纳体系化 / GAMIFIED AI ADOPTION",
       "hook": null,
       "summary": "Sendbird CEO John Kim 给出了一套可复制的 AI 采纳操作系统，核心不是培训项目，而是一个叫 \"Automators\" 的内部产品平台。任何人可以发布 \"quest\"（自动化需求），工程师或 AI Agent 接单完成，每个 quest 标注风险等级、节省周数、受益方；完成者获得经验值，可兑换礼品卡、与高管喝茶或在全员周会上展示成果。Token 用量被分为六级——从 Beginner（每日不足 100 万 token）到 AI God（超 1 亿），每位管理者实时可见团队成员所在层级，但不与绩效挂钩。营销团队在零工程支持下用数天完成了带 Stripe 集成、Konami Code 彩蛋的电商周边商店。John 还设立\"AI Engineer for Internal Operations\"岗位，直属 CEO 与 Chief of Staff，跨职能打通 CTO、InfoSec 与业务线。招聘标准也已重写：降低工作年限要求，提高好奇心、自驱力与学习能力的权重。高管是 token 消耗排行榜的头部用户——领导者示范，不是下指令。",
@@ -387,7 +426,8 @@
       "practice_score": 4,
       "frontier_score": 4,
       "score_reasoning": "Sendbird CEO的AI采纳操作系统:游戏化激励+token可视化+跨职能赋能,CEO层面组织重构框架",
-      "total_score": 12
+      "total_score": 12,
+      "is_featured": false
     },
     {
       "id": 168,
@@ -396,6 +436,7 @@
       "source": "Eightfold AI",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "负责任AI / RESPONSIBLE AI DATA",
       "hook": null,
       "summary": "AI 招聘偏见的根源不在算法，在数据——这是 Eightfold AI 联合创始人兼 CEO Ashutosh Garg 在这篇技术立场文章里的核心判断。算法没有凭空制造歧视，它只是忠实地学习了历史数据里已有的偏见：如果过去80%晋升为技术领导的是男性，模型就会把\"男性相关特征\"识别为成功信号，哪怕那只是偏见的遗产而非真实的预测力。更危险的是，传统平台只用组织内部历史数据训练，不只继承偏见，还以更高置信度放大它。Eightfold 给出三层工程应对：一、特征遮蔽，在训练前剥离姓名、地址、邮件等可作为人口统计代理变量的字段；二、特征分布审查，训练前为每个特征建立假设分布，异常分布触发审查；三、数据清洗作为持续实践而非一次性项目，随行业语言与劳动力结构演变持续迭代。公平不是一个可以勾选的功能，它必须是结构性的。",
@@ -406,7 +447,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "AI偏见源于数据而非算法,提出组织级责任框架与具体工程实施方案",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 150,
@@ -415,6 +457,7 @@
       "source": "SaaStr",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "售后组织重构 / FDE VS CSM SPLIT",
       "hook": null,
       "summary": "ICONIQ 对 205 家 B2B SaaS 高管的调研给出一个硬数据：FDE 岗位招聘量单年增长 12 倍。这不是招聘趋势，是结构性断裂。大量公司的错误反应是把现有 CSM 转型为 FDE——这条路基本走不通。CSM 管 8–12 个账户、维系关系、防流失；FDE 同时嵌入 1–3 个客户、写调试 workflow、每天清除部署障碍、对 AI 能否在生产环境跑起来负全责。两者不是技能差距，是职能物种差异。数据已经说明结果：AI 原生公司售后人员结构中 FDE 和实施专家占 40%，CSM 仅占 25%；一家 Series B AI 公司前 90 天投入是传统 SaaS 的 3 倍，但流失率减半、扩展率翻倍、月 3 后客户支持需求降 40%。Palantir 发明了现代 FDE 模型，经年打磨后仍将人类保留在部署环节——FDE 不是过渡方案，是商业模式本身。真正能完成转型的 CSM 不超过 5%。",
@@ -425,7 +468,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "FDE vs CSM职能分化是AI时代组织重构的核心,CEO视角清晰,多案例有数据支撑",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 120,
@@ -434,6 +478,7 @@
       "source": "HR Executive",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "组织瘦身激进派 / ANTI-HR REORG",
       "hook": null,
       "summary": "Bolt CEO Ryan Breslow 在 Fortune Workforce Innovation Summit 上公开宣告：HR 团队\"在制造本不存在的问题\"，裁掉他们之后问题消失了。这不是隐晦批评，是直接宣战。Breslow 2014 年斯坦福宿舍创立 Bolt，2022 年公司估值达 110 亿美元后他因误导投资者指控卸任，2025 年以 2800 万美元年收入规模强势回归，随即裁员 30%，HR 团队全员清零，公司缩减至约 100 人。他的替代方案不是\"废除人力职能\"，而是用术语切割：HR 是\"错误的能量\"，People Ops 才能\"赋能管理者、加速决策\"。他同步终止了四天工作制与无限 PTO，给前任遗留员工 60 天适应\"战时文化\"——结果 99% 的人无法适应。Breslow 把这归因于高烧增长期养出的\"特权文化\"。HR 社区反驳：换个名字，活儿还在，风险只增不减。两种判断摆在桌上，组织代价已经发生。",
@@ -444,7 +489,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "CEO直言HR的组织结构陷阱,揭示激进重组中的人力成本真相与文化转向",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 108,
@@ -453,6 +499,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "AI硬件产业化 / AI HARDWARE FRONTIER",
       "hook": null,
       "summary": "AI 硬件浪潮不是未来时，是现在时——这是 Caitlin Kalinowski 的核心判断。她的履历本身就是论据：Apple MacBook Air 技术负责人、Meta AR/VR 硬件负责人（主导 Quest、Rift、Orion 全系列），离开 OpenAI 前负责从零搭建机器人与硬件团队。她指出 VR 的失速不是技术失败，而是时机错位，那一代技术积累正在成为现代战争装备（参见 Palmer Luckey 的 Anduril）和人形机器人的基础设施。当前人形机器人仍停留在原型阶段，真正的量产卡点不是算法而是供应链与内存成本——她直接建议初创公司现在预购内存，否则将面临价格冲击。她从 Steve Jobs、Mark Zuckerberg、Sam Altman 三位领导者身上提炼出硬件产品决策的不同底层逻辑，并公开谈及离开 OpenAI 的原因。AI 的下一个战场，算力在硅上，但产品在物理世界里。",
@@ -463,7 +510,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "硬件+AI产业化路径新视角,但缺乏组织变革维度的深度案例",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 101,
@@ -472,6 +520,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "工作未来预判 / AUTOMATION PARADOX",
       "hook": null,
       "summary": "Every 联合创始人兼 CEO Dan Shipper 给出一个反直觉判断：AI 自动化不会减少人，反而会产生更多工作、需要更多人。这不是安慰剂——Every 约 30 人的团队是一个真实的 AI 早期采用实验室，从编辑到运营全员重度使用 AI，给了 Shipper 独特的观察窗口。他的核心预判：未来工作将发生在 Codex 或 Claude Code 内部；每家公司都会有一个所有员工每天对话的\"超级 Agent\"驻扎在 Slack；\"前置部署工程师\"（forward deployed engineer）成为最关键新角色；SaaS 不会死，用户自带 AI token 进入 SaaS 反而改善利润率；PM 和全栈设计师将在 AI 时代成为超级个体。他最强硬的立场：CLI 时代结束，\"自动化是个谎言\"，AI 工作末日论根本不会发生。",
@@ -482,7 +531,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "CEO视角论述AI重构组织能力,基于Every真实案例,但缺乏系统数据支撑",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 88,
@@ -491,6 +541,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "管理者权力重构 / RE-FOUNDER PLAYBOOK",
       "hook": null,
       "summary": "非创始人 CEO 能否拥有创始人权力？Satya Nadella 给出了迄今最有力的反例。The Generalist 历时三个月、基于法庭文件、高管confidential 访谈与百小时研究，拆解了 Nadella 自 2014 年接手微软以来的权力建构逻辑——彼时微软股价横盘十年、文化腐化、创新堵塞，Ballmer 留下的是一个困在自身惯性里的巨人。Nadella 的打法不是 Musk 式的动物强度，而是七步棋：用神话塑造权威、从旧政权借力同时反向定位、重塑麾下贵族圈、让失败变安全、叙事确立后以其为掩护、磨砺最锋利的刀、赢不了未来至少不输未来。具体动作包括：一个厕所间隙的决策让 Azure 向 Linux 开放、25 亿美元收购 Minecraft 本质是分发卡位、一纸许可协议对竞争对手云客户征收 400% 税、2019 年一封恐慌邮件触发 130 亿美元 OpenAI 押注。结果：微软市值 3 万亿美元，完成真实的内部革命。Paul Graham 的\"founder mode\"论断之外，Nadella 证明了管理者也可以重写权力结构。",
@@ -501,7 +552,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "CEO级视角解析管理者如何获得创始人权力,多案例深度剖析,但研究对象单一。",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 85,
@@ -510,6 +562,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AI推理范式重构 / VERIFIED AI REASONING",
       "hook": null,
       "summary": "20人团队 Harmonic 在 2024年7月国际数学奥林匹克（IMO）上拿到金牌级表现，与 OpenAI 和 Google DeepMind 并列——但有一个决定性差异：Harmonic 提交的每一份证明都经过形式化验证，不存在幻觉通过率的问题。CEO Tudor Achim 的判断直接而尖锐：2-3年内，AI 数学家将在任意具体数学任务上超越人类，不是十年。Harmonic 的核心产品 Aristotle 以强化学习驱动、用编程语言 Lean 4 作为形式化验证底座，把\"幻觉\"重新定义为创造力的引擎而非缺陷——系统自由生成候选证明，Lean 4 负责过滤错误，形成合成训练数据的飞轮。Tudor 的路径本身也说明问题：CMU 音乐预科、Quora 机器学习、计算生物学博士中途退学、联合创办自动驾驶公司 Helm.ai，最终与 Robinhood CEO Vlad Tenev 共同押注\"数学即可验证的世界模型\"。他对数学未来的判断是：形态将更像 GitHub，而非学术期刊。",
@@ -520,7 +573,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "AI数学推理的范式转变:从验证到生成的组织价值重构",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 82,
@@ -529,6 +583,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "选人框架 / FOUNDER SIGNAL READING",
       "hook": null,
       "summary": "Long Journey Ventures 联创 Cyan Banister 给出一个尖锐判断：AI 时代属于博学者（polymath）——能跨系统思考、打通不同学科的人，将产出此前结构性不可能的结果。她本人的投资战绩印证这一逻辑：Uber、SpaceX、DeepMind、Flock Safety（当前估值 84 亿美元），多数来自非传统信号——在四季酒店咖啡厅扫 Wi-Fi 名单发现 Flock Safety，与 Travis Kalanick 的偶遇锁定 Uber 早期席位。她识别创始人用\"Biz、Tizz、Rizz\"三维框架：商业判断力、执行韧性、原始感召力，三者并存极罕见。她称这类人为\"magical weirdos\"。核心前提是：大多数人只看显性信号，而真正的异常回报藏在被忽视的弱信号里。这套认知框架对 HR 选人逻辑的冲击远大于任何 ATS 升级。",
@@ -539,7 +594,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "多学科思维与选人框架对组织再造有启发,但缺乏系统性行业洞察",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 81,
@@ -548,6 +604,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "硬件组织重构 / AI-NATIVE MANUFACTURING",
       "hook": null,
       "summary": "硬件可以像软件一样敏捷——这是 Diode 联创兼 CEO Davide Asnaghi 押注的核心命题。Diode 是一家总部在布鲁克林的 PCB 设计与制造初创公司，成立仅两年，已拿下 Physical Intelligence、Saronic 作为客户，并与 Anthropic 合作训练 Claude 成为更强的电气工程师。Asnaghi 曾任职于苹果 Special Projects Group，深扎深圳制造生态后得出判断：西方外包 PCB 的逻辑已经失效，中国的优势早已从廉价劳动力转向极致自动化能力。Diode 的模型可以 one-shot 完成大部分原理图设计，把硬件研发周期从数月压缩至数周。组织层面，Asnaghi 坚持极高招聘门槛，在 YC 期间用三周完成从设计验证工具到全栈制造商的战略转轴。他的终极目标不是造一款工具，而是\"培养出一名电气工程师\"——让 AI 本身具备领域专家级的工程判断力。",
@@ -558,7 +615,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "AI重塑硬件制造流程,创业者视角阐述组织如何重建,多案例支撑但未达paradigm级",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 71,
@@ -567,6 +625,7 @@
       "source": "Stratechery",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "基础设施政治 / DATA CENTER VETO",
       "hook": null,
       "summary": "Ben Thompson 这周抛出一个被低估的结构性判断：AI 的真正制约不在算法，在物理世界的数据中心审批权。AI 的冲击目前集中在数字领域，数字化程度越高的工作受威胁越大——但数据中心要落地，就必须过普通人和地方政府这一关。这给了\"局外人\"一种在全球化时代从未拥有过的否决权（veto power）。Thompson 明确指出：试图纠正反对者的\"错误信息\"是在治标，真正的原因是利益结构失衡——唯一有效的解法是直接付钱（paying them off）。与此同时，Twitter 前 CEO Parag Agarwal 创办的 Parallel 正在解决另一个基础设施问题：当 AI agent 取代人类用户成为主要流量来源，广告模型失效，内容激励机制需要从头重建。两条线索指向同一个结论：AI 扩张的下一个战场是物理与经济基础设施的重新谈判。",
@@ -577,7 +636,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "数据中心成为AI发展的物理制约,转变传统权力格局,CEO需重新思考基础设施政治",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 59,
@@ -586,6 +646,7 @@
       "source": "Sarah Tavel",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AI竞争护城河 / B2B STACK DEFENSE",
       "hook": null,
       "summary": "Benchmark 合伙人 Sarah Tavel 给出一个冷静的警告：LLM 底层玩家（OpenAI、Anthropic 等）花了天量资本训练模型，不可能永远只做 API 供应商。它们向上蔓延至 async agent 层是必然动作，而编程 agent 只是第一步。Leopold Aschenbrenner 描述的\"drop-in AI worker\"一旦成真，能自读知识库、自建集成、自动处理工单，大量 B2B AI 应用层公司的存在理由将被直接抽空。Tavel 给出三条防守路线：一、网络效应，有就全力压飞轮；二、积累专有数据或稀缺数据访问权，形成护城河；三、攻占被忽视的垂直市场——基础模型公司的 GTM 只会对准大市场，小垂直需要更精细的封装与客户教育，但随着 LLM 能力提升，\"一个员工训练一个 Anthropic agent\"就能复制你的产品，竞争烈度将持续上升。3-5 年窗口期，不做这道思想实验的创始人，是在赌命。",
@@ -596,7 +657,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "创始人视角分析AI堆栈竞争风险,提出实战防守策略,但缺乏具体案例数据支撑。",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 52,
@@ -605,6 +667,7 @@
       "source": "Sarah Tavel",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "工程认知退化 / CODE OWNERSHIP DECAY",
       "hook": null,
       "summary": "Rekki CTO Borislav Nikolov 给出一个反直觉实践：每周两天关掉所有 AI，打开空白终端裸写代码。原因不是仪式感，而是认知校准——持续依赖 LLM 会让工程师丧失对\"代码复杂度\"的感知，温水煮蛙式地接受 500 行\"外星代码\"并觉得没问题。他把这个失准的状态称为\"审美退化\"：nonsense filter 变钝，spidey sense 消失。第二个问题更深：LLM 生成的代码没有\"theory of mind\"可言。人类读同事代码，能推断历史原因、设计动机；读 LLM 代码，只有向量对齐，没有意图可溯。工程师因此滑向\"产品经理视角\"——不想读代码，只想让它跑。Borislav 本人 70% 代码由 LLM 生成，但他的结论是：所谓\"AI 生成代码占比\"是虚荣指标，优化这个数字只会消解工程师对代码的所有权与责任感，埋下长期技术债。",
@@ -615,7 +678,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "CTO实战视角深入AI对工程认知的改变，提出\"代码所有权\"和\"审美退化\"的组织范式问题",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 48,
@@ -624,6 +688,7 @@
       "source": "Elad Gil",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "市场结构洞察 / LLM OLIGOPOLY",
       "hook": null,
       "summary": "Elad Gil 给出一个清醒判断：AI 市场越看越不透明，但有一件事正在固化——前沿 LLM 是寡头市场，且云巨头正是造王者。OpenAI 拿了微软 100 亿美元，Anthropic 从亚马逊和谷歌融到 70 亿，Meta 宣布 200 亿算力预算押注 Llama——真正的资本方不是 VC，是云厂商和主权国家。微软 Azure 单季营收 250 亿美元，对 OpenAI 的投入不过六周收入，而 AI 带动 Azure 2024 年 Q2 增长 6 个百分点，年化增量已达投资额的 50%。云厂商有强烈的经济动机持续注资大模型。与此同时，Llama 的开源许可条款暗藏设计：7 亿用户以上的商业使用须向 Meta 付费，既封住竞争对手，又为 Meta 保留货币化通道。Gil 的核心问题是：当前沿模型训练成本持续膨胀，新入局者的资本与人才门槛是否已实际关闭？",
@@ -634,7 +699,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "创始人视角审视AI市场结构，揭示云计算寡头掌控LLM的深层机制，对组织战略有重要启示",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 47,
@@ -643,6 +709,7 @@
       "source": "Elad Gil",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "小团队组织哲学 / SQUAD-BASED AI TEAMS",
       "hook": null,
       "summary": "Mistral CEO Arthur Mensch 给出了一个值得记住的数字：4 到 5 人。他的判断是，真正能出成果的 AI 团队历来是这个规模，Mistral 内部也据此拆分成负责数据、预训练等方向的小分队（squad）。公司从成立到发布 Mistral 7B 只用了四个月，从零 GPU 爬到 500 张卡完成训练，靠的不是庞大的组织，而是高度聚焦的小团队与极度压缩的决策链。Mensch 和联创 Guillaume、Timothée 本来在 DeepMind 和 Meta 等待时机，GPT 发布成为信号，三人判断窗口已开、立即创业\"速通\"（speedrun）。产品策略同样反映这种聚焦逻辑：不拼参数规模，找到社区已在用但质量不够的 llama 7B 作为甜点切入，以推理速度和低成本打出差异点。四个月、五人规模、清晰的甜点定位——这是一套可复用的 AI 产品冷启动模板。",
@@ -653,7 +720,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "创始人视角讲述小模型速度策略和5人团队组织哲学，具体案例但非首创洞察",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 43,
@@ -662,6 +730,7 @@
       "source": "Elad Gil",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AI市场格局 / MARKET CRYSTALLIZATION",
       "hook": null,
       "summary": "Elad Gil 给出一个结构性判断：AI 市场的第一批赛道已经固化，未来一两年的头部玩家轮廓清晰。这不是预测，是已发生的事实。他本人四年前领投或参投了 Harvey、Perplexity、Character.AI、BrainTrust 等，从一手视角描述了市场从混沌到收敛的全过程。三个已结晶的赛道：LLM 层，Anthropic、OpenAI、Google、Meta/Llama、X.AI 构成核心阵营，与超大规模云厂商绑定形成资本护城河，新进者几乎无从撼动；代码赛道，Cursor、Windsurf、Claude Code、GitHub Copilot 等头部产品营收在产品上线两年内传闻已达数亿美元；法律赛道，Harvey 与 CaseText 占据主流，EvenUp 深入人身伤害领域，端到端工作流自动化正在成型。Gil 的核心逻辑：资本护城河决定 LLM 格局，应用层的窗口期有限但仍存在，下一批赛道今天仍不清晰。",
@@ -672,7 +741,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "创始人级视角看AI市场分化,多案例数据支撑,但观点未突破行业共识",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 36,
@@ -681,6 +751,7 @@
       "source": "Sequoia Capital",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "组织进化范式 / HIERARCHY TO INTELLIGENCE",
       "hook": null,
       "summary": "Sequoia 这篇文章的核心判断：两千年的组织创新——从罗马军团到普鲁士参谋部、从铁路公司到矩阵管理、从 Spotify 的 Squad 到 Zappos 的 Holacracy——本质上都是在同一个约束下打补丁：人类领导者的\"管理幅度\"上限（3-8 人）决定了信息必须分层路由，层数越多速度越慢。Daniel McCallum 1850 年代画出第一张组织结构图是为了防止火车相撞，Frederick Taylor 的科学管理是为了让层级内部更高效，麦肯锡帮 Shell 和 GE 搭矩阵结构是为了在全球化规模下维持协调——问题从未被解决，只是被管理。Block 正在做的事情是 Sequoia 眼中第一个真正打破这个约束的实验：用 AI 替代信息路由这个中层管理的核心职能，让速度成为可复利的竞争优势。约束变了，组织的形状就必须变。",
@@ -691,7 +762,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "从罗马军队到现代企业,追踪组织设计如何被AI改造,CEO级别思维突破",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 20,
@@ -700,6 +772,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "学发",
       "sub_tag": "人才范式重构 / AGENCY OVER SKILLS",
       "hook": null,
       "summary": "Notion 产品负责人 Max Schoening 给出一个清醒判断：AI 时代真正拉开差距的不是技能，而是 agency——主动驾驭不确定性、自主推进事情的能力。他在 Notion 推动设计师和 PM 直接用 Claude Code 在终端里写代码、原型化产品，并成功落地多款 AI 产品，验证了这套打法。他的论据之一：项目前 10% 的成本现在接近于零，这从根本上改变了\"谁有资格启动一件事\"的门槛。高 agency 的人会把这 10% 的免费空间变成持续试验的飞轮；低 agency 的人手里有再多工具也只会原地等待指令。他同时提出\"tiny core\"理论——iPhone 多点触控、GitHub Pull Request、Notion Blocks、Dropbox 菜单栏图标，伟大产品都有一个极简内核。这与 agency 逻辑呼应：能识别并坚守核心的人，才是 AI 扩权后真正危险的建造者。",
@@ -710,7 +783,8 @@
       "practice_score": 3,
       "frontier_score": 4,
       "score_reasoning": "CEO级视角：从技能到agency的paradigm转变，用Notion设计师/PM实例论证AI时代的组织重建核心",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 16,
@@ -719,6 +793,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "学发",
       "sub_tag": "全员AI采纳 / INTERNAL AI ADOPTION",
       "hook": null,
       "summary": "Sendbird 联合创始人兼 CEO John Kim 给出一套全员 AI 采纳的完整打法，核心逻辑是：把 AI 采纳当产品来运营，而不是当培训来推广。三个支柱：第一，内部平台 Automators——任何人可以发布需求（Quest），工程师或 AI Agent 来接单构建工具，形成内部技能市场；市场团队用这套机制两天内独立上线了带 Stripe 支付的电商周边商店，零工程资源介入。第二，Token 使用量仪表盘设五个段位（Beginner 到 AI God），Sendbird 发现曲线的平滑度比总量更关键——如果中间层断崖，说明采纳是表演而非习惯。第三，领导层可见使用是最强采纳信号，CEO 本人公开自己的 AI 学习工作流。招聘端同步重写 JD，用好奇心、自主性、能量密度替代工作年限。整套框架的底层假设：SaaS 没有死，它正在被每家公司内部重建一遍。",
@@ -729,7 +804,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "CEO级改组论：内部市场化+游戏化+可见领导力驱动全员AI采纳，但框架仍属最佳实践范畴",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 13,
@@ -738,6 +814,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "使命护城河 / MISSION GOVERNANCE",
       "hook": null,
       "summary": "《精益创业》作者 Eric Ries 在新书《Incorruptible》里提出一个残酷规律：80% 的风险投资支持创始人在上市后三年内被踢出局，成功本身不是护城河，反而让公司成为更大的猎物。他把这个现象命名为\"财务重力\"——组织一旦规模化，短期财务逻辑会系统性地腐蚀创始使命。解药不是文化喊话，而是法律结构：一份两页纸的公益公司（PBC）申报文件，可以在章程层面锁住使命优先级。他援引 Anthropic、Costco、Novo Nordisk、Patagonia 的治理结构作为实证——这些公司的共同点不是 CEO 更有道德，而是治理机制让\"偏离使命\"的成本极高。Cloudflare 的 Matthew Prince、Groupon 的 Andrew Mason 均被点名作为对照案例。核心论点是：Conway's Law 同样适用于价值观——组织结构决定组织行为，治理架构决定使命存活率。",
@@ -748,7 +825,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "创始人视角的公司长期价值保护框架,多个真实案例(Anthropic、Costco等)支撑,但治理观点非新颖",
-      "total_score": 11
+      "total_score": 11,
+      "is_featured": false
     },
     {
       "id": 161,
@@ -757,6 +835,7 @@
       "source": "Eightfold AI",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "公平AI产品化 / RESPONSIBLE AI BY DESIGN",
       "hook": null,
       "summary": "Eightfold AI 联创 Ashutosh Garg 提出一个切实的判断：AI 偏见不只是算法后端问题，更是产品问题，必须在界面层、工作流层就动刀。这篇文章拆解了三个落地机制。第一，候选人信息遮蔽（Candidate Masking）：在招聘官看到简历前，自动剥除姓名、性别、种族、照片等与岗位绩效无关却触发偏见模式识别的字段，分为标准遮蔽与可配置遮蔽两档，后者可按司法管辖区调整；第二，多元化漏斗仪表盘：按性别、种族分组，逐阶段（电话筛选→现场面试→Offer）追踪候选人流失率，把\"哪个环节出了问题\"从事后审计变成实时可见的运营问题；第三，个性化岗位推荐：基于数十亿条全球职业路径数据做技能邻近度匹配，解决女性等群体因自我筛除而从未进入漏斗顶端的结构性流失。遮蔽、监测、推荐三层叠加，才构成完整防线——单层都不够用。",
@@ -767,7 +846,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "详细拆解HR AI中的具体产品解决方案,但框架本身(masking/monitoring)已成业界最佳实践",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 130,
@@ -776,6 +856,7 @@
       "source": "Stripe Blog",
       "source_type": "rss",
       "section": "Industry",
+      "hr_module": null,
       "sub_tag": "垂直SaaS护城河 / EMBEDDED FINANCE MOAT",
       "hook": null,
       "summary": "AI 商品化软件功能，垂直 SaaS 的答案不是\"做更好的软件\"，而是把自己变成客户业务的金融基础设施。Stripe Sessions 2026 给出了几个硬数据：嵌入支付的平台年流失率低 11%，多产品策略平台收入增速比纯软件同行快 49%；每个采用嵌入式支付的客户平均为平台带来 4,200 美元增量 ARR（Tidemark 估算）。Toast 从餐厅 POS 扩展到薪资、账单支付和资本贷款；theCut CEO Obi Omile 上线 Stripe Capital 后 24 小时内 167 名理发师接受了 78.8 万美元融资，平均接受时间 3-4 分钟。支付中位采用率已从 2024 年 27% 升至 2025 年 40%，但头部平台可达 80% 以上——差距在于是否把支付采用变成全公司 KPI，而非产品部门单独议题。GlossGenius、Fullbay 的实践表明：把支付指标写进 AE、CSM 的激励计划，是关闭这个差距最直接的杠杆。",
@@ -786,7 +867,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "垂直SaaS应对AI的深度案例研究,支付嵌入和金融服务具体数据,但核心洞察（功能商品化→金融产品）已成主流共识",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 129,
@@ -795,6 +877,7 @@
       "source": "HR Executive",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "人才架构重构 / HUMAN CAPABILITY MAP",
       "hook": null,
       "summary": "AI Agent 规模化之前，CHRO 最该做的不是采购培训课程，而是画一张人才能力地图——这是 HR Executive 这篇文章的核心判断，也是当下最被忽视的组织动作。技能清单（skills inventory）告诉你员工修过哪些课、担过哪些职；能力地图（capability map）告诉你判断力在哪里、机构知识由谁持有、谁能在速度与责任碰撞时做出决策。AI 会把这个缺口彻底暴露：当初稿、摘要、报告在几分钟内生成，真正稀缺的变成\"能定义任务、审查输出、识别缺失、决定是否可执行\"的监督能力。Gartner 预测 2027 年底超过 40% 的 Agentic AI 项目将因成本失控、价值不清或风险失控而被叫停——这不只是技术警告，是组织治理警告。Deloitte 2026 全球人力资本趋势报告同样指出，优势正从静态结构中的人才配置转向对人、技能、数据与技术的实时编排。T 型与 M 型人才在跨职能 Agent 协同中的价值因此急剧上升。",
@@ -805,7 +888,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "CHROs需在AI规模化前建立人才地图，重新定义监督职能，从结构到能力的转变。",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 114,
@@ -814,6 +898,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "企业AI竞争格局 / PLATFORM WINS OVER MODEL",
       "hook": null,
       "summary": "Josh Bersin 抛出一个反直觉判断：企业 AI 战争的赢家不是 OpenAI 或 Anthropic，而是微软。原因不是模型能力，而是\"Surface\"——应用体验、集成深度与生态系统。他将企业 AI 市场拆解为三层：模型（谁的算法最强）、Surface（谁的使用体验最好）、生态系统（谁的合作伙伴网络最广）。关键论据：OpenAI 70% 收入来自消费者订阅，Anthropic 70% 来自向其他供应商卖算力，两者真正的企业端渗透远未成型。Bersin 亲测 Claude 与 Hubspot 的集成——查询超时、数据残缺，直接弃用。这不是模型问题，是 Surface 问题。微软的历史剧本已经写过一遍：不是靠最好的技术赢得 PC 市场，而是靠 Excel、PowerPoint、Outlook 的\"fit and finish\"和 450 万付费用户。企业客户告诉他的需求也印证这一点：他们要的不是最强模型，而是能管理 Agentic 应用、对接现有系统、避免供应商锁定的平台。模型是引擎，Surface 才是战场。",
@@ -824,7 +909,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "CEO视角重塑AI竞争认知：从模型战争转向应用生态和集成体验，这是企业AI采购的核心",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 112,
@@ -833,6 +919,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "智能体治理竞争 / AGENT CONTROL LAYER",
       "hook": null,
       "summary": "ServiceNow 用一波密集发布押注一个核心野心：成为企业内所有 AI 智能体的收费闸口。目标是四年内营收翻倍至 300 亿美元。三张牌同时打出：Action Fabric（经由 MCP 协议统一认证、审计、治理所有 agent）、Otto（整合 Moveworks 后重命名，定位\"企业前门\"员工体验层，创始人 Bhavin Shah 直接操盘）、AI Control Tower（监控 agent 行为、计算 ROI、识别幻觉与 token 超支）。这条路上并不孤独——Microsoft 有 Agent 365，Workday 有 Agent System of Record，SAP 有 Business Accelerator Hub，四方都在抢同一个位置：agent 的管控基础设施。Josh Bersin 的判断是：企业真正的痛点不是\"混乱\"，而是\"找不到可规模化的 ROI 用例\"——控制层能否反过来加速落地，才是关键变量。ServiceNow 同时推出\"自主劳动力\"预设角色库，含 HR Service Delivery Specialist、Case Management Specialist 等岗位定义，这是平台方第一次系统性地替企业定义 agent 的 JD。",
@@ -843,7 +930,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "ServiceNow策略分析深入，但竞争格局已成型；多案例对标有价值，缺paradigm级洞察。",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 111,
@@ -852,6 +940,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "企业AI架构 / AUTONOMOUS ENTERPRISE",
       "hook": null,
       "summary": "Josh Bersin 对 SAP\"自主企业\"架构的判断一针见血：这是一辆会自动驾驶的旧车，不是重新设计乘客体验的 Zoox。CEO Christian Klein 宣布的 Autonomous Enterprise 包含统一 AI 平台、自主套件与全新交互层，Joule 已能回答\"南美某产品利润为何下滑\"并直接定位到供应商问题——这在三年前需要一整个分析师团队。HCM 模块单独发布了数十个 agent，覆盖薪酬纠错、员工发展、技能匹配等场景。但 Bersin 指出核心局限：224 个 agent 的绝大多数逻辑是\"把现有流程自动化\"，而非\"重设流程本身\"。他的四阶段模型显示，Stage 3（流程重设）和 Stage 4（超级 agent）的 ROI 是纯自动化（Stage 2）的 5-10 倍。SAP 自研的表格数据模型 SAP-RPT-1.5 是真正值得关注的底层突破，它让 ERP 数据可以被大上下文窗口直接消化。现阶段 SAP 交付的是价值实在、但天花板可见的自动化红利。",
@@ -862,7 +951,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "SAP案例深入但视角局限；探讨AI自动化vs流程重设的二阶思考值得关注",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 110,
@@ -871,6 +961,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "学发",
       "sub_tag": "企业学习范式重构 / AI-NATIVE L&D",
       "hook": null,
       "summary": "Josh Bersin 的判断直截了当：ChatGPT 出现的那一刻，企业 e-learning 的旧范式就开始死亡。Cornerstone 作为营收近 10 亿美元、服务 1.4 亿用户的企业学习最大玩家，正面对一个正在坍塌的市场——SCORM 标准统治了 35 年，课程开发动辄耗时 9 个月、单课成本超 5 万美元，如今 AI 可以在数小时内完成同等工作。Cornerstone 自 2021 年以 55 亿美元私有化后，陆续收购 EdCast、Skyhive、Tailspin，但品牌老化、客户续约时频繁比价。真正的结构性威胁来自 Sana、Docebo、Absorb 等 AI-native 新玩家，以及 OpenAI 整合 Coursera 内容、Anthropic 直接下场帮企业部署。Bersin 提出核心框架：AI 学习的本质不是\"更快生成课程\"，而是从内容消费转向实时赋能——员工不再翻课程目录，而是直接提问获得答案。Bersin 调研 700 家企业，处于 L&D 成熟度第 4 级的公司在技能开发及时性上领先同行 74%。L&D 部门的归宿也将重写：合规培训留在 HR，其余职能直接嵌入业务线。",
@@ -881,7 +972,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "AI赋能学习从内容生产到实时赋能的范式转变,CEO视角深刻,但缺乏多个实战案例支撑",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 89,
@@ -890,6 +982,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AI治理范式 / DECENTRALIZED SUPERINTELLIGENCE",
       "hook": null,
       "summary": "Prime Intellect 联合创始人 Vincent Weisser 给出一个反直觉判断：AI 最大的风险不是失控的超级智能，而是被少数机构完美对齐的单一超级智能。\"一个超级智能远比无数个超级智能更危险\"——单点垄断比失配更可怕。这个判断驱动他创立 Prime Intellect，专门构建开放的前沿模型训练与强化学习基础设施，直接对抗 Anthropic、OpenAI、Google DeepMind 等机构的集中化路径。Weisser 的思想底色来自 David Deutsch 的《无穷的开始》与 Nick Bostrom 的《超级智能》，更有实战印记：他曾协助组织 Vitalik Buterin 的 Zuzalu 实验，并在去中心化科学领域撬动约 4000 万美元流向非主流研究。他把同一套开放逻辑移植进 AI 基础设施——让塑造超级智能的工具保持广泛可及，而非收窄在权力节点手中。DeepSeek 的出现印证了这条路线的可行性。",
@@ -900,7 +993,8 @@
       "practice_score": 2,
       "frontier_score": 4,
       "score_reasoning": "CEO级视角提出新安全框架,但缺乏实现案例支撑",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 87,
@@ -909,6 +1003,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "基础设施范式重构 / VERTICAL INTEGRATION",
       "hook": null,
       "summary": "Meter CEO Anil Varanasi 抛出一个刺耳判断：\"硅谷已经不懂网络了。\"他和兄弟 Sunil 融资超 2.5 亿美元，正面挑战 Cisco——不是靠更好的硬件，而是靠彻底重写商业模式：垂直整合硬件、软件、部署与运维，以公用事业订阅制（utility model）交付，让网络像水电一样运转。他提出企业构建护城河的三条路径：技术、交付、商业模式，并断言大多数公司过度押注技术而忽视后两者。Meter 的以旧换新模式直接借鉴汽车行业，日本自动贩卖机的物流逻辑则启发了其基础设施部署哲学。深层命题是：30% 的网络工程师正在退休，AI 时代的算力需求爆炸，网络自主化（autonomous network）不是愿景，是必然出口。COVID 危机曾迫使 Meter 放弃地域限制、强制全国扩张，反而成为规模化转折点。",
@@ -919,7 +1014,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "CEO视角论述垂直整合、业务模型创新、基础设施自主化，但案例深度有限",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 86,
@@ -928,6 +1024,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "信息萃取心理学 / ART OF ELICITATION",
       "hook": null,
       "summary": "真正的信息萃取从不依赖问卷和访谈提纲。The Generalist 深挖 John Nolan 1999 年絕版著作《Confidential》，拆解这位前情报官员总结的对话心理学。核心洞见：最有效的信息获取发生在对方毫无防备时——Luftwaffe 审讯官 Hanns Scharff 带美军飞行员在 Taunus 山丘散步，故意说错情报细节，让对方忍不住纠正，全程未问一个问题，情报已落袋。Nolan 本人从打字机销售员起家，靠跟踪 IBM 代表锁定潜在客户，后创立企业情报咨询公司，曾为宝洁策划针对联合利华的\"洗发水秘方\"竞争情报行动。《Confidential》350 页系统化呈现十余种萃取技术：故意犯错、表演怀疑、制造沉默、身份伪装——每一种都指向同一个机制：让对方的纠正欲、表达欲压过防御本能。对 HR 和组织领导者而言，这套框架的威胁与工具价值同等真实：你的高管在接受猎头、投资人、竞争对手约谈时，正处于被萃取状态。",
@@ -938,7 +1035,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "深度拆解信息萃取心理学,CEO级思维工具,但案例多为历史故事缺乏现代组织应用",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 77,
@@ -947,6 +1045,7 @@
       "source": "Stratechery",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AI部署范式 / TOP-DOWN DEPLOYMENT",
       "hook": null,
       "summary": "Ben Thompson 的核心判断：AI 的影响力将由顶层驱动，而非自下而上渗透。OpenAI 正在组建独立的部署公司，Anthropic、Google DeepMind 等头部实验室也在跟进——这不是战略扩张，而是一个结构性信号：AI 落地需要自上而下的强力实施，分布式、工具化的采用路径不够用了。Thompson 将此类比回 70 年代的大型企业 IT 部署逻辑：技术变革不是由员工自发采纳驱动，而是由组织顶层统一推行。副线是 Apple 与 Intel 的合作动向，背后是经济利益而非技术情感，说明平台层的重组同样在加速。对企业而言，等待\"员工自发用起来\"已经是错误的路径假设。",
@@ -957,7 +1056,8 @@
       "practice_score": 2,
       "frontier_score": 4,
       "score_reasoning": "AI部署模式重构企业形态，顶层实施论挑战传统分布式范式",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 64,
@@ -966,6 +1066,7 @@
       "source": "Sam Altman",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "算力即基础设施 / COMPUTE AS INFRASTRUCTURE",
       "hook": null,
       "summary": "Sam Altman 在《Abundant Intelligence》里抛出一个结构性判断：AI 获取将成为经济的基础驱动力，最终可能是基本人权。这不是愿景包装——他给出了具体的物理目标：每周新增 1 吉瓦 AI 基础设施产能，相当于把 OpenAI 的扩张逻辑从模型研发拉升到能源与芯片供应链层面。Altman 用\"10 吉瓦算力治癌 vs. 10 吉瓦算力普惠教育\"的取舍框架，把算力稀缺直接翻译成人类代价——迫使外界接受\"无限扩张\"的合理性。执行路径横跨芯片、电力、建筑、机器人四个层级，融资方案年内披露。背景是美国在芯片厂与新能源产能上已落后于其他国家，OpenAI 明确要扭转这一趋势。算力不再是 IT 预算，它是国家级基础设施竞赛的筹码。",
@@ -976,7 +1077,8 @@
       "practice_score": 2,
       "frontier_score": 4,
       "score_reasoning": "CEO视角重新定义AI经济基础设施,但缺乏具体执行数据",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 60,
@@ -985,6 +1087,7 @@
       "source": "Sarah Tavel",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "LLM资本博弈 / BIG STACK DYNAMICS",
       "hook": null,
       "summary": "Benchmark 合伙人 Sarah Tavel 给出一个冷静的判断：LLM 竞赛本质是一场\"大筹码扑克\"，没有人能主动选择离桌。META、MSFT、GOOG、Anthropic、OpenAI——这些玩家不是因为算清了 ROI 才继续押注，而是因为一旦落后，定价权立刻归零。GPT-3.5 从 2022 年上线时的 $0.02/千 tokens 跌到现在的 $0.0005，18 个月内贬值 97.5%，没有哪个技术品类的商品化速度比得上 LLM。但反过来看，正是巨头们\"不敢眨眼\"的竞争烈度，给应用层创业者送了一份厚礼：算力成本持续暴跌，模型能力持续跃升。软件工程师全球年支出约 $1T，Copilot 阶段已能撬动 $100-200B 的生产力价值，从\"副驾\"进化到\"自动驾驶\"之后，市场天花板将数量级扩张。对组织而言，底层模型更迭速度决定了任何基于单一模型的内部能力建设都会快速折旧——应用架构必须保持模型无关性（model-agnostic），才能持续吃到价格下降与能力提升的双重红利。",
@@ -995,7 +1098,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "创始人视角解读LLM竞争动态与资本博弈，但缺乏组织重构案例支撑",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 46,
@@ -1004,6 +1108,7 @@
       "source": "Elad Gil",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "公司治理迁移 / REINCORPORATION STRATEGY",
       "hook": null,
       "summary": "Delaware 正在失去其作为美国首选注册地的护城河——这不是政治表态，而是可量化的治理风险。Tesla 以84%非控股股东支持票迁往德克萨斯，SpaceX、Dropbox、Neuralink 相继离开；导火索是一系列被创始人和投资人视为\"司法创意写作\"的判决：Activision 以98%股东支持完成的并购被叫停，Moelis 创始人在 IPO 时已充分披露的股东协议被认定无效，TripAdvisor 仅仅尝试迁册就被要求特别委员会审批。Elad Gil 联合 Latham & Watkins 合伙人 Ben Potter 团队梳理了三州对比框架：Delaware 的优势（成熟判例、专业法官）正被司法激进主义侵蚀；Nevada 将受托责任写入成文法而非依赖判例，提供更高可预测性；Texas 则靠 SpaceX、Tesla 的背书积累生态。结论清晰：新公司直接选 Nevada 或 Texas，存量私有公司迁册流程数月可完，公开公司核心是流程合规。",
@@ -1014,7 +1119,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "创始人级别决策框架,多案例对比(Tesla、SpaceX等),当下最佳实践",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 45,
@@ -1023,6 +1129,7 @@
       "source": "Elad Gil",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "竞争终局策略 / MARKET ENDING MOVES",
       "hook": null,
       "summary": "Elad Gil 给创始人提了一个高频被忽略的战略问题：什么样的一步棋可以直接终结市场竞争格局？他把这类棋路归为五类：与主要竞争对手合并（X.com 与 PayPal、Uber 在多个国际市场的子公司整合）；收购关键供应商以掐断竞争对手的核心输入；拿下决定性分发渠道（IBM 分发微软早期 OS、Yahoo! 分发 Google，均是改变行业走向的\"造王之举\"）；摧毁对手的现金奶牛业务（Google 在搜索广告上面临 GenAI 冲击的逻辑正在此）；以及资本饱和——TikTok 早期大规模买量、头部 LLM 靠百亿融资锁定寡头格局。核心论点不在于这些案例本身，而在于：创始人应主动把\"终局思维\"内化为常规战略推演工具，哪怕最终不执行，这套推演也会倒逼出 M&A、合伙关系和关键人才引进的新思路。",
@@ -1033,7 +1140,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "创始人级战略思维,但案例多为已知历史,缺乏当前AI组织重构应用",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 41,
@@ -1042,6 +1150,7 @@
       "source": "Elad Gil",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AI经济重构 / COMPUTE AS CURRENCY",
       "hook": null,
       "summary": "Elad Gil 抛出一组密度极高的判断，核心命题是：计算（token）正在成为硅谷新的经济计价单位。OpenAI 与 Anthropic 各自营收已达美国 GDP 的 0.1%，若两家在 2026 年底均突破 $100B，AI 将占据约 1% 的 GDP run rate——这个速度远超互联网或 IT 的历史节奏。与此同时，他提出三个结构性约束：一、HBM 供应瓶颈（Hynix、Samsung、Micron 产能周期至少持续两年）正在为模型能力进步制造人工渐近线，寡头格局将被锁定至 2028 年；二、Meta 大手笔抢人触发了跨实验室的\"隐形 IPO\"——数十到数百名顶尖 AI 研究员一夜间跨越经济门槛，部分人行为已开始漂移；三、AI 带来的裁员冲击优先落在印度、菲律宾等外包服务国，而非西方企业自身的 headcount，主流叙事严重低估了这一地理转移效应。后期公司 CEO 普遍的策略是不做大规模裁员、而是让自然减员叠加 AI 悄悄压缩编制。",
@@ -1052,7 +1161,8 @@
       "practice_score": 2,
       "frontier_score": 4,
       "score_reasoning": "CEO视角的AI经济影响深度思考,计算成为新货币单位的洞察有启发,但缺乏具体案例数据支撑",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 18,
@@ -1061,6 +1171,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "员工体验",
       "sub_tag": "设计协作范式重构 / DEMOS NOT MEMOS",
       "hook": null,
       "summary": "Stripe 设计经理 Owen Williams 造了一把钥匙，直接开掉了\"先写文档再做设计\"的老锁。他构建的内部 AI 原型工具 Protodash，把 Stripe 自有设计系统 Sail 封装进 MCP server，配合 Cursor rules 和 React 组件，让设计师和 PM 几分钟内就能生成像素级贴合品牌的可交互原型——不是 v0 那种\"blurple slop\"（错字体、错组件、导航飘移的幻觉界面），而是真正跑在 Stripe 设计语言里的产品级 demo。最意外的变量：PM 成了 Protodash 用量最高的群体之一，使用量与设计师持平。Owen 最初神经紧绷——\"PM 开始设计了\"；但现实是，设计评审的对话从\"要不要给这个项目配设计师\"直接跳到\"这是实际方案，我们来讨论怎么做得更好\"。工具还内置了 AI 设计评审模式：评论聚合、AI 摘要、一键推修改给 AI。Owen 给出两条 AI 协作铁律：第一，开头提示要够具体；第二，一旦想骂人，`/clear` 重来，沉没成本是最贵的 bug。",
@@ -1071,7 +1182,8 @@
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "Stripe内部工具案例具体,展示设计-PM协作新范式,但仍属管理层创新",
-      "total_score": 10
+      "total_score": 10,
+      "is_featured": false
     },
     {
       "id": 117,
@@ -1080,6 +1192,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "就业范式重构 / AI AS JOB CREATOR",
       "hook": null,
       "summary": "Josh Bersin 用数据正面反驳\"AI 消灭就业\"的主流叙事：AI 不消灭岗位，它重写岗位的价值密度。两个核心案例支撑这个判断。软件工程：Lightcast 数据显示全球软件类职位数量基本未变，OpenAI 一家当前仍有 650 个工程职位开放；Draup 技能分析显示入门级编码与测试需求下降，但\"Full Stack AI Engineer\"和\"GenAI Engineer\"等新职位正在填位，过去 15 年软件薪资翻倍，去年单年涨幅超 15%。医学影像：十年前被预言消亡的 X 光技师，今年职位发布量同比增长 35%，薪资稳步攀升，岗位技能转向患者沟通与数据管理。Bersin 将这一模式命名为\"Superwork\"——AI 承接执行层任务，人转向判断、整合与价值创造。他的判断锚点：美国失业率数十年稳定在 4.5% 附近，人类的适应能力是结构性事实，不是安慰剂。",
@@ -1090,7 +1203,8 @@
       "practice_score": 4,
       "frontier_score": 2,
       "score_reasoning": "数据驱动的工作转型分析,但\"技术创造就业\"论点非新颖,缺乏对组织重构的深度思考。",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 115,
@@ -1099,6 +1213,7 @@
       "source": "Josh Bersin",
       "source_type": "rss",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "HR智能体愿景 / AGENTIC HR 2030",
       "hook": null,
       "summary": "Josh Bersin 给出了一个强硬判断：HR 不会消亡，但它必须从 COE 拼装体重构为 Agentic 操作层。他将这个框架命名为 HR 2030，核心逻辑是 Systemic HR 与 AI Superagent 架构的合并——不是给 HR 装智能助手，而是让 Agent 云接管招聘、薪酬、排班、绩效、学习的全链路执行。九条原则中有几个值得记住：员工数据将从结构化扩展到\"环境感知\"（邮件、会议录音、位置、行为）；跨业务 Agent 互联意味着绩效数据将来自销售、代码行数、客服工单，而非年度评估；员工调研将被近实时情绪信号取代；数字孪生让离职员工的知识仍可被调用。Microsoft、Roblox、Google、Mastercard、ServiceNow 已在加速落地。Bersin 的预判是：四年内实现。这是架构愿景，不是实践手册——但方向判断足够清晰，容不得观望。",
@@ -1109,7 +1224,8 @@
       "practice_score": 2,
       "frontier_score": 3,
       "score_reasoning": "CEO级视角重新定义HR,但缺乏具体案例支撑,主要是架构愿景而非实践验证。",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 106,
@@ -1118,6 +1234,7 @@
       "source": "Lenny's Newsletter",
       "source_type": "substack",
       "section": "HR",
+      "hr_module": "组织设计",
       "sub_tag": "工程师角色重构 / COMPUTE ALLOCATOR",
       "hook": null,
       "summary": "Anthropic Claude Code 团队工程师 Thariq Shihipar 给出一个直接的判断：工程师正在从写代码变成\"计算资源分配者\"。当 Claude 可以单任务连跑 8 小时、成本折算约 500 美元时，核心决策不再是怎么写代码，而是这件事值不值得建、边界在哪里、如何全程保持同步。他的核心实践：用 HTML 替代 Markdown 作为与 AI 协作的主要格式——HTML 支持交互元素、可视化 mockup、可滚动结构，让千行计划真正可读、可批注、可改进，而不是被略过。他还引入\"即用即弃 micro-app\"概念：需要编辑计划中某张数据表？让 Claude 现做一个专属 UI，用完丢掉。他生成的 token 中只有约 1% 进入生产代码，其余全部服务于理解、规划与沟通过程本身。这是 token 丰盛时代的工作方式重写。",
@@ -1128,7 +1245,8 @@
       "practice_score": 3,
       "frontier_score": 3,
       "score_reasoning": "实践者视角展示HTML+AI协作新模式,但缺乏组织变革深度与行业数据支撑",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 94,
@@ -1137,6 +1255,7 @@
       "source": "Not Boring",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "意义经济学 / HUMAN DIFFERENTIATION",
       "hook": null,
       "summary": "Not Boring 创始人 Packy McCormick 在 The Mountain 演讲中给出一个挑衅性命题：生命的意义是扩展宇宙中体验的广度与深度——AI 时代的核心危机不是失业，是失意。他引用 Viktor Frankl 1978 年的诊断：\"人有了活下去的手段，却没有了活下去的理由。\"那是物质尚且匮乏的年代；而今 Sierra 估值 $150 亿、Anthropic 年 ARR $440 亿，意义危机反而加剧。他从奥义书的\"Neti, neti\"（非此，非此）出发，剥离思想、情绪、感知，剩下的是纯粹的觉知——你即你所经历的一切。一位读者为回答\"去掉生产力需求后人活着为何\"，分析了 200 部科幻小说：59% 聚焦意义危机，仅 17% 关注身份认同。数字已说话。McCormick 的结论不是鸡汤：在机器可以替代产出的时代，差异化不是竞争策略，是道德义务。",
@@ -1147,7 +1266,8 @@
       "practice_score": 2,
       "frontier_score": 3,
       "score_reasoning": "CEO级思维框架,探讨AI时代的人生意义与组织存在,但缺乏企业实践案例",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 90,
@@ -1156,6 +1276,7 @@
       "source": "The Generalist",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "物理智能范式 / GENERAL-PURPOSE ROBOTICS",
       "hook": null,
       "summary": "Physical Intelligence 联合创始人兼 CEO Karol Hausman 押注一个反商业直觉的判断：机器人的瓶颈从来不是机械设计，而是智能的泛化能力。他与 Google Brain 同事 Sergey Levine、Chelsea Finn 共同创立 π.ai，融资超过 10 亿美元，目标是为物理世界构建通用\"AI 大脑\"——让同一套 foundation model 驱动跨机型、跨环境、跨任务的机器人，而非为单一用途重复编程。核心逻辑与语言模型的 scaling 之路高度平行：真实世界数据替代仿真、强化学习回归主流、部署本身形成数据飞轮。但 Hausman 明确拒绝过早商业化压力——专业化是短期变现的捷径，也是通用智能的死路。与 LLM 不同，物理机器人的可靠性门槛远高于语言生成，容错率接近零。",
@@ -1166,7 +1287,8 @@
       "practice_score": 2,
       "frontier_score": 3,
       "score_reasoning": "CEO视角探讨物理智能范式,但缺乏组织重构实证与具体案例数据。",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 67,
@@ -1175,6 +1297,7 @@
       "source": "Sam Altman",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "AGI经济学 / INTELLIGENCE COST CURVE",
       "hook": null,
       "summary": "Sam Altman 给出三条 AGI 经济学观察，核心结论是：这轮变革的烈度远超摩尔定律。第一，AI 智能水平约等于训练与推理资源投入的对数，scaling law 在多个数量级上持续成立；第二，同等智能的使用成本每 12 个月下降约 10 倍——GPT-4 到 GPT-4o 的 18 个月里，token 价格已跌去 150 倍，而摩尔定律的节奏不过是 18 个月翻一倍；第三，线性增长的智能带来超指数级的社会经济价值，这解释了为何指数级投入不会停止。落地层面，他将 AI agent 描述为\"真实但相对初级的虚拟同事\"：能独立完成两天以内的任务、大量依赖人类监督、某些方向出人意料地差。把这样的 agent 乘以一百万、覆盖所有知识工作领域，劳动力市场的结构性压力就不再是隐喻。2035 年，任何人都应能调用等同于 2025 年全人类智识总量的算力——这是他为分配公平设定的锚点，也是对资本与劳动失衡的早期预警。",
@@ -1185,7 +1308,8 @@
       "practice_score": 2,
       "frontier_score": 3,
       "score_reasoning": "CEO视角的AGI经济学观察,但缺乏组织重构的具体案例和数据支撑",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 66,
@@ -1194,6 +1318,7 @@
       "source": "Sam Altman",
       "source_type": "rss",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "智识奇点叙事 / GENTLE SINGULARITY",
       "hook": null,
       "summary": "Sam Altman 的判断直接且不留余地：奇点已经开始，事件视界已经越过。这不是科幻预言，是他对当下的技术现实评估。核心论点：最难的科学突破已经完成，GPT-4 到 o3 的路径已被验证，剩下的是规模与加速。时间轴他给得很具体——2025 年 agent 开始承担真实认知工作；2026 年系统具备产出新洞见的能力；2027 年机器人进入物理世界。到 2030 年代，智识与能源将同时进入丰裕状态，这两项历史上人类进步的根本瓶颈将同步解除。他用\"温和奇点\"这个框架刻意对抗末日叙事：奇迹不断到来，但人类的适应速度同样惊人，工业革命后的职业迁移是他援引的历史先例。对 HR 从业者最刺眼的一句话：整类工作岗位将消失，但世界同时会变得足够富裕，以至于新的社会契约在政策上第一次变得可以认真讨论。",
@@ -1204,7 +1329,8 @@
       "practice_score": 2,
       "frontier_score": 3,
       "score_reasoning": "CEO级别的AI时代叙事,但缺乏组织变革实践案例",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
     },
     {
       "id": 51,
@@ -1213,6 +1339,7 @@
       "source": "Sarah Tavel",
       "source_type": "substack",
       "section": "Organization",
+      "hr_module": null,
       "sub_tag": "消费AI浪潮解构 / CONSUMER AI WAVE THESIS",
       "hook": null,
       "summary": "Benchmark 合伙人 Sarah Tavel 给出一个清醒判断：消费 AI 浪潮不会复制移动互联网的量级，核心原因在于\"时间增量\"的结构性差异。她把移动时代的爆发拆解为三个驱动力——新增可争夺的在线分钟数、硬件新原语（摄像头/GPS/加速度计）、App Store 的分发革命——并用反事实推演证明，第一条（时间增量）是决定性的。消费 AI 面对的战场截然不同：AI 伴侣、AI 治疗师、Voice AI 可以渗透通勤、家务、遛狗等原本\"模拟时间\"，但它们的对手不是当年未优化的模拟世界，而是已被 TikTok 算法榨干的多巴胺存量市场。抢一分钟的代价远高于移动时代。Tavel 的结论是：消费 AI 更大的战场在\"效用型\"应用——类比 Uber 和 Google Maps，而非 Instagram——Manus、Lovable 是这一路径的早期信号。新设备或神经接口出现之前，时间天花板不会被打破。",
@@ -1223,7 +1350,50 @@
       "practice_score": 2,
       "frontier_score": 3,
       "score_reasoning": "创始人级思维框架,重新定义消费AI波浪与移动互联网的类比逻辑,但缺乏具体案例数据支撑",
-      "total_score": 9
+      "total_score": 9,
+      "is_featured": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "claude-cowork-hr-plugin",
+      "name": "Claude Cowork · HR Plugin",
+      "vendor": "Anthropic",
+      "category": "组织设计",
+      "one_line": "把 Claude 当作可被 HR 工作流编排的同事，而非聊天对象",
+      "summary": "Anthropic 在 Claude Cowork 里为 HR 场景开放了官方 Plugin 入口。一号位可以为团队定制专属的 Skill 与 Plugin：把招聘评估、绩效校准、培训追踪等流程封装成可调用的智能体，跨 Slack / Notion / 邮箱组合调度。它的关键不是工具数量，而是把 HR 系统从'操作软件'重构为'编排上下文'——HR 不再录入数据，而是配置 AI 同事的工作边界。",
+      "url": "https://www.anthropic.com/news/cowork",
+      "featured": true
+    },
+    {
+      "id": "anthropic-skills",
+      "name": "Anthropic Skills (Claude)",
+      "vendor": "Anthropic",
+      "category": "组织设计",
+      "one_line": "Claude 的可调用专长包——HR 领域第一次有了'可装可卸的能力'",
+      "summary": "Skills 让一位 HRD 可以为公司定制可被复用的'能力包'：'校准全员绩效曲线'、'生成岗位胜任力地图'、'员工 1:1 复盘模板'——一次构建，全员调用。技术上是 Markdown + 工具组合；管理上是把 HR 的隐性方法论显性化、模块化、可继承化。",
+      "url": "https://www.anthropic.com/news/skills",
+      "featured": false
+    },
+    {
+      "id": "notion-ai-hr",
+      "name": "Notion AI Connectors",
+      "vendor": "Notion",
+      "category": "员工体验",
+      "one_line": "把 HR 文档变成可被搜索、问答、行动触发的活资产",
+      "summary": "Notion 把 HR 手册、福利政策、入职流程、SOP 都封进可被 AI Connector 跨库索引的统一接口。员工不再翻 PDF，而是问 Notion AI'我现在怎么发起年假申请'；HR 不再答重复问题，而是维护一份知识库。员工体验质变的关键不是给员工配 AI，而是让组织资产可被对话。",
+      "url": "https://www.notion.com/product/ai",
+      "featured": false
+    },
+    {
+      "id": "rippling-it-agents",
+      "name": "Rippling IT Agents",
+      "vendor": "Rippling",
+      "category": "员工体验",
+      "one_line": "新人入职的设备、账号、权限——全程零 IT 工单",
+      "summary": "Rippling 把员工入职/离职最痛的 IT 段落，封进了 Agent。新人 Day 0 收到机器，自动激活；Day 1 各 SaaS 自动开通；离职 24 小时全自动注销。HR 入职 NPS 从 60 跳到 88 不是因为 HR 团队变强，而是因为 HR 把这段权力让给了 Agent。",
+      "url": "https://www.rippling.com/blog/it-agents",
+      "featured": false
     }
   ]
 }

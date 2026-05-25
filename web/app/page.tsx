@@ -1,10 +1,18 @@
-import { getCandidates, getIssue, SECTION_META, type Section } from "@/lib/db";
+import Link from "next/link";
+import {
+  getFeatured,
+  getIssue,
+  getBySection,
+  SECTION_META,
+  type Section,
+} from "@/lib/db";
 import { Signal } from "./components/Signal";
+import { SkillsBlock } from "./components/SkillsBlock";
+import { StatStrip } from "./components/StatStrip";
 
 const SECTION_ORDER: Section[] = ["Organization", "HR", "Industry"];
 
 export default async function Home() {
-  const items = getCandidates();
   const issue = getIssue();
 
   return (
@@ -19,21 +27,20 @@ export default async function Home() {
           Weekly signals on how organizations are being rebuilt around AI.
         </p>
         <p className="subtitle-zh">每周筛选全球 AI 原生组织的前沿信号。</p>
-        <div className="update-promise">
-          每周五早上 8:00 更新 · Updates every Friday at 8 AM
-        </div>
+        <StatStrip />
       </header>
 
-      {/* 本周观察 — Editor-written segment per PRD §5.5 / §6.1 */}
-      <section className="observation">
-        <div className="observation-label">本周观察 / This week</div>
-        <p className="observation-text">{issue.observation}</p>
-      </section>
+      {/* AI 工具速览 — replaces the editorial observation block */}
+      <SkillsBlock />
 
-      {/* Three sections, with this issue's selected signals */}
+      {/* Three sections, featured signals only — full archive on section pages */}
       {SECTION_ORDER.map((key) => {
         const meta = SECTION_META[key];
-        const sectionItems = items.filter((i) => i.section === key);
+        const featured = getFeatured(key);
+        const totalInSection = getBySection(key).length;
+        const archiveCount = totalInSection - featured.length;
+        const path = `/${key.toLowerCase()}`;
+
         return (
           <section key={key} className={`section section--${key.toLowerCase()}`}>
             <header className="section-header">
@@ -41,12 +48,18 @@ export default async function Home() {
               <div className="section-zh">{meta.zh}</div>
             </header>
 
-            {sectionItems.length === 0 ? (
+            {featured.length === 0 ? (
               <div className="empty">
                 <p>本期暂无入选内容 / Awaiting next week&rsquo;s signals.</p>
               </div>
             ) : (
-              sectionItems.map((item) => <Signal key={item.id} item={item} />)
+              featured.map((item) => <Signal key={item.id} item={item} />)
+            )}
+
+            {archiveCount > 0 && (
+              <Link href={path} className="section-archive-link">
+                查看 {key} 全部 {totalInSection} 条 →
+              </Link>
             )}
           </section>
         );

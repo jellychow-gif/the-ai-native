@@ -1,8 +1,7 @@
 import Link from "next/link";
 
 /**
- * Top navigation per PRD §6.2: Organization / HR / Industry / Observations.
- * The logo (top-left) links to the homepage.
+ * Top navigation per PRD §6.2. Four primary destinations + brand wordmark.
  */
 export function Nav() {
   return (
@@ -14,7 +13,7 @@ export function Nav() {
         <Link href="/organization">Organization</Link>
         <Link href="/hr">HR</Link>
         <Link href="/industry">Industry</Link>
-        <Link href="/observations">Observations</Link>
+        <Link href="/skills">Skills</Link>
       </div>
     </nav>
   );

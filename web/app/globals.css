@@ -178,37 +178,281 @@ a {
   color: var(--text-tertiary);
 }
 
-/* ── 本周观察 / Weekly Observation ──────────────────────────────── */
+/* ── Stat strip (under masthead) ───────────────────────────────── */
 
-.observation {
-  margin-bottom: 112px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+.stat-strip {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
 }
 
-.observation-label {
+.stat-dot {
+  color: var(--border);
+}
+
+/* ── Skills block (homepage hero, replaces 本周观察) ──────────────── */
+
+.skills-block {
+  margin: 72px 0 112px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.skills-header {
+  margin-bottom: 32px;
+}
+
+.skills-eyebrow {
   color: var(--text-tertiary);
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
-.observation-text {
+.skills-title {
   font-family: "Noto Serif SC", serif;
-  font-size: 21px;
   font-weight: 400;
-  line-height: 1.7;
+  font-size: 22px;
+  line-height: 1.5;
   color: var(--text-primary);
 }
 
 @media (min-width: 768px) {
-  .observation-text {
-    font-size: 24px;
-  }
+  .skills-title { font-size: 26px; }
 }
+
+/* Featured skill — large block, hover-shifts subtly */
+.skill-featured {
+  display: block;
+  padding: 40px;
+  margin-bottom: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.skill-featured:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.skill-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+}
+
+.skill-vendor {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.skill-divider { color: var(--border); }
+
+.skill-name {
+  font-family: "Newsreader", serif;
+  font-weight: 400;
+  font-size: clamp(26px, 4vw, 34px);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.skill-oneline {
+  font-family: "Noto Serif SC", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.skill-summary {
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.skill-cta {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* Mini skill grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1000px) {
+  .skills-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.skill-mini {
+  display: block;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease;
+}
+
+.skill-mini:hover {
+  border-color: var(--text-primary);
+}
+
+.skill-mini-name {
+  font-family: "Newsreader", serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.skill-mini-oneline {
+  font-family: "Noto Serif SC", serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Skills archive page */
+.skills-archive-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 800px) {
+  .skills-archive-list { grid-template-columns: 1fr 1fr; }
+}
+
+.skill-archive-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.skill-archive-card:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.skill-archive-name {
+  font-family: "Newsreader", serif;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* ── Section archive link (homepage "view all" CTA) ─────────────── */
+
+.section-archive-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: opacity 0.18s ease;
+}
+
+.section-archive-link:hover { opacity: 0.7; }
+
+/* ── HR module chips + group headers ───────────────────────────── */
+
+.module-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -48px 0 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.module-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.module-chip:hover {
+  border-color: var(--accent);
+  background-color: rgba(232, 71, 168, 0.06); /* HR section accent, faded */
+}
+
+.module-chip-count {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.hr-module-group {
+  margin-bottom: 64px;
+}
+
+.hr-module-title {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+/* (Removed: .observation block — replaced by .skills-block per editor direction) */
 
 /* ── Section header ─────────────────────────────────────────────── */
 
@@ -253,6 +497,16 @@ a {
 .signal {
   padding: 56px 0;
   border-top: 1px solid var(--border);
+  transition: padding-left 0.25s ease;
+}
+
+/* Subtle elevation on hover — no shadow, just a colored gutter mark */
+.signal:hover {
+  padding-left: 12px;
+}
+
+.signal:hover .signal-tag {
+  letter-spacing: 0.24em;
 }
 
 .signal-tag {

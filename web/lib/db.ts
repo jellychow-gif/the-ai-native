@@ -10,6 +10,19 @@ import path from "node:path";
 
 export type Section = "Organization" | "HR" | "Industry";
 
+// HR sub-modules per PRD §6.1. Display priority order set by the editor:
+// 组织设计 > 薪酬 > 绩效 > 员工体验 > 学发 > 招聘
+export type HRModule = "组织设计" | "薪酬" | "绩效" | "员工体验" | "学发" | "招聘";
+
+export const HR_MODULE_ORDER: HRModule[] = [
+  "组织设计",
+  "薪酬",
+  "绩效",
+  "员工体验",
+  "学发",
+  "招聘",
+];
+
 export type Item = {
   id: number;
   url: string;
@@ -17,6 +30,7 @@ export type Item = {
   source: string;
   source_type: string;
   section: Section | null;
+  hr_module: HRModule | null;
   sub_tag: string | null;
   hook: string | null;
   summary: string | null;
@@ -28,13 +42,24 @@ export type Item = {
   frontier_score: number | null;
   score_reasoning: string | null;
   total_score: number;
+  is_featured: boolean;
 };
 
 export type Issue = {
   number: string;
   date_iso: string;
   date_label: string;
-  observation: string;
+};
+
+export type Skill = {
+  id: string;
+  name: string;
+  vendor: string;
+  category: string;
+  one_line: string;
+  summary: string;
+  url: string;
+  featured: boolean;
 };
 
 export type Payload = {
@@ -42,32 +67,55 @@ export type Payload = {
   generated_at: string;
   min_score_threshold: number;
   item_count: number;
+  featured_count: number;
   items: Item[];
+  skills: Skill[];
 };
 
 function dataPath(): string {
   return path.resolve(process.cwd(), "data", "items.json");
 }
 
-// We deliberately do NOT cache the parsed payload: `next build` reads it once
-// per static page and freezes the result into HTML, so there's no production
-// benefit. In `next dev`, caching would mask data changes after a pipeline run.
+// No cache: file reads are cheap; `next build` reads once per static page.
 export function loadPayload(): Payload {
   const raw = fs.readFileSync(dataPath(), "utf-8");
   return JSON.parse(raw) as Payload;
 }
 
-export function getCandidates(): Item[] {
+export function getAllItems(): Item[] {
   return loadPayload().items;
+}
+
+export function getFeatured(section?: Section): Item[] {
+  const items = loadPayload().items.filter((i) => i.is_featured);
+  return section ? items.filter((i) => i.section === section) : items;
+}
+
+export function getBySection(section: Section): Item[] {
+  return loadPayload().items.filter((i) => i.section === section);
 }
 
 export function getIssue(): Issue {
   return loadPayload().issue;
 }
 
-/** Items in a given section, sorted by score then id. */
-export function getBySection(section: Section): Item[] {
-  return loadPayload().items.filter((i) => i.section === section);
+export function getSkills(): Skill[] {
+  return loadPayload().skills;
+}
+
+export function getFeaturedSkill(): Skill | undefined {
+  return loadPayload().skills.find((s) => s.featured);
+}
+
+export function getStats(): { items: number; featured: number; skills: number; sources: number } {
+  const p = loadPayload();
+  const sources = new Set(p.items.map((i) => i.source)).size;
+  return {
+    items: p.item_count,
+    featured: p.featured_count,
+    skills: p.skills.length,
+    sources,
+  };
 }
 
 /** Section metadata for navigation + headers. */

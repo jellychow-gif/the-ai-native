@@ -46,6 +46,9 @@ MIGRATIONS = [
     "ALTER TABLE items ADD COLUMN body TEXT",
     "ALTER TABLE items ADD COLUMN score_reasoning TEXT",
     "ALTER TABLE items ADD COLUMN processed_at TEXT",
+    # HR sub-module classifier per PRD §6.1 — priority order per editor:
+    # 组织设计 > 薪酬 > 绩效 > 员工体验 > 招聘
+    "ALTER TABLE items ADD COLUMN hr_module TEXT",
 ]
 
 
