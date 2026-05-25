@@ -119,23 +119,61 @@ a {
 
 .topnav-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   font-family: "Newsreader", serif;
   font-size: 14px;
   color: var(--text-secondary);
 }
 
-.topnav-links a {
+.topnav-link {
+  position: relative;
   text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  color: var(--text-secondary);
+  padding-bottom: 6px;
+  transition: color 0.22s ease;
 }
 
-.topnav-links a:hover {
+/* Subtle section-color underline marker — short + faded by default */
+.topnav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  height: 2px;
+  background: var(--link-accent, var(--text-primary));
+  opacity: 0.45;
+  transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              right 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.22s ease;
+}
+
+/* Inactive: short faded hint of the section color */
+.topnav-link::after {
+  left: calc(50% - 8px);
+  right: calc(50% - 8px);
+}
+
+.topnav-link:hover {
   color: var(--text-primary);
-  border-bottom-color: var(--text-primary);
+}
+
+.topnav-link:hover::after {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+/* Active page: full-width colored underline + bolder type */
+.topnav-link--active {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.topnav-link--active::after {
+  left: 0;
+  right: 0;
+  opacity: 1;
 }
 
 /* ── Section-page hero ─────────────────────────────────────────── */
