@@ -20,6 +20,18 @@ SOURCES: list[dict] = [
         "section": "Organization",
     },
     {
+        "name": "OpenAI",
+        "type": "rss",
+        "url": "https://openai.com/blog/rss.xml",
+        "section": "Organization",
+    },
+    {
+        "name": "Anthropic News",
+        "type": "html_anthropic",
+        "url": "https://www.anthropic.com/news",
+        "section": "Organization",
+    },
+    {
         "name": "Sequoia Capital",
         "type": "rss",
         "url": "https://www.sequoiacap.com/feed/",
@@ -68,6 +80,18 @@ SOURCES: list[dict] = [
         "name": "Lenny's Newsletter",
         "type": "substack",
         "url": "https://www.lennysnewsletter.com/feed",
+        "section": "HR",
+    },
+    {
+        "name": "Hebba Youssef · I Hate It Here",
+        "type": "substack",
+        "url": "https://ihateithere.substack.com/feed",
+        "section": "HR",
+    },
+    {
+        "name": "Harvard Business Review · Talent",
+        "type": "html_hbr",
+        "url": "https://hbr.org/topic/subject/talent-management",
         "section": "HR",
     },
     {

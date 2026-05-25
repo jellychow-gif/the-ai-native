@@ -8,13 +8,13 @@ export function StatStrip() {
   const s = getStats();
   return (
     <div className="stat-strip">
-      <span>{s.sources} sources</span>
+      <span>{s.sources} sources scanned daily</span>
       <span className="stat-dot">·</span>
       <span>{s.items} signals selected</span>
       <span className="stat-dot">·</span>
       <span>{s.skills} tools tracked</span>
       <span className="stat-dot">·</span>
-      <span>Updated weekly</span>
+      <span>Updates Fridays · 08:00 Beijing</span>
     </div>
   );
 }

@@ -127,10 +127,132 @@ def fetch_html_rippling(source: dict) -> list[dict]:
     return items
 
 
+def fetch_html_anthropic(source: dict) -> list[dict]:
+    """Scrape https://www.anthropic.com/news (no public RSS as of 2026)."""
+    import re
+    log.info(f"Fetching HTML: {source['name']}")
+    resp = requests.get(source["url"], headers=HTTP_HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.content, "lxml")
+
+    base = "https://www.anthropic.com"
+    seen: set[str] = set()
+    items: list[dict] = []
+
+    # Anchor pattern: /news/<slug>; anchor text shape: "<Category> <Date> <Title>" or
+    # "<Date> <Category> <Title>". Parse with a date regex.
+    slug_re = re.compile(r"^/news/[a-z0-9-]+/?$")
+    date_re = re.compile(
+        r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}\b"
+    )
+    category_pattern = re.compile(
+        r"^(Product|Announcements|Policy|Research|Engineering|Interpretability|"
+        r"Societal Impacts)\s+"
+    )
+
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if not slug_re.match(href):
+            continue
+        full = urljoin(base, href).rstrip("/")
+        if full in seen:
+            continue
+        text = a.get_text(" ", strip=True)
+        if not text:
+            continue
+        # Pull the date out; what remains is "<category> <title>" or "<title>"
+        date_m = date_re.search(text)
+        date_iso = None
+        if date_m:
+            try:
+                date_iso = _norm_date(date_m.group(0))
+            except Exception:
+                pass
+            text = (text[: date_m.start()] + " " + text[date_m.end():]).strip()
+        # Strip leading category label
+        text = category_pattern.sub("", text).strip()
+        if len(text) < 6:
+            continue
+        seen.add(full)
+        items.append({
+            "url": full,
+            "title": text,
+            "author": None,
+            "published_at": date_iso,
+            "raw_excerpt": None,
+            "source": source["name"],
+            "source_type": source["type"],
+            "section": source["section"],
+        })
+        if len(items) >= MAX_PER_SOURCE:
+            break
+    log.info(f"  parsed {len(items)} entries")
+    return items
+
+
+def fetch_html_hbr(source: dict) -> list[dict]:
+    """Scrape an HBR /topic/... index page."""
+    import re
+    log.info(f"Fetching HTML: {source['name']}")
+    resp = requests.get(source["url"], headers=HTTP_HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.content, "lxml")
+
+    base = "https://hbr.org"
+    seen: set[str] = set()
+    items: list[dict] = []
+
+    # HBR wraps each card in <stream-item class="stream-item">; the article link
+    # is /YYYY/MM/<slug>. First text in container is the title.
+    href_re = re.compile(r"^/\d{4}/\d{2}/[a-z0-9-]+/?$")
+    for container in soup.select("stream-item.stream-item, .stream-item"):
+        a = container.find("a", href=href_re)
+        if not a:
+            continue
+        href = a["href"]
+        full = urljoin(base, href).rstrip("/")
+        if full in seen:
+            continue
+        # Title = first non-empty text node up to ~12 words
+        # The container text concatenates everything; take the first sentence-ish piece
+        # by splitting on common category labels.
+        full_text = container.get_text(" ", strip=True)
+        # Heuristic: title is followed by a category like "Business management",
+        # "Talent management", "Employee performance management", etc.
+        title_match = re.match(
+            r"^(.+?)\s+(?:Business management|Talent management|"
+            r"Employee performance management|Leadership and managing people|"
+            r"Diversity and inclusion|Organizational culture|Hiring and recruitment|"
+            r"Compensation and benefits|Managing yourself|Career planning|"
+            r"Innovation|Strategy)\b",
+            full_text,
+        )
+        title = title_match.group(1).strip() if title_match else full_text.split(" Newsletter ")[0][:140]
+        if len(title) < 8:
+            continue
+        seen.add(full)
+        items.append({
+            "url": full,
+            "title": title,
+            "author": None,
+            "published_at": None,
+            "raw_excerpt": None,
+            "source": source["name"],
+            "source_type": source["type"],
+            "section": source["section"],
+        })
+        if len(items) >= MAX_PER_SOURCE:
+            break
+    log.info(f"  parsed {len(items)} entries")
+    return items
+
+
 FETCHERS = {
     "rss": fetch_rss,
     "substack": fetch_rss,
     "html": fetch_html_rippling,
+    "html_anthropic": fetch_html_anthropic,
+    "html_hbr": fetch_html_hbr,
 }
 
 

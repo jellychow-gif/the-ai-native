@@ -4,9 +4,9 @@
     "date_iso": "2026-05-29",
     "date_label": "May 29, 2026"
   },
-  "generated_at": "2026-05-25T08:20:36.583411+00:00",
+  "generated_at": "2026-05-25T09:12:39.291260+00:00",
   "min_score_threshold": 9,
-  "item_count": 64,
+  "item_count": 65,
   "featured_count": 9,
   "items": [
     {
@@ -1183,6 +1183,27 @@
       "frontier_score": 3,
       "score_reasoning": "Stripe内部工具案例具体,展示设计-PM协作新范式,但仍属管理层创新",
       "total_score": 10,
+      "is_featured": false
+    },
+    {
+      "id": 193,
+      "url": "https://hbr.org/2026/05/gen-ai-could-fix-performance-reviews-or-make-them-even-worse",
+      "title": "Gen AI Could Fix Performance Reviews—or Make Them Even Worse",
+      "source": "Harvard Business Review · Talent",
+      "source_type": "html_hbr",
+      "section": "HR",
+      "hr_module": "绩效",
+      "sub_tag": "绩效评审重构 / AI PERFORMANCE TRAP",
+      "hook": null,
+      "summary": "用 AI 加速一个坏流程，得到的是一个更快的坏流程。HBR 这篇文章摆出三个大厂案例：Citi 的 Performance Assist 跨系统拉数据、自动起草评估报告；JPMorgan 的 LLM Suite 辅助撰写年终考核；BCG 内部 AI 助手让评审撰写时间压缩 40%。数字好看，方向错了。这些部署的共同逻辑是效率优化——让传统叙述式绩效评审写得更快、更光滑——而非追问绩效评审本身是否值得保留。传统年度评审的核心缺陷不是\"写起来太慢\"，是反馈滞后、评分主观、与实际发展脱节。把 Gen AI 叠在旧流程上，只是给既有偏见镀了一层机器背书的光泽，管理者的刻板印象会以更流畅的措辞复现，而不会被纠正。真正的机会在于用 AI 重写评审的触发逻辑、频率与数据来源——而不是润色它的输出。",
+      "implication": "作为组织变革负责人，警惕\"AI 上线即改革\"的自我欺骗。采购 AI 评审工具前，先问一个问题：我们在加速的这个流程，本身是否解决了真正的绩效问题？若答案存疑，正确动作是先重构评审机制（频率、触发点、数据源），再引入 AI，而非反过来用工具锁死旧范式。",
+      "author": null,
+      "published_at": null,
+      "perspective_score": 3,
+      "practice_score": 4,
+      "frontier_score": 2,
+      "score_reasoning": "多家企业案例展示AI在评审中的应用,但仍陷入效率优化而非流程重构的窠臼",
+      "total_score": 9,
       "is_featured": false
     },
     {

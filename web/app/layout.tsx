@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nav } from "./components/Nav";
+import { BackToTop } from "./components/BackToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
+        <BackToTop />
       </body>
     </html>
   );
