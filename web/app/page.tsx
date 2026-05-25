@@ -1,4 +1,4 @@
-import { getCandidates, type Section } from "@/lib/db";
+import { getCandidates, getIssue, type Section } from "@/lib/db";
 
 const SECTIONS: { key: Section; en: string; zh: string }[] = [
   { key: "Organization", en: "Organization", zh: "组织 · 认知输入" },
@@ -6,21 +6,16 @@ const SECTIONS: { key: Section; en: string; zh: string }[] = [
   { key: "Industry", en: "Industry", zh: "行业 · 行动输入" },
 ];
 
-// Phase 1 demo values — Step 7 will derive these from the database / publish state.
-const ISSUE_NUMBER = "01";
-const ISSUE_DATE = "May 15, 2026";
-const WEEKLY_OBSERVATION =
-  "[本周观察 — 由发起人撰写，每周四晚审核改写。Step 7 接入后此字段从数据库读取。]";
-
 export default async function Home() {
-  const items = await getCandidates();
+  const items = getCandidates();
+  const issue = getIssue();
 
   return (
     <div className="container">
       {/* Masthead */}
       <header className="masthead">
         <div className="meta-top">
-          Issue {ISSUE_NUMBER} · {ISSUE_DATE}
+          Issue {issue.number} · {issue.date_label}
         </div>
         <h1 className="title">The AI Native</h1>
         <p className="subtitle-en">
@@ -35,7 +30,7 @@ export default async function Home() {
       {/* 本周观察 — Editor-written segment per PRD §5.5 / §6.1 */}
       <section className="observation">
         <div className="observation-label">本周观察 / This week</div>
-        <p className="observation-text">{WEEKLY_OBSERVATION}</p>
+        <p className="observation-text">{issue.observation}</p>
       </section>
 
       {/* Three sections */}
