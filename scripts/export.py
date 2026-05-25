@@ -23,7 +23,8 @@ log = logging.getLogger("export")
 MIN_SCORE = 9  # PRD §5.3 threshold
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT_PATH = ROOT / "data" / "items.json"
+# JSON lives inside web/ so Vercel can read it without crossing project boundaries.
+OUT_PATH = ROOT / "web" / "data" / "items.json"
 
 # Phase 1 demo values — Step 7 will derive these from pipeline state.
 DEFAULT_ISSUE = {

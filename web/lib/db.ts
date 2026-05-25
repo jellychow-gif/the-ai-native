@@ -46,9 +46,9 @@ export type Payload = {
 };
 
 function dataPath(): string {
-  // During `next dev` / `next build`, cwd is the `web/` dir.
-  // On Vercel with rootDirectory=web, cwd is also the web/ dir.
-  return path.resolve(process.cwd(), "..", "data", "items.json");
+  // JSON lives inside web/data/items.json so Vercel can deploy web/ standalone
+  // with Root Directory = "web".
+  return path.resolve(process.cwd(), "data", "items.json");
 }
 
 let cached: Payload | null = null;
