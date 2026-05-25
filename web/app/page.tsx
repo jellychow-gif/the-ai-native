@@ -7,7 +7,6 @@ import {
   type Section,
 } from "@/lib/db";
 import { Signal } from "./components/Signal";
-import { SkillsBlock } from "./components/SkillsBlock";
 import { StatStrip } from "./components/StatStrip";
 import { TopSignals } from "./components/TopSignals";
 
@@ -41,11 +40,12 @@ export default async function Home() {
         <StatStrip />
       </header>
 
-      {/* Top Signals hero — PRD v2 §4 (analyst-feed format) */}
+      {/* Top Signals hero — PRD v2 §4 (analyst-feed format).
+          This is the homepage's only "above-section" content. Skills moved
+          to dedicated /skills page per editor: homepage must stay 100%
+          about weekly frontier signals — anything evergreen dilutes the
+          freshness promise. */}
       <TopSignals />
-
-      {/* AI 工具速览 — secondary block, surfaces curated tooling */}
-      <SkillsBlock />
 
       {/* Three sections, featured signals only — full archive on section pages */}
       {SECTION_ORDER.map((key) => {
