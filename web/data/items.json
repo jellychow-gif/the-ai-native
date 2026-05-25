@@ -4,7 +4,7 @@
     "date_iso": "2026-05-25",
     "date_label": "May 25, 2026"
   },
-  "generated_at": "2026-05-25T11:41:43.447587+00:00",
+  "generated_at": "2026-05-25T11:56:33.627293+00:00",
   "min_score_threshold": 9,
   "item_count": 40,
   "featured_count": 9,
@@ -15,7 +15,7 @@
       "title": "How Anthropic Rebuilt Its Sales Org From Scratch When Demand Went Vertical: 54% of New Enterprise Logos Now Come Self-Serve",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "销售组织重构 / AI-NATIVE SALES REBUILD",
       "hook": null,
@@ -43,7 +43,7 @@
       "title": "Forget “Would You Hire Them Again.” The Real Test Now Is Whether You’d Replace Them With an Agent.",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "人机替代决策框架 / AGENT REPLACEMENT TEST",
       "hook": null,
@@ -71,7 +71,7 @@
       "title": "The Agents Episode #005 is Out! Our 2 AI VPs Cost $257/Month, a Website Willed Itself Into Becoming an Agent, and QB Sent 83 Personalized Emails at 12:20am",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "AI代理取代中层 / AGENT-AS-EXECUTIVE",
       "hook": null,
@@ -91,7 +91,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI代理取代中层职能,成本极低($257/月),重构营销/运营团队架构",
       "total_score": 13,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 193,
@@ -119,7 +119,7 @@
       "frontier_score": 4,
       "score_reasoning": "深度剖析AI重塑HR核心流程的风险与机遇,具体案例(花旗、摩根大通、BCG)有数据支撑,触及管理者和HRD决策范畴",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 153,
@@ -127,7 +127,7 @@
       "title": "Even a Mediocre Prompt Can Build Pretty Good Software Today",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "创始人直接交付 / ZERO-ENGINEER SHIPPING",
       "hook": null,
@@ -147,7 +147,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI赋能非技术创始人直接交付产品,重塑组织人力结构和分工模式",
       "total_score": 12,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 152,
@@ -155,7 +155,7 @@
       "title": "Dear SaaStr: As a Startup, What Are Some Effective Ways For an Underdog to Take Down Their Competition?",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "AI原生竞争颠覆 / AI-NATIVE DISPLACEMENT",
       "hook": null,
@@ -183,7 +183,7 @@
       "title": "Why 95% of Customer Success Managers Can’t Be Turned into Forward Deployed Engineers. And What That Means.",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "部署工程化转型 / FORWARD DEPLOYED ENGINEER",
       "hook": null,
@@ -287,7 +287,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI正在重塑L&D职能与组织结构,从内容生产转向实时赋能,CEO级视角论证工作革命。",
       "total_score": 12,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 53,
@@ -315,7 +315,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI原住民组织架构重构:从工程集中制转向全员赋能编码的PaaS模式,深度案例+思维框架。",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 52,
@@ -343,7 +343,7 @@
       "frontier_score": 4,
       "score_reasoning": "CTO深度实践论：AI代码度量陷阱、工程师心智模型、代码所有权危机",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 39,
@@ -371,7 +371,7 @@
       "frontier_score": 4,
       "score_reasoning": "创业公司架构转向服务化的范式思考,多个真实案例和市场数据支撑,反映前沿组织模式演变",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 16,
@@ -735,7 +735,7 @@
       "frontier_score": 3,
       "score_reasoning": "高层揭示高量级招聘流程崩溃根因,但缺乏深度案例与数据支撑实现路径。",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 161,
@@ -763,7 +763,7 @@
       "frontier_score": 3,
       "score_reasoning": "招聘中的AI公平性产品设计,具体案例但非paradigm级新颖",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 119,
@@ -875,7 +875,7 @@
       "frontier_score": 3,
       "score_reasoning": "CEO级领导力范式解析,揭示非创始人如何获得组织权威与文化重建的深层机制",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 41,
@@ -995,7 +995,7 @@
       "title": "Don’t Lose a Great CoFounder, Whatever It Takes",
       "source": "SaaStr",
       "source_type": "rss",
-      "section": "Industry",
+      "section": "Organization",
       "hr_module": null,
       "sub_tag": "联创关系韧性 / COFOUNDER RETENTION",
       "hook": null,

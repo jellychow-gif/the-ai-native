@@ -1,18 +1,23 @@
-"""Source registry for The AI Native.
+"""Source registry for The AI Native — AI Native Organization Observatory.
 
-Each source has: name, type ('rss' | 'substack' | 'html'), url, section.
-Sources marked TODO require custom HTML scrapers; they will be added
-in a later iteration. The Python pipeline silently skips unknown types.
+Per PRD v2 §1-2 Source Architecture and editor refinement (May 2026):
 
-Per PRD §4, the target is ~45 sources with 60-65% international.
-Current state: 18 active international sources covering Organization (9),
-HR (5), Industry (4). More to be added; see TODO block below.
+  Organization → paradigm-level content for CEO / HRD-一号位
+                 (frontier operators, org-design thinkers, deep-essay outlets)
+  HR           → HR practitioner deep-dives + practice frameworks
+  Industry     → HR Tech vendors' AI product launches + industry news
+                 (NOT general SaaS thinking — that belongs in Organization)
+
+The pipeline silently skips unknown types. See bottom for deferred sources
+that need custom HTML scrapers.
 """
 from __future__ import annotations
 
 SOURCES: list[dict] = [
-    # ── Organization · 认知输入 ──────────────────────────────────────────
-    # VC firms & founder voices — paradigm-level org content
+    # ═════════════════════════════════════════════════════════════════
+    # Organization · CEO / 创始人 / HRD-一号位 视角
+    # Frontier operators, org-design thinkers, paradigm essays
+    # ═════════════════════════════════════════════════════════════════
     {
         "name": "Y Combinator Blog",
         "type": "rss",
@@ -55,7 +60,6 @@ SOURCES: list[dict] = [
         "url": "https://blog.samaltman.com/posts.atom",
         "section": "Organization",
     },
-    # Deep-essay outlets — Stratechery / Generalist / Not Boring
     {
         "name": "Stratechery",
         "type": "rss",
@@ -104,8 +108,42 @@ SOURCES: list[dict] = [
         "url": "https://www.shreyasdoshi.com/feed",
         "section": "Organization",
     },
+    # Reclassified from Industry — these write paradigm-level content,
+    # not HR Tech product news. Belongs with CEO/founder-level voices.
+    {
+        "name": "SaaStr",
+        "type": "rss",
+        "url": "https://www.saastr.com/feed/",
+        "section": "Organization",
+    },
+    {
+        "name": "Stripe Blog",
+        "type": "rss",
+        "url": "https://stripe.com/blog/feed.rss",
+        "section": "Organization",
+    },
+    {
+        "name": "GitHub Blog",
+        "type": "rss",
+        "url": "https://github.blog/feed/",
+        "section": "Organization",
+    },
+    {
+        "name": "Databricks Blog",
+        "type": "rss",
+        "url": "https://www.databricks.com/blog/feed.xml",
+        "section": "Organization",
+    },
+    {
+        "name": "HubSpot Marketing",
+        "type": "rss",
+        "url": "https://blog.hubspot.com/marketing/rss.xml",
+        "section": "Organization",
+    },
 
-    # ── HR · 专业输入 ────────────────────────────────────────────────────
+    # ═════════════════════════════════════════════════════════════════
+    # HR · HR 各模块的实践与重构
+    # ═════════════════════════════════════════════════════════════════
     {
         "name": "Lenny's Newsletter",
         "type": "substack",
@@ -149,29 +187,14 @@ SOURCES: list[dict] = [
         "section": "HR",
     },
 
-    # ── Industry · 行动输入 ─────────────────────────────────────────────
+    # ═════════════════════════════════════════════════════════════════
+    # Industry · HR Tech 公司的 AI 产品动态 + HR 行业新闻
+    # NOT general SaaS thinking — that lives in Organization above.
+    # ═════════════════════════════════════════════════════════════════
     {
         "name": "Rippling Blog",
         "type": "html",
         "url": "https://www.rippling.com/blog",
-        "section": "Industry",
-    },
-    {
-        "name": "Stripe Blog",
-        "type": "rss",
-        "url": "https://stripe.com/blog/feed.rss",
-        "section": "Industry",
-    },
-    {
-        "name": "HubSpot Marketing",
-        "type": "rss",
-        "url": "https://blog.hubspot.com/marketing/rss.xml",
-        "section": "Industry",
-    },
-    {
-        "name": "SaaStr",
-        "type": "rss",
-        "url": "https://www.saastr.com/feed/",
         "section": "Industry",
     },
     {
@@ -181,57 +204,59 @@ SOURCES: list[dict] = [
         "section": "Industry",
     },
     {
-        "name": "GitHub Blog",
+        "name": "HR Dive",
         "type": "rss",
-        "url": "https://github.blog/feed/",
+        "url": "https://www.hrdive.com/feeds/news/",
         "section": "Industry",
     },
     {
-        "name": "Databricks Blog",
+        "name": "Glint · LinkedIn",
         "type": "rss",
-        "url": "https://www.databricks.com/blog/feed.xml",
+        "url": "https://www.glintinc.com/blog/feed/",
+        "section": "Industry",
+    },
+    {
+        "name": "Workhuman",
+        "type": "rss",
+        "url": "https://www.workhuman.com/blog/feed/",
         "section": "Industry",
     },
 ]
 
 
-# ── TODO sources (need custom HTML scrapers or special access) ─────────
-# These appear in PRD §4 but lack public RSS:
+# ── TODO sources (deferred — need custom HTML scrapers) ─────────────
 #
-# Organization:
-#   - a16z (no public RSS as of 2026)
-#   - First Round Review (newsletter-only)
-#   - Foundation Capital
-#   - McKinsey Quarterly + Organization Practice
-#   - BCG Henderson Institute
-#   - Bain & Company
-#   - Aaron Levie / Patrick Collison (Twitter — needs Twitter API or browser scraping)
-#   - Anthropic letters (SSL/cert issues; retry later)
+# HR Tech vendors (Priority for Industry section, all behind Marketo/HubSpot):
+#   - Workday (newsroom + blog)
+#   - Lattice
+#   - Deel
+#   - BambooHR
+#   - ServiceNow HR
+#   - Greenhouse
+#   - Personio
+#   - Gusto
+#   - Cornerstone
+#   - HiBob
+#   - Beamery
+#   - Phenom
+#   - Visier
+#   - Culture Amp
+#   - 15Five
 #
-# HR:
-#   - Mercer Global Talent Trends
-#   - Deloitte Global Human Capital Trends
-#   - Korn Ferry Workforce Insights
-#   - Gartner HR (paywall)
-#   - PwC Workforce of the Future
-#   - MIT Sloan Future of Work
-#   - HR Brew (returns 403; may need user-agent tweak)
+# Frontier operators without RSS:
+#   - Block, Duolingo, Tesla, Notion, Cursor, Perplexity, Figma, Snowflake
 #
-# Industry:
-#   - Deel / Lattice / Workday / Gusto blogs (no public RSS)
-#   - Notion Blog (no public RSS)
-#   - Salesforce / Agentforce updates
-#   - Juicebox / Lexiom (founder uses; small no-RSS startups)
-#   - Gartner Magic Quadrant (paywall)
-#   - Forrester HR Tech Wave (paywall)
-#   - Product Hunt HR Tech tag
+# Org Design Thinkers (Twitter/LinkedIn only):
+#   - Claire Hughes Johnson, Patty McCord, Reed Hastings, Brian Chesky,
+#     Keith Rabois, Lars Schmidt, Laszlo Bock, Diana Hu (YC Library)
 #
-# Chinese sources (no public RSS — most are 微信公众号 / 知乎):
-#   - 经纬创投, 真格基金, 红杉中国, 险峰长青
+# Research / Consulting (long-form reports, irregular cadence):
+#   - McKinsey Global Institute, BCG Henderson Institute, Bain
+#   - HBS Working Knowledge, MIT Sloan Future of Work, NBER
+#   - Microsoft Research, PwC Future of Work, Deloitte Human Capital
+#
+# Chinese sources (need WeChat → RSSHub bridge):
+#   - 穆胜事务所, 陈春花数智新解, 华夏基石管理评论
+#   - 杨国安, 中欧 HR Value, 混沌大学 CEO 课
+#   - 经纬创投, 红杉中国, 真格基金, 险峰长青
 #   - 晚点 LatePost, 36氪潜望, 远川研究所, 乱翻书
-#   - 腾讯研究院
-#   - 穆胜事务所, 陈春花, 彭剑锋华夏基石
-#   - 杨国安, 中欧 HR Value, 混沌大学
-#
-# Strategy: add per-source HTML scrapers as needed, prioritized by signal value.
-# WeChat 公众号 may require a third-party RSS bridge (e.g., RSSHub).

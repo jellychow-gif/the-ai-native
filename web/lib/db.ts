@@ -151,17 +151,20 @@ export function getStats(): { items: number; featured: number; skills: number; s
 export const SECTION_META: Record<Section, { en: string; zh: string; tagline: string }> = {
   Organization: {
     en: "Organization",
-    zh: "组织 · 认知输入",
-    tagline: "AI 原生组织如何构建？",
+    zh: "组织 · 一号位输入",
+    tagline:
+      "面向 CEO / 创始人 / HRD 一号位的范式级输入——前沿运营者、组织设计思想家、深度长文。",
   },
   HR: {
     en: "HR",
-    zh: "HR · 专业输入",
-    tagline: "HR 各模块如何被 AI 重构？",
+    zh: "HR · 模块重构",
+    tagline:
+      "HR 六大模块（组织设计 / 薪酬 / 绩效 / 员工体验 / 学发 / 招聘）在 AI 时代如何被重写。",
   },
   Industry: {
     en: "Industry",
-    zh: "行业 · 行动输入",
-    tagline: "全球 HR AI 工具有哪些？哪些值得 dogfood？",
+    zh: "行业 · HR Tech 产品动态",
+    tagline:
+      "HR Tech 公司的 AI 新品发布与产品演进。Rippling / Eightfold / Workday / Glint 等的实时动态。",
   },
 };

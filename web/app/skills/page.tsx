@@ -20,10 +20,11 @@ export default function SkillsPage() {
         <div className="meta-top">工具速览 / AI Tooling Catalog</div>
         <h1 className="title">Skills</h1>
         <p className="subtitle-zh">
-          值得 HR 一号位 dogfood 的全球 AI 工具、Skill 与 Plugin。
+          编辑精选的 AI 工具、Skill 与 Plugin —— HR 一号位本人 dogfood
+          的清单。区别于 Industry 板块的产品新闻流，这里只收**真正用过**的工具。
         </p>
         <div className="update-promise">
-          {skills.length} {skills.length === 1 ? "tool" : "tools"} tracked
+          {skills.length} {skills.length === 1 ? "tool" : "tools"} curated by hand
         </div>
       </header>
 
