@@ -1,0 +1,58 @@
+name: Weekly draft + publish
+
+# Runs every Thursday at 13:00 UTC (21:00 Beijing) per PRD §5.4.
+# Steps: summarize top-scoring items → export JSON → commit → Vercel auto-redeploys.
+on:
+  schedule:
+    - cron: "0 13 * * 4"
+  workflow_dispatch:  # allow manual trigger for testing
+
+permissions:
+  contents: write  # commit items.json + items.db updates
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Summarize high-scoring items with Claude Sonnet
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/summarize.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Export JSON snapshot for frontend
+        run: python scripts/export.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Commit issue draft
+        run: |
+          git config user.name  "The AI Native (bot)"
+          git config user.email "ai-native@users.noreply.github.com"
+          git add data/items.db web/data/items.json || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Weekly draft: summarize + export @ $(date -u +%Y-%m-%dT%H:%MZ)
+
+            Editor (you) should now review web/data/items.json:
+            - Rewrite the 'implication' field per PRD §5.5
+            - Write the 'observation' field for this week
+            - Push approved version Friday morning for auto-publish"
+            git push
+          fi

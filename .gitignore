@@ -27,11 +27,13 @@ dist/
 *.tsbuildinfo
 next-env.d.ts
 
-# Database — SQLite files stay local
+# Database — SQLite files stay local EXCEPT the canonical items.db
+# (committed so GitHub Actions can persist scraper state across runs)
 *.db
 *.sqlite
 *.sqlite3
 *.db-journal
+!data/items.db
 
 # Editors
 .vscode/

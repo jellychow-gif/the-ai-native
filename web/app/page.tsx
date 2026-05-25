@@ -1,10 +1,7 @@
-import { getCandidates, getIssue, type Section } from "@/lib/db";
+import { getCandidates, getIssue, SECTION_META, type Section } from "@/lib/db";
+import { Signal } from "./components/Signal";
 
-const SECTIONS: { key: Section; en: string; zh: string }[] = [
-  { key: "Organization", en: "Organization", zh: "组织 · 认知输入" },
-  { key: "HR", en: "HR", zh: "HR · 专业输入" },
-  { key: "Industry", en: "Industry", zh: "行业 · 行动输入" },
-];
+const SECTION_ORDER: Section[] = ["Organization", "HR", "Industry"];
 
 export default async function Home() {
   const items = getCandidates();
@@ -33,14 +30,15 @@ export default async function Home() {
         <p className="observation-text">{issue.observation}</p>
       </section>
 
-      {/* Three sections */}
-      {SECTIONS.map(({ key, en, zh }) => {
+      {/* Three sections, with this issue's selected signals */}
+      {SECTION_ORDER.map((key) => {
+        const meta = SECTION_META[key];
         const sectionItems = items.filter((i) => i.section === key);
         return (
           <section key={key} className="section">
             <header className="section-header">
-              <h2 className="section-en">{en}</h2>
-              <div className="section-zh">{zh}</div>
+              <h2 className="section-en">{meta.en}</h2>
+              <div className="section-zh">{meta.zh}</div>
             </header>
 
             {sectionItems.length === 0 ? (
@@ -48,42 +46,7 @@ export default async function Home() {
                 <p>本期暂无入选内容 / Awaiting next week&rsquo;s signals.</p>
               </div>
             ) : (
-              sectionItems.map((item) => (
-                <article key={item.id} className="signal">
-                  {item.sub_tag && (
-                    <div className="signal-tag">{item.sub_tag}</div>
-                  )}
-                  <h3 className="signal-title">
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.title}
-                    </a>
-                  </h3>
-                  <div className="signal-source">{item.source}</div>
-                  {item.summary && (
-                    <p className="signal-summary">{item.summary}</p>
-                  )}
-                  {item.implication && (
-                    <div className="implication">
-                      <div className="implication-label">
-                        对组织变革的含义
-                      </div>
-                      <p className="implication-text">{item.implication}</p>
-                    </div>
-                  )}
-                  <a
-                    className="readmore"
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read original →
-                  </a>
-                </article>
-              ))
+              sectionItems.map((item) => <Signal key={item.id} item={item} />)
             )}
           </section>
         );

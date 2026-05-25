@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Nav } from "./components/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,7 +25,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Noto+Serif+SC:wght@300;400;500&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

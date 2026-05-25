@@ -36,13 +36,72 @@ a {
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 80px 24px 120px;
+  padding: 56px 24px 120px;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 112px 48px;
+    padding: 80px 48px 120px;
   }
+}
+
+/* ── Top navigation (PRD §6.2) ─────────────────────────────────── */
+
+.topnav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .topnav {
+    padding: 48px 48px 0;
+  }
+}
+
+.topnav-brand {
+  font-family: "Newsreader", serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.topnav-links {
+  display: flex;
+  gap: 24px;
+  font-family: "Newsreader", serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.topnav-links a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.topnav-links a:hover {
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
+}
+
+/* ── Section-page hero ─────────────────────────────────────────── */
+
+.section-page-header {
+  margin-bottom: 80px;
+}
+
+.observation-archive-item {
+  margin-bottom: 56px;
 }
 
 /* ── Masthead ───────────────────────────────────────────────────── */

@@ -46,18 +46,15 @@ export type Payload = {
 };
 
 function dataPath(): string {
-  // JSON lives inside web/data/items.json so Vercel can deploy web/ standalone
-  // with Root Directory = "web".
   return path.resolve(process.cwd(), "data", "items.json");
 }
 
-let cached: Payload | null = null;
-
+// We deliberately do NOT cache the parsed payload: `next build` reads it once
+// per static page and freezes the result into HTML, so there's no production
+// benefit. In `next dev`, caching would mask data changes after a pipeline run.
 export function loadPayload(): Payload {
-  if (cached) return cached;
   const raw = fs.readFileSync(dataPath(), "utf-8");
-  cached = JSON.parse(raw) as Payload;
-  return cached;
+  return JSON.parse(raw) as Payload;
 }
 
 export function getCandidates(): Item[] {
@@ -67,3 +64,27 @@ export function getCandidates(): Item[] {
 export function getIssue(): Issue {
   return loadPayload().issue;
 }
+
+/** Items in a given section, sorted by score then id. */
+export function getBySection(section: Section): Item[] {
+  return loadPayload().items.filter((i) => i.section === section);
+}
+
+/** Section metadata for navigation + headers. */
+export const SECTION_META: Record<Section, { en: string; zh: string; tagline: string }> = {
+  Organization: {
+    en: "Organization",
+    zh: "组织 · 认知输入",
+    tagline: "AI 原生组织如何构建？",
+  },
+  HR: {
+    en: "HR",
+    zh: "HR · 专业输入",
+    tagline: "HR 各模块如何被 AI 重构？",
+  },
+  Industry: {
+    en: "Industry",
+    zh: "行业 · 行动输入",
+    tagline: "全球 HR AI 工具有哪些？哪些值得 dogfood？",
+  },
+};
