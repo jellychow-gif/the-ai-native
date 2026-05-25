@@ -10,7 +10,7 @@ export function SectionPage({ section }: { section: Section }) {
   const items = getBySection(section);
 
   return (
-    <div className="container">
+    <div className={`container section--${section.toLowerCase()}`}>
       <header className="section-page-header">
         <div className="meta-top">{meta.zh}</div>
         <h1 className="title">{meta.en}</h1>

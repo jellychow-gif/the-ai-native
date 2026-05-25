@@ -35,7 +35,7 @@ export default async function Home() {
         const meta = SECTION_META[key];
         const sectionItems = items.filter((i) => i.section === key);
         return (
-          <section key={key} className="section">
+          <section key={key} className={`section section--${key.toLowerCase()}`}>
             <header className="section-header">
               <h2 className="section-en">{meta.en}</h2>
               <div className="section-zh">{meta.zh}</div>

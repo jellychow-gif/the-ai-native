@@ -7,9 +7,24 @@
   --text-primary: #1A1A1A;
   --text-secondary: #5C5C5C;
   --text-tertiary: #999999;
-  --accent: #1B3A5C;
   --border: #E5E3DD;
+
+  /* Section signature accents — derived from Moka Ascend 2026 VI.
+     Used sparingly so each section is instantly distinguishable while the
+     base stays restrained per PRD §7.1. The .section--* classes below
+     remap --accent for each scope. */
+  --accent-organization: #8B5CF6;   /* 紫 — 人事 Eva — paradigm/vision */
+  --accent-hr:           #E847A8;   /* 玫红 — 招聘 Eva — HR soul */
+  --accent-industry:     #3FB8FF;   /* 青蓝 — BP Eva — action/tech */
+  --accent-observation:  #1A1A1A;   /* editorial voice = monochrome */
+
+  /* Default for pages outside a section scope (observations, fallback) */
+  --accent: #1B3A5C;
 }
+
+.section--organization { --accent: var(--accent-organization); }
+.section--hr           { --accent: var(--accent-hr); }
+.section--industry     { --accent: var(--accent-industry); }
 
 *,
 *::before,
@@ -98,6 +113,18 @@ a {
 
 .section-page-header {
   margin-bottom: 80px;
+  position: relative;
+  padding-top: 32px;
+}
+
+/* Colored bar at the top of section pages — instant visual signal */
+.section-page-header::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 24px;
 }
 
 .observation-archive-item {
@@ -191,13 +218,30 @@ a {
 }
 
 .section-en {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Tinted dot before section name — picks up section accent color */
+.section-en::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 .section-zh {
-  margin-top: 4px;
+  margin-top: 6px;
+  margin-left: 24px;
   font-family: "Noto Serif SC", serif;
   font-size: 14px;
   font-weight: 300;
@@ -212,8 +256,9 @@ a {
 }
 
 .signal-tag {
-  color: var(--text-tertiary);
+  color: var(--accent);
   font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 24px;
