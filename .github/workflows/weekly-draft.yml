@@ -67,6 +67,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          cd web
-          npx -y vercel --yes --prod --token=$VERCEL_TOKEN
+        # Run from repo root — Vercel project's rootDirectory='web' setting
+        # tells the CLI where the Next.js app is. cd'ing into web here would
+        # cause path duplication (web/web).
+        run: npx -y vercel --yes --prod --token=$VERCEL_TOKEN
