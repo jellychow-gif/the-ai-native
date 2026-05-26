@@ -58,11 +58,15 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🤖 Weekly draft: summarize + export @ $(date -u +%Y-%m-%dT%H:%MZ)
-
-            Editor (you) should now review web/data/items.json:
-            - Rewrite the 'implication' field per PRD §5.5
-            - Write the 'observation' field for this week
-            - Push approved version Friday morning for auto-publish"
+            git commit -m "🤖 Weekly freeze: Issue auto-generated @ $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
           fi
+
+      - name: Deploy to Vercel production
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd web
+          npx -y vercel --yes --prod --token=$VERCEL_TOKEN
