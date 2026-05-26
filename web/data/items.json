@@ -1,10 +1,24 @@
 {
   "issue": {
-    "number": "02",
+    "number": "03",
     "date_iso": "2026-05-26",
     "date_label": "May 26, 2026"
   },
   "issues": [
+    {
+      "number": 3,
+      "date_iso": "2026-05-26",
+      "date_label": "May 26, 2026",
+      "frozen_at": "2026-05-26 06:22:18",
+      "item_count": 5,
+      "item_ids": [
+        150,
+        11,
+        123,
+        121,
+        162
+      ]
+    },
     {
       "number": 2,
       "date_iso": "2026-05-26",
@@ -38,8 +52,8 @@
       ]
     }
   ],
-  "current_issue_number": 2,
-  "generated_at": "2026-05-26T06:15:34.107261+00:00",
+  "current_issue_number": 3,
+  "generated_at": "2026-05-26T06:22:18.803717+00:00",
   "min_score_threshold": 9,
   "item_count": 40,
   "featured_count": 9,
@@ -239,7 +253,7 @@
       "insight_class": "Org Architecture",
       "author": "Jason Lemkin",
       "published_at": "2026-05-24T14:10:01+00:00",
-      "issue_number": null,
+      "issue_number": 3,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 4,
@@ -500,7 +514,7 @@
       "insight_class": "Capability Transformation",
       "author": "Lenny Rachitsky",
       "published_at": "2026-05-11T16:02:49+00:00",
-      "issue_number": null,
+      "issue_number": 3,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 4,
@@ -529,7 +543,7 @@
       "insight_class": "Labor Economics",
       "author": "Jill Barth",
       "published_at": "2026-05-22T12:00:39+00:00",
-      "issue_number": null,
+      "issue_number": 3,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -558,7 +572,7 @@
       "insight_class": "Org Architecture",
       "author": "Josephine Tan",
       "published_at": "2026-05-22T12:15:54+00:00",
-      "issue_number": null,
+      "issue_number": 3,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -790,7 +804,7 @@
       "insight_class": "Organizational Scaling",
       "author": "Eightfold AI",
       "published_at": "2026-05-19T14:15:51+00:00",
-      "issue_number": null,
+      "issue_number": 3,
       "perspective_score": 4,
       "practice_score": 3,
       "frontier_score": 3,
