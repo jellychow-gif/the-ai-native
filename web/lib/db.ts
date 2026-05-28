@@ -126,7 +126,31 @@ export function getFeatured(section?: Section): Item[] {
   return section ? items.filter((i) => i.section === section) : items;
 }
 
+/**
+ * Strict freshness gate for site-wide display per editor directive:
+ * articles older than 180 days are never surfaced as "current content"
+ * on section archive pages. Permanent Issue pages are excepted —
+ * they're date-stamped historical records.
+ */
+const FRESHNESS_DAYS = 180;
+
+function isFreshEnough(item: Item): boolean {
+  if (!item.published_at) return false; // unknown date treated as old
+  const ms = Date.parse(item.published_at);
+  if (isNaN(ms)) return false;
+  const ageMs = Date.now() - ms;
+  return ageMs <= FRESHNESS_DAYS * 24 * 60 * 60 * 1000;
+}
+
 export function getBySection(section: Section): Item[] {
+  return loadPayload()
+    .items
+    .filter((i) => i.section === section)
+    .filter(isFreshEnough);
+}
+
+/** Includes old items — only used by Issue pages where date-stamped context is explicit. */
+export function getBySectionAllTime(section: Section): Item[] {
   return loadPayload().items.filter((i) => i.section === section);
 }
 
