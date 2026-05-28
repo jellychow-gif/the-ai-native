@@ -1,10 +1,24 @@
 {
   "issue": {
-    "number": "05",
+    "number": "06",
     "date_iso": "2026-05-28",
     "date_label": "May 28, 2026"
   },
   "issues": [
+    {
+      "number": 6,
+      "date_iso": "2026-05-28",
+      "date_label": "May 28, 2026",
+      "frozen_at": "2026-05-28 10:44:11",
+      "item_count": 5,
+      "item_ids": [
+        289,
+        288,
+        13,
+        312,
+        310
+      ]
+    },
     {
       "number": 5,
       "date_iso": "2026-05-28",
@@ -80,8 +94,8 @@
       ]
     }
   ],
-  "current_issue_number": 5,
-  "generated_at": "2026-05-28T08:58:59.596138+00:00",
+  "current_issue_number": 6,
+  "generated_at": "2026-05-28T10:44:12.666456+00:00",
   "min_score_threshold": 9,
   "item_count": 52,
   "featured_count": 9,
@@ -716,7 +730,7 @@
       "insight_class": "Performance Systems",
       "author": "Lara Ewen",
       "published_at": "2026-05-26T10:55:00-04:00",
-      "issue_number": null,
+      "issue_number": 6,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -745,7 +759,7 @@
       "insight_class": "Capability Transformation",
       "author": "Nicole Laskowski",
       "published_at": "2026-05-26T10:55:00-04:00",
-      "issue_number": null,
+      "issue_number": 6,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -977,7 +991,7 @@
       "insight_class": "AI Governance",
       "author": "Lenny Rachitsky",
       "published_at": "2026-05-10T12:03:32+00:00",
-      "issue_number": null,
+      "issue_number": 6,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -1035,7 +1049,7 @@
       "insight_class": "AI-Human Collaboration",
       "author": "Jill Barth",
       "published_at": "2026-05-27T11:30:26+00:00",
-      "issue_number": null,
+      "issue_number": 6,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
@@ -1064,7 +1078,7 @@
       "insight_class": "Labor Economics",
       "author": "Jill Barth",
       "published_at": "2026-05-27T12:00:22+00:00",
-      "issue_number": null,
+      "issue_number": 6,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
