@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Nav } from "./components/Nav";
 import { BackToTop } from "./components/BackToTop";
 import "./globals.css";
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
