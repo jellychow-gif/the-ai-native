@@ -29,10 +29,10 @@ logging.basicConfig(
 )
 log = logging.getLogger("classify_hr")
 
-MODULES = ["组织设计", "薪酬", "绩效", "员工体验", "学发", "招聘"]
+MODULES = ["组织设计", "薪酬", "绩效", "员工体验", "HRBP", "L&D", "招聘"]
 
 SYSTEM_PROMPT = f"""\
-Classify the HR article into exactly ONE of these six modules:
+Classify the HR article into exactly ONE of these seven modules:
 
 - 组织设计 (org design): role architecture, workflow, agent-employee structure,
   reporting lines, decision rights, role-redesign for AI-augmented work
@@ -41,12 +41,14 @@ Classify the HR article into exactly ONE of these six modules:
   feedback cycles, talent calibration
 - 员工体验 (employee experience): onboarding, internal tools, DEI, culture,
   retention, internal communication
-- 学发 (learning & development): training, upskilling, career pathing,
+- HRBP (HR Business Partner): HRBP role transformation, business-embedded HR,
+  HRBP-CEO partnership, strategic workforce planning, business-unit advisory
+- L&D (learning & development): training, upskilling, career pathing,
   internal mobility, skills marketplace
 - 招聘 (recruiting): sourcing, interviewing, hiring, talent assessment, ATS
 
 Pick the SINGLE module most central to the article. Output only the
-Chinese module name (one of: {', '.join(MODULES)}).
+module label (one of: {', '.join(MODULES)}).
 """
 
 TOOLS = [{

@@ -10,16 +10,24 @@ import path from "node:path";
 
 export type Section = "Organization" | "HR" | "Industry";
 
-// HR sub-modules per PRD §6.1. Display priority order set by the editor:
-// 组织设计 > 薪酬 > 绩效 > 员工体验 > 学发 > 招聘
-export type HRModule = "组织设计" | "薪酬" | "绩效" | "员工体验" | "学发" | "招聘";
+// HR sub-modules per PRD §6.1. Display priority order set by the editor.
+// 7 modules: 学发→L&D label change + HRBP added as new (May 2026).
+export type HRModule =
+  | "组织设计"
+  | "薪酬"
+  | "绩效"
+  | "员工体验"
+  | "HRBP"
+  | "L&D"
+  | "招聘";
 
 export const HR_MODULE_ORDER: HRModule[] = [
   "组织设计",
   "薪酬",
   "绩效",
   "员工体验",
-  "学发",
+  "HRBP",
+  "L&D",
   "招聘",
 ];
 
@@ -244,7 +252,7 @@ export const SECTION_META: Record<Section, { en: string; zh: string; tagline: st
     en: "HR",
     zh: "HR · 模块重构",
     tagline:
-      "HR 六大模块（组织设计 / 薪酬 / 绩效 / 员工体验 / 学发 / 招聘）在 AI 时代如何被重写。",
+      "HR 七大模块（组织设计 / 薪酬 / 绩效 / 员工体验 / HRBP / L&D / 招聘）在 AI 时代如何被重写。",
   },
   Industry: {
     en: "Industry",
