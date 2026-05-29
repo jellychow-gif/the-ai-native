@@ -25,9 +25,12 @@ export default async function Home() {
     <div className="container">
       {/* Masthead */}
       <header className="masthead">
-        <div className="meta-top">
-          Issue {issue.number} · {issue.date_label}
-        </div>
+        <Link
+          href={currentIssue ? `/issues/${currentIssue.number}` : "/issues"}
+          className="meta-top meta-top-link"
+        >
+          Issue {issue.number} · {issue.date_label} →
+        </Link>
         <h1 className="title">The AI Native</h1>
         <div className="observatory-line">
           AI Native Organization Observatory

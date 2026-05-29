@@ -16,6 +16,7 @@ const ITEMS = [
   { href: "/hr",           label: "HR",           accent: "var(--accent-hr)" },
   { href: "/industry",     label: "Industry",     accent: "var(--accent-industry)" },
   { href: "/skills",       label: "Skills",       accent: "var(--text-primary)" },
+  { href: "/issues",       label: "Issues",       accent: "var(--text-primary)" },
 ];
 
 export function Nav() {
