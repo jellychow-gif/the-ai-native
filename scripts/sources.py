@@ -132,6 +132,26 @@ SOURCES: list[dict] = [
         "url": "https://www.mckinsey.com/insights/rss",
         "section": "Organization",
     },
+    # AI lab leaders / founders — June 2026 expansion per editor request
+    # "Claude 类的创始人、联创等大牛有关原生组织、人才等观点分享"
+    {
+        "name": "Greg Brockman",
+        "type": "rss",
+        "url": "https://blog.gregbrockman.com/rss/",
+        "section": "Organization",
+    },
+    {
+        "name": "Andrej Karpathy",
+        "type": "rss",
+        "url": "https://karpathy.github.io/feed.xml",
+        "section": "Organization",
+    },
+    {
+        "name": "Google DeepMind",
+        "type": "rss",
+        "url": "https://www.deepmind.com/blog/rss.xml",
+        "section": "Organization",
+    },
     # ═════════════════════════════════════════════════════════════════
     # HR · HR 各模块的实践与重构
     # ═════════════════════════════════════════════════════════════════

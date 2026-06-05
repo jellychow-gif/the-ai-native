@@ -94,7 +94,11 @@ def freeze(force_number: int | None = None) -> int:
             log.warning(f"No eligible items to freeze for Issue {number:02d}. Skipping.")
             return number
 
-        today = datetime.now(timezone.utc)
+        # Editor-facing dates always in Beijing time (UTC+8) — issues are
+        # published "Friday morning Beijing time" per PRD §5.4, so the
+        # date stamp should match the reader's timezone, not the runner's.
+        bjt = timezone(timedelta(hours=8))
+        today = datetime.now(bjt)
         date_iso = today.date().isoformat()
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]

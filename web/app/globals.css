@@ -5,9 +5,9 @@
 :root {
   --bg: #FAFAF8;
   --text-primary: #1A1A1A;
-  --text-secondary: #5C5C5C;
-  --text-tertiary: #999999;
-  --border: #E5E3DD;
+  --text-secondary: #3D3D3D;     /* was #5C5C5C — deepened per editor feedback */
+  --text-tertiary: #6B6B6B;      /* was #999999 — deepened, matches Anthropic.com mid-grey */
+  --border: #DDDAD0;             /* was #E5E3DD — slightly stronger so visible against new text */
 
   /* Section signature accents — derived from Moka Ascend 2026 VI.
      Used sparingly so each section is instantly distinguishable while the

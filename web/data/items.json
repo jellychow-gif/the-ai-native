@@ -1,14 +1,14 @@
 {
   "issue": {
     "number": "03",
-    "date_iso": "2026-06-04",
-    "date_label": "Jun 4, 2026"
+    "date_iso": "2026-06-05",
+    "date_label": "Jun 5, 2026"
   },
   "issues": [
     {
       "number": 3,
-      "date_iso": "2026-06-04",
-      "date_label": "Jun 4, 2026",
+      "date_iso": "2026-06-05",
+      "date_label": "Jun 5, 2026",
       "frozen_at": "2026-06-04 20:48:38",
       "item_count": 9,
       "item_ids": [
@@ -59,9 +59,9 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-05T10:04:39.239868+00:00",
+  "generated_at": "2026-06-05T10:36:50.875123+00:00",
   "min_score_threshold": 9,
-  "item_count": 92,
+  "item_count": 93,
   "featured_count": 9,
   "items": [
     {
@@ -961,6 +961,35 @@
       "frontier_score": 4,
       "score_reasoning": "Sendbird CEO的AI转型实战框架:内部市场化、代币激励、跨职能赋能模式重塑工作流",
       "total_score": 12,
+      "is_featured": false
+    },
+    {
+      "id": 588,
+      "url": "https://blog.gregbrockman.com/define-cto-openai",
+      "title": "#define CTO OpenAI",
+      "source": "Greg Brockman",
+      "source_type": "rss",
+      "section": "Organization",
+      "hr_module": null,
+      "sub_tag": "研究工程融合 / RESEARCH-ENGINEERING UNITY",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Greg Brockman 在 OpenAI 创立回顾文中披露：2015 年 8 月一顿晚餐催生 OpenAI，Brockman 独自在三个月内（8月至11月）完成核心创始团队组建，核心策略为\"链式引荐\"——从 Yoshua Bengio 到 Durk Kingma 到 John Schulman，Schulman 的加入成为说服 Andrej Karpathy 和 Wojciech Zaremba 的关键杠杆。Brockman 将 CTO 角色定位为\"清除 Ilya 一切非研究任务\"，自身以写代码方式实现可扩展影响力。",
+      "why_matters": "这是对\"AI 研究型组织如何从零启动\"最具操作细节的第一手记录。核心信号：使命共鸣不是难点，\"让候选人相信这个组织真实存在\"才是；以及 CTO 角色的本质是首席障碍清除者而非首席决策者。",
+      "org_implication": "OpenAI 创始期组织逻辑：技术视野者（Ilya）+ 组织编排者（Brockman）双核驱动，CTO 主动承接所有运营摩擦，确保研究者零切换成本。这一\"技术护盾\"架构消解了传统 CTO 的决策权力中心化倾向，决策权实质下沉给首席研究员。",
+      "talent_implication": "创始团队中出现两种关键原型：①\"AI 技术信仰者\"（John Schulman 型）——对使命与学术-工业融合结构高度敏感，一旦结构命中立即锁定；②\"外部背书激活型\"（Karpathy/Zaremba 型）——需要圈内权威背书才能越过信任门槛。两类人才招募路径完全不同，不可混用同一套说辞。",
+      "hr_operating_implication": "对 AI 研究型组织的 HR 操作启示：①早期招聘核心卡点不是薪酬而是\"组织可信度建设\"，需设计专项 closing 流程（如 OpenAI 的集体 offsite + 统一 deadline）；②引荐链设计优先于 JD 投放，需绘制领域人才图谱并识别\"背书节点人物\"；③研究岗与工程岗评估维度需显著分离，不能用同一套 bar。",
+      "prediction": "至 2027 年，顶级 AI 实验室的 CTO 职能将正式分拆为\"技术视野官\"与\"研究运营官\"两个独立角色，后者专职清除研究摩擦、管理计算资源与跨团队协调，类 Brockman 模式将成为标准组织配置。",
+      "insight_class": "Org Architecture",
+      "author": null,
+      "published_at": "2017-01-09T10:21:41-08:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 4,
+      "frontier_score": 3,
+      "score_reasoning": "创始人视角讲述如何组织AI研究团队,强调文化选人、使命驱动与研发工程融合",
+      "total_score": 11,
       "is_featured": false
     },
     {
