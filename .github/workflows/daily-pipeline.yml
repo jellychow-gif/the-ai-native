@@ -1,19 +1,21 @@
-name: Daily scrape + score
+name: Daily scrape + score + summarize + publish
 
 # Runs every day at 06:00 UTC (14:00 Beijing).
-# Steps: scrape → fetch_bodies → score. Summarization happens weekly.
+# Full pipeline: scrape → fetch_bodies → score → summarize → classify_hr →
+# export → commit → Vercel deploy. Issue freezing remains weekly (Thursdays
+# via weekly-draft.yml).
 on:
   schedule:
     - cron: "0 6 * * *"
-  workflow_dispatch:  # allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 permissions:
-  contents: write  # needed to commit updated items.db back
+  contents: write
 
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
@@ -44,14 +46,39 @@ jobs:
         run: python scripts/score.py
         working-directory: ${{ github.workspace }}
 
-      - name: Commit updated database
+      - name: Summarize new high-scoring items with Claude Sonnet
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/summarize.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Classify new HR items into sub-modules
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/classify_hr.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Export JSON snapshot for frontend
+        run: python scripts/export.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Commit pipeline state
         run: |
           git config user.name  "The AI Native (bot)"
           git config user.email "ai-native@users.noreply.github.com"
-          git add data/items.db || true
+          git add data/items.db web/data/items.json || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🤖 Daily pipeline: scrape + score @ $(date -u +%Y-%m-%dT%H:%MZ)"
+            git commit -m "🤖 Daily pipeline: $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
           fi
+
+      - name: Deploy to Vercel production
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd web
+          npx -y vercel --yes --prod --token=$VERCEL_TOKEN

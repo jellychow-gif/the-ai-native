@@ -1,12 +1,10 @@
 import Link from "next/link";
 import {
   getCurrentIssue,
-  getIssueItems,
+  getFeatured,
   getBySection,
-  getIssue,
   SECTION_META,
   type Section,
-  type Item,
 } from "@/lib/db";
 import { Signal } from "./components/Signal";
 import { StatStrip } from "./components/StatStrip";
@@ -14,23 +12,29 @@ import { TopSignals } from "./components/TopSignals";
 
 const SECTION_ORDER: Section[] = ["Organization", "HR", "Industry"];
 
+/** Editor-facing date stamp ("updated <today, Beijing time>") for the masthead.
+ *  Rendered at build time — every Vercel deploy refreshes it. */
+function todayInBeijing(): string {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const now = new Date();
+  // Convert UTC build time to BJT (UTC+8)
+  const bjt = new Date(now.getTime() + 8 * 60 * 60 * 1000);
+  return `${months[bjt.getUTCMonth()]} ${bjt.getUTCDate()}, ${bjt.getUTCFullYear()}`;
+}
+
 export default async function Home() {
-  const issue = getIssue();
   const currentIssue = getCurrentIssue();
-  // Items bound to the latest frozen issue (homepage shows current issue only,
-  // per Issue 化 design). Section archives still hold the full historical pool.
-  const issueItems: Item[] = currentIssue ? getIssueItems(currentIssue.number) : [];
+  const todayLabel = todayInBeijing();
 
   return (
     <div className="container">
-      {/* Masthead */}
+      {/* Masthead — emphasizes "today" not Issue NN. Issue archive
+          accessible via the explicit link at bottom + top nav. */}
       <header className="masthead">
-        <Link
-          href={currentIssue ? `/issues/${currentIssue.number}` : "/issues"}
-          className="meta-top meta-top-link"
-        >
-          Issue {issue.number} · {issue.date_label} →
-        </Link>
+        <div className="meta-top">
+          Latest update · {todayLabel} BJT
+        </div>
         <h1 className="title">The AI Native</h1>
         <div className="observatory-line">
           AI Native Organization Observatory
@@ -47,19 +51,25 @@ export default async function Home() {
           systems work as one operating model.
         </p>
         <StatStrip />
-        <Link href="/issues" className="masthead-issues-link">
-          View all issues →
-        </Link>
+        {currentIssue && (
+          <Link
+            href={`/issues/${currentIssue.number}`}
+            className="masthead-issues-link"
+          >
+            📜 Latest weekly snapshot · Issue {String(currentIssue.number).padStart(2, "0")} · {currentIssue.date_label} →
+          </Link>
+        )}
       </header>
 
-      {/* Top Signals hero — PRD v2 §4 (analyst-feed format). */}
+      {/* Top Signals hero — current freshest 5, refreshed daily by pipeline */}
       <TopSignals />
 
-      {/* Three sections showing this issue's frozen picks per section.
-          Section archive pages hold the full historical pool. */}
+      {/* Per-section blocks now show CURRENT featured (not issue-bound).
+          Refreshed daily as new content gets scored + summarized.
+          Issue NN pages still hold permanent weekly snapshots. */}
       {SECTION_ORDER.map((key) => {
         const meta = SECTION_META[key];
-        const inIssue = issueItems.filter((i) => i.section === key);
+        const featured = getFeatured(key);
         const totalInSection = getBySection(key).length;
         const path = `/${key.toLowerCase()}`;
 
@@ -70,17 +80,17 @@ export default async function Home() {
               <div className="section-zh">{meta.zh}</div>
             </header>
 
-            {inIssue.length === 0 ? (
+            {featured.length === 0 ? (
               <div className="empty">
-                <p>本期暂无入选内容 / Awaiting next week&rsquo;s signals.</p>
+                <p>本板块暂无新精选 / Awaiting fresh signals.</p>
               </div>
             ) : (
-              inIssue.map((item) => <Signal key={item.id} item={item} />)
+              featured.map((item) => <Signal key={item.id} item={item} />)
             )}
 
-            {totalInSection > inIssue.length && (
+            {totalInSection > featured.length && (
               <Link href={path} className="section-archive-link">
-                查看 {key} 全部 {totalInSection} 条历史归档 →
+                查看 {key} 全部 {totalInSection} 条 →
               </Link>
             )}
           </section>
@@ -89,8 +99,8 @@ export default async function Home() {
 
       <footer className="site-footer">
         <p>
-          A weekly signal layer for leaders rebuilding their organizations
-          around AI.
+          A daily signal layer for leaders rebuilding their organizations
+          around AI. Weekly snapshots archived as Issues.
         </p>
       </footer>
     </div>
