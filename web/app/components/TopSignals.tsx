@@ -20,8 +20,8 @@ export function TopSignals() {
           5 things every AI-native operator should know this week
         </h2>
         <p className="topsignals-criteria">
-          入选标准：通过 AI Native 相关性过滤 · 范式视角 + 实践锚点 + 全球前沿三轴得分 ≥ 9 / 15 ·
-          发表于近 180 天 · 每源最多 1 条，强制多元化。
+          入选标准：AI Native 相关性硬过滤 · 三轴评分（范式视角 + 实践锚点 + 全球前沿）≥ 9 / 15 ·
+          发表于近 180 天 · 每源最多 1 条 · **至少 1 条来自 Organization 板块**（保障 CEO 一号位视角）。
         </p>
       </header>
 

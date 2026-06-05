@@ -59,9 +59,9 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-04T20:48:38.174418+00:00",
+  "generated_at": "2026-06-05T10:04:39.239868+00:00",
   "min_score_threshold": 9,
-  "item_count": 91,
+  "item_count": 92,
   "featured_count": 9,
   "items": [
     {
@@ -2353,6 +2353,35 @@
       "frontier_score": 3,
       "score_reasoning": "Stripe内部工具改变设计-PM协作模式,具体案例与数据支撑,但主要聚焦产品工具而非组织结构重塑",
       "total_score": 10,
+      "is_featured": false
+    },
+    {
+      "id": 544,
+      "url": "https://sfstandard.com/opinion/2025/06/15/move-fast-and-make-things/#new_tab",
+      "title": "Move fast and make things: the new career mantra",
+      "source": "Reid Hoffman",
+      "source_type": "substack",
+      "section": "Organization",
+      "hr_module": null,
+      "sub_tag": "职业心智重构 / AI-OPTIMIZE NOT AI-PROOF",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "LinkedIn 联合创始人、Greylock 合伙人 Reid Hoffman 在 2025 年毕业季撰文，援引 Anthropic CEO Dario Amodei 预测——入门级白领岗位五年内或消失一半——但反向论证：应届生应\"AI-optimize\"职业路径而非\"AI-proof\"。Hoffman 提出以六个月实验替代五年规划，以公开学习（learn in public）替代资历积累，强调意图力（intention）是 AI 时代核心人类竞争优势。",
+      "why_matters": "Hoffman 将职业策略从防御性\"抗 AI\"彻底翻转为进攻性\"乘 AI\"——这一叙事框架直接影响下一代劳动力的自我定位与雇主对入门级人才的期待标准。当 Amodei 和 Altman 同时为此背书，HR 在 JD 设计与校招标准上若不响应，将系统性错配人才供给。",
+      "org_implication": "入门级岗位的价值生产逻辑正在重写：过去需要团队完成的内容创作、营销测试、代码编写、产品设计，单个 AI 流畅的个人即可承担。组织应重新审视初级职级的存在理由——从\"执行分工单元\"转向\"实验与学习节点\"，相应调整 onboarding 设计与早期职业发展路径。",
+      "talent_implication": "新一代核心人才原型浮现：具备 AI 流畅度（超越 prompt engineering，理解 AI 如何重塑工作流与权力结构）、高意图密度（能自设目标并驱动执行）、公开学习能力（以可见的过程积累信任与影响力）的\"AI 原生自驱者\"。传统以学历与年限定义的初级人才筛选框架将系统性失效。",
+      "hr_operating_implication": "校招与社招 JD 须删除年限与学历代理指标，新增三项显性评估维度：AI 工作流实际应用深度、六个月内可交付的独立项目证明、公开学习轨迹（GitHub/写作/作品集）。绩效体系需为\"实验密度\"而非\"任务完成率\"设立早期职业通道。Workforce planning 应将入门级 headcount 替换为\"高意图个体 + AI 工具包\"的资源组合模型。",
+      "prediction": "至 2027 年，超过 40% 的头部科技公司将正式取消应届生岗位的工作经验年限要求，转而以可验证的 AI 协作项目作品集作为首要筛选标准。",
+      "insight_class": "Labor Economics",
+      "author": "Reid Hoffman",
+      "published_at": "2025-06-15T21:21:58+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 2,
+      "frontier_score": 3,
+      "score_reasoning": "创始人级视角，重构职业心智模型，但缺乏组织实践案例支撑",
+      "total_score": 9,
       "is_featured": false
     },
     {

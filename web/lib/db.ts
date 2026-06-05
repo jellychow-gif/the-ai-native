@@ -206,26 +206,33 @@ export function getIssueItems(issueNumber: number): Item[] {
  *   3) summarized into 6-field structured intelligence
  *   4) published in the last 180 days (freshness gate)
  *   5) MAX 1 item per source — source diversity rule
- *
- * The diversity rule (5) is the practical insurance against any single
- * source flooding the hero (e.g., SaaStr publishing 7 great pieces in
- * one week).
+ *   6) At least 1 Organization-section item if any qualified one exists —
+ *      structural guarantee for CEO/founder一号位 audience (PRD v3, June 2026)
  */
 export function getTopSignals(n: number = 5): Item[] {
-  // Pull from `is_featured` only — that flag already enforces freshness
-  // (<180 days) and per-section caps in export.py. Then apply diversity
-  // rule: max 1 item per source.
   const items = loadPayload().items.filter(
     (i) => i.is_featured && i.what_happened,
   );
+
+  // Pass 1 — try to seat at least 1 Organization item (highest-scored, fresh,
+  // featured). If found, lock it in before diversity/score-ranking the rest.
+  const orgPick = items.find((i) => i.section === "Organization");
   const picked: Item[] = [];
   const seenSources = new Set<string>();
+  if (orgPick) {
+    picked.push(orgPick);
+    seenSources.add(orgPick.source);
+  }
+
+  // Pass 2 — fill remaining slots by score order, applying diversity rule.
   for (const item of items) {
+    if (picked.length >= n) break;
+    if (orgPick && item.id === orgPick.id) continue;
     if (seenSources.has(item.source)) continue;
     picked.push(item);
     seenSources.add(item.source);
-    if (picked.length >= n) break;
   }
+
   return picked;
 }
 

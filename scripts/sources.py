@@ -108,6 +108,30 @@ SOURCES: list[dict] = [
         "url": "https://www.shreyasdoshi.com/feed",
         "section": "Organization",
     },
+
+    # ── CEO / founder-tier (Iteration v3, June 2026) ─────────────
+    # Editor-confirmed priority: close the CEO 一号位 audience gap.
+    # Note: Patrick Collison / Cash App·Block / BCG Henderson Institute
+    # all probed 200 initially but block subsequent automated reads.
+    # Documented in SOURCES.md as "deferred — bot-protected".
+    {
+        "name": "Reid Hoffman",
+        "type": "substack",
+        "url": "https://reidhoffman.org/feed/",
+        "section": "Organization",
+    },
+    {
+        "name": "Duolingo Blog",
+        "type": "rss",
+        "url": "https://blog.duolingo.com/feed/",
+        "section": "Organization",
+    },
+    {
+        "name": "McKinsey Insights",
+        "type": "rss",
+        "url": "https://www.mckinsey.com/insights/rss",
+        "section": "Organization",
+    },
     # ═════════════════════════════════════════════════════════════════
     # HR · HR 各模块的实践与重构
     # ═════════════════════════════════════════════════════════════════
