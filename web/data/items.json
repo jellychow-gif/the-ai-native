@@ -59,11 +59,40 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-05T16:23:24.031965+00:00",
+  "generated_at": "2026-06-06T11:18:14.686458+00:00",
   "min_score_threshold": 9,
-  "item_count": 98,
+  "item_count": 99,
   "featured_count": 9,
   "items": [
+    {
+      "id": 638,
+      "url": "https://www.saastr.com/how-vercel-runs-on-ai-agents-96-of-marketing-93-of-support-and-an-sdr-team-reabsorbed-a-deep-dive-with-cpo-tom-occhino/",
+      "title": "How Vercel Runs on AI Agents: 96% of Marketing, 93% of Support, and an SDR Team Reabsorbed. A Deep Dive With CPO Tom Occhino",
+      "source": "SaaStr",
+      "source_type": "rss",
+      "section": "Industry",
+      "hr_module": null,
+      "sub_tag": "人力重构与智能体替代 / AGENT-DRIVEN ORG REDESIGN",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Vercel CPO Tom Occhino 在 SaaStr AI Deploy 披露：Vercel 自建数百个 AI Agent 并在内部生产环境运行，96% 营销内容由 Content Agent 起草、93% 客户支持无需人工干预、原 SDR 团队因 Lead Qualifying Agent 上线而整体重新部署至高价值岗位。核心 GTM Agent \"DealOne\" 接入 Gong → Vercel Function → Claude → MCP Server 全链路，全程在 Slack 内交付销售洞察与 coaching。",
+      "why_matters": "这是 B2B 规模公司将 Agent 从 demo 推进到生产运营的最完整公开数据集之一。96%/93% 的自动化率意味着整个职能层级的人力配置逻辑已被重写，而非边际优化——对 2026 年人员规划具有直接基准意义。",
+      "org_implication": "三个职能单元（市场内容、SDR 团队、客户支持）的传统人力架构被压缩为 Agent + 人工审核/升级的双层结构。SDR 编制被完全吸收而非裁减，决策权上移：支持团队只处理\"产品缺口信号\"而非机械工单，管理层的注意力从任务分配转向 Agent 规则校准与异常治理。",
+      "talent_implication": "原 SDR、内容初稿写手、一线支持坐席等执行型角色加速萎缩；新增需求集中在：Agent 工作流设计师（懂 webhook/durable workflow/MCP 架构）、AI 输出质检编辑（保持 brand voice 的人类审核层）、GTM Intelligence Analyst（从 DealOne 产出中提炼跨交易模式洞察）。核心能力从\"执行量产\"转为\"规则设计 + 信号判断\"。",
+      "hr_operating_implication": "招聘端：SDR、内容专员、L1 支持的 HC 申请需附 Agent 替代可行性评估，方可立项。绩效端：市场与支持团队的 KPI 基线须重新校准——人均产出基数已由 Agent 拉高，人力增量价值须体现在 Agent 无法覆盖的判断与关系层。L&D 端：全员补课 Prompt 工程、MCP/webhook 基础认知；销售团队优先完成 DealOne 使用认证。Workforce Planning 端：以\"Agent 覆盖率\"替代\"人均工单数\"作为支持团队的核心容量指标。",
+      "prediction": "至 2027 年，SaaStr 500 中超过 60% 的 B2B 公司将正式在编制计划中设置\"Agent 覆盖率\"目标，SDR 与 L1 Support 的全球招聘量同比下降 40% 以上。",
+      "insight_class": "Org Architecture",
+      "author": "Jason Lemkin",
+      "published_at": "2026-06-06T09:21:35+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 5,
+      "frontier_score": 4,
+      "score_reasoning": "Vercel用AI agents重建GTM/运营,96%营销内容、93%支持自动化,展示组织结构重设的具体案例与数据。",
+      "total_score": 13,
+      "is_featured": true
+    },
     {
       "id": 629,
       "url": "https://www.saastr.com/inside-the-ai-agent-stacks-at-saastr-owner-com-klaviyo-the-deep-dives-from-saastr-ai-2026/",
@@ -120,7 +149,7 @@
       "frontier_score": 4,
       "score_reasoning": "SaaStr内部21+AI智能体运营详解，展示组织如何重建工作流和角色；CEO级视角，深度案例数据。",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 445,
