@@ -3,6 +3,7 @@ import {
   getCurrentIssue,
   getFeatured,
   getBySection,
+  loadPayload,
   SECTION_META,
   type Section,
 } from "@/lib/db";
@@ -12,20 +13,23 @@ import { TopSignals } from "./components/TopSignals";
 
 const SECTION_ORDER: Section[] = ["Organization", "HR", "Industry"];
 
-/** Editor-facing date stamp ("updated <today, Beijing time>") for the masthead.
- *  Rendered at build time — every Vercel deploy refreshes it. */
-function todayInBeijing(): string {
+/** Data-last-updated stamp for the masthead, sourced from items.json's
+ *  `generated_at` (set every time export.py runs — daily via pipeline).
+ *  This makes the "Latest update" line semantically truthful: it shows
+ *  when the data was last refreshed, not when the browser is visiting. */
+function lastUpdateInBeijing(): string {
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const now = new Date();
-  // Convert UTC build time to BJT (UTC+8)
-  const bjt = new Date(now.getTime() + 8 * 60 * 60 * 1000);
+  const isoUtc = loadPayload().generated_at;
+  const utc = new Date(isoUtc);
+  // Convert UTC → BJT (UTC+8)
+  const bjt = new Date(utc.getTime() + 8 * 60 * 60 * 1000);
   return `${months[bjt.getUTCMonth()]} ${bjt.getUTCDate()}, ${bjt.getUTCFullYear()}`;
 }
 
 export default async function Home() {
   const currentIssue = getCurrentIssue();
-  const todayLabel = todayInBeijing();
+  const todayLabel = lastUpdateInBeijing();
 
   return (
     <div className="container">
