@@ -26,9 +26,10 @@ FEATURED_TOP_PER_SECTION = { # Per PRD §5.4 issue makeup: 3-4 / 3 / 2 = 8-9
     "HR": 3,
     "Industry": 2,
 }
-# Freshness gate for featured/top: only articles published within this window
-# can be promoted to the homepage. Older items remain in archive pages.
-FEATURED_MAX_AGE_DAYS = 180
+# Freshness gate for featured/top: editor v3.4 — 180 days was too loose
+# ("frontier signals" promise was being violated by 6-month-old content).
+# Now strict: items must be from the last 7 days to enter Featured.
+FEATURED_MAX_AGE_DAYS = 7
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "web" / "data" / "items.json"

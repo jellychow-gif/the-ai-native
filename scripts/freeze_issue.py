@@ -22,7 +22,7 @@ log = logging.getLogger("freeze_issue")
 
 MIN_SCORE = 9
 FEATURED_TOP_PER_SECTION = {"Organization": 4, "HR": 3, "Industry": 2}
-FRESH_DAYS = 180  # only items within this window are eligible
+FRESH_DAYS = 7  # editor v3.4: tightened from 180 to true weekly freshness
 
 
 def _parse_date(raw: str | None):

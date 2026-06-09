@@ -152,6 +152,37 @@ SOURCES: list[dict] = [
         "url": "https://www.deepmind.com/blog/rss.xml",
         "section": "Organization",
     },
+    # Individual blogs — high-leverage editor / founder voices (June 2026)
+    {
+        "name": "Patty McCord",
+        "type": "rss",
+        "url": "https://pattymccord.com/feed/",
+        "section": "Organization",
+    },
+    {
+        "name": "Andrew Chen",
+        "type": "rss",
+        "url": "https://andrewchen.com/feed/",
+        "section": "Organization",
+    },
+    {
+        "name": "Paul Graham",
+        "type": "rss",
+        "url": "https://paulgraham.com/rss.html",
+        "section": "Organization",
+    },
+    {
+        "name": "Marc Andreessen · pmarca",
+        "type": "substack",
+        "url": "https://pmarca.substack.com/feed",
+        "section": "Organization",
+    },
+    {
+        "name": "DHH · 37signals",
+        "type": "rss",
+        "url": "https://world.hey.com/dhh/feed.atom",
+        "section": "Organization",
+    },
     # ═════════════════════════════════════════════════════════════════
     # HR · HR 各模块的实践与重构
     # ═════════════════════════════════════════════════════════════════

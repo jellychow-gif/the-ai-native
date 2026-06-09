@@ -38,30 +38,48 @@ about how ORGANIZATIONS are being rebuilt around AI. The target audience is
 org-change leaders (CEOs, founders, HRDs).
 
 ═══════════════════════════════════════════════════════════════════
-RELEVANCE GATE — apply BEFORE scoring
+RELEVANCE GATE — apply BEFORE scoring · TIGHTENED v3.4
 ═══════════════════════════════════════════════════════════════════
 
-The article must be primarily about ONE OR MORE of:
-  ✓ Human capital, talent, HR functions in the AI era
-  ✓ Organizational design, workflow, role architecture, team structure
-  ✓ AI adoption INSIDE companies (operating-model change)
-  ✓ Hiring, performance, comp, learning, employee experience under AI
-  ✓ Leadership / culture / org strategy in the AI-native era
-  ✓ The future of work, jobs, careers in the AI era
-  ✓ Founder/CEO/HRD-level frameworks about building/running companies
+The CENTRAL topic of the article must be ONE of these specific buckets.
+Side mentions DO NOT count — the title and 80%+ of the body must be
+about this:
 
-The article must NOT be primarily about (even if high quality):
-  ✗ AI applied to a non-org domain as PRIMARY topic — biology, medicine,
-    drug discovery, materials, finance instruments, legal contracts, etc.
-  ✗ AI infrastructure / model architecture / chips / training (technical AI)
-  ✗ Generic tech industry news without an organizational / people angle
-  ✗ Specific company news (funding, IPO, acquisitions, partner announcements,
-    product launches) UNLESS the piece is about HOW the company is built
-  ✗ Investment thesis / market analysis pieces (unless about org/talent)
-  ✗ Consumer product reviews, app reviews
+  ✓ A specific company REORGANIZING people / teams / HR function for AI era
+    (e.g., "How Stripe redesigned its sales org around agents")
+  ✓ HR functional module reshaping (recruiting, comp, perf, L&D,
+    employee exp, org design, HRBP) under AI
+  ✓ HR Tech vendor product launches / strategy shifts (Workday, Rippling,
+    Lattice, Eightfold, Glint, Workhuman, Deel, etc.)
+  ✓ HR Tech industry analysis (consolidation, market shifts, vendor wars)
+  ✓ AI tool / Skill / Plugin that an HRD would actually use or assess
+  ✓ Frontier company's organizational transformation case study with
+    concrete data (headcount changes, role redesigns, comp shifts)
+  ✓ Future of work / jobs in the AI era, when grounded in actual labor
+    market data or specific company practice (NOT speculative)
 
-If the article fails the relevance gate, return scores {perspective: 0,
-practice: 0, frontier: 0} and a Chinese reasoning that starts with "OFF-TOPIC:".
+The article HARD FAILS if any of these are true:
+  ✗ Primary subject is an AI capability / model / research, even if
+    it mentions "new roles emerging" or "Formal Methods Engineer" etc.
+    (Carina Hong / Axiom Math = OFF-TOPIC. Formal verification = OFF-TOPIC.)
+  ✗ Primary subject is AI infrastructure / chips / training compute
+  ✗ Primary subject is consumer AI product (ChatGPT user growth, etc.)
+  ✗ Primary subject is AI policy / regulation / safety
+  ✗ Primary subject is investment / funding / valuation news (unless
+    explicitly about the people org being built)
+  ✗ Primary subject is a non-org domain — biology, medicine, finance
+    instruments, legal contracts, materials, etc.
+  ✗ Speculative essays about AGI / future of work WITHOUT concrete
+    company practice or labor data anchoring
+  ✗ Reflective / philosophical / coaching-style content without a
+    real company / framework / data anchor
+
+KEY TEST: Could a CHRO at Anthropic / Stripe / Workday hand this
+article to a member of their People team and say "this is exactly
+what we should be thinking about"? If NO — OFF-TOPIC.
+
+If the article fails the relevance gate, return scores {0, 0, 0} and
+a Chinese reasoning that starts with "OFF-TOPIC:" + brief reason.
 
 ═══════════════════════════════════════════════════════════════════
 SCORING DIMENSIONS — apply only if article passes the gate, 1-5 each

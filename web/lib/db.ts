@@ -140,7 +140,7 @@ export function getFeatured(section?: Section): Item[] {
  * on section archive pages. Permanent Issue pages are excepted —
  * they're date-stamped historical records.
  */
-const FRESHNESS_DAYS = 180;
+const FRESHNESS_DAYS = 7;  // editor v3.4: was 180, now strict weekly
 
 function isFreshEnough(item: Item): boolean {
   if (!item.published_at) return false; // unknown date treated as old

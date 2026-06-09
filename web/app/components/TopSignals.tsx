@@ -17,11 +17,12 @@ export function TopSignals() {
       <header className="topsignals-header">
         <div className="skills-eyebrow">Top Signals · This Week</div>
         <h2 className="topsignals-title">
-          5 things every AI-native operator should know this week
+          {top.length} {top.length === 1 ? "thing" : "things"} every AI-native operator should know this week
         </h2>
         <p className="topsignals-criteria">
           入选标准：AI Native 相关性硬过滤 · 三轴评分（范式视角 + 实践锚点 + 全球前沿）≥ 9 / 15 ·
-          发表于近 180 天 · 每源最多 1 条 · **至少 1 条来自 Organization 板块**（保障 CEO 一号位视角）。
+          发表于近 <strong>7 天</strong>（v3.4 收紧从 180 天）· 每源最多 1 条 ·
+          至少 1 条来自 Organization 板块。
         </p>
       </header>
 
