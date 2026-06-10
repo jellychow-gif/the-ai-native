@@ -59,7 +59,7 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-09T16:33:16.499069+00:00",
+  "generated_at": "2026-06-10T03:23:19.272894+00:00",
   "min_score_threshold": 9,
   "item_count": 115,
   "featured_count": 9,
@@ -758,7 +758,7 @@
       "frontier_score": 4,
       "score_reasoning": "GitHub COO深度探讨AI如何重塑开发工作流、团队协作、组织运作;微技能、WorkIQ等具体案例丰富",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 443,
@@ -816,7 +816,7 @@
       "frontier_score": 4,
       "score_reasoning": "工程组织如何重构以支持90%代理驱动的工作流;Oz平台展现智能代理与人类监督的协调新范式",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 320,
@@ -1048,7 +1048,7 @@
       "frontier_score": 4,
       "score_reasoning": "CHRO需在AI agents大规模部署前绘制人才能力图，从角色静态配置转向动态编排，重新定义人的价值。",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 113,
@@ -1193,7 +1193,7 @@
       "frontier_score": 4,
       "score_reasoning": "创业公司架构转向服务化的范式思考,多个真实案例和市场数据支撑,反映前沿组织模式演变",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 16,
@@ -1367,7 +1367,7 @@
       "frontier_score": 3,
       "score_reasoning": "员工自主学习AI超过正式培训，揭示人才战略危机，管理层需重新定义组织学习模式",
       "total_score": 11,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 651,
@@ -1396,7 +1396,7 @@
       "frontier_score": 3,
       "score_reasoning": "大型金融企业通过重新设计决策流程实现AI组织转型,人才优先战略深度示范。",
       "total_score": 11,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 625,
@@ -1599,7 +1599,7 @@
       "frontier_score": 3,
       "score_reasoning": "全球技术服务企业AI转型案例,深入阐述组织设计、工作流和领导力重塑,具体数据和多部门实践",
       "total_score": 11,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 471,
@@ -2295,7 +2295,7 @@
       "frontier_score": 3,
       "score_reasoning": "CEO战略思考:微软如何在AI时代重新定义核心能力与平台角色",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 490,
