@@ -59,9 +59,9 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-10T03:23:19.272894+00:00",
+  "generated_at": "2026-06-10T18:01:28.768352+00:00",
   "min_score_threshold": 9,
-  "item_count": 115,
+  "item_count": 116,
   "featured_count": 9,
   "items": [
     {
@@ -2962,6 +2962,35 @@
       "frontier_score": 3,
       "score_reasoning": "Stripe内部工具改变设计-PM协作模式,具体案例与数据支撑,但主要聚焦产品工具而非组织结构重塑",
       "total_score": 10,
+      "is_featured": false
+    },
+    {
+      "id": 715,
+      "url": "https://openai.com/index/lseg",
+      "title": "From data to decisions: how LSEG is scaling trusted AI",
+      "source": "OpenAI",
+      "source_type": "rss",
+      "section": "Organization",
+      "hr_module": null,
+      "sub_tag": "工作流重构规模化 / WORKFLOW REENGINEERING AT SCALE",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "伦敦证券交易所集团（LSEG）向全球 27,000 名员工部署 ChatGPT Enterprise 及 OpenAI API，数周内完成全员覆盖。产品发布周期从 3–6 个月压缩至 2 周，客户需求到生产部署周期缩短至约 4 周。AI 产品集团总监 Max Grigoryev 与 AI 集团负责人 Emily Prince 主导落地，同步构建 human-in-the-loop 审核机制与 Model Context Protocol 数据治理框架。",
+      "why_matters": "LSEG 案例的信号价值不在于工具部署本身，而在于它在强监管金融基础设施行业验证了\"治理先行、全员赋能\"可同步实现——这打破了合规行业\"AI 只能小范围试点\"的默认假设，对 HR 的规模化能力建设逻辑有直接冲击。",
+      "org_implication": "产品、工程、研究、运营四条线同步接入 AI，跨职能信息流加速，原有串行审批节点（合规/法务/网安）被前置嵌入而非取消。决策权未向上集中，而是通过治理框架下沉至一线团队——中层协调角色的存在理由被重新审视。",
+      "talent_implication": "分析师核心工作从\"初级信息合成\"转向\"AI 输出校准与洞察提炼\"；产品团队需具备快速原型验证能力而非传统瀑布式开发思维。高价值人才特征从\"流程执行精度\"转为\"工作流重设能力\"——Emily Prince 原话：最有影响力的人是在挑战自己的工作方式本身。",
+      "hr_operating_implication": "招聘 JD 须删除以\"流程合规执行\"为核心的年限要求，新增 AI 工作流编排熟练度与跨职能原型加速能力考核项。学习体系从\"工具培训\"升级为\"工作流重设工作坊\"，早期采用者应被识别为内部变革大使并纳入绩效激励。劳动力规划需重新评估分析师与研究岗位的人员配比基准。",
+      "prediction": "至 2027 年，金融基础设施行业头部机构将普遍将\"产品发布周期\"列为 HR 效能仪表盘的核心指标之一，AI 工作流重设能力成为分析师晋升至高级岗位的必要条件。",
+      "insight_class": "Capability Transformation",
+      "author": null,
+      "published_at": "2026-06-10T00:00:00+00:00",
+      "issue_number": null,
+      "perspective_score": 3,
+      "practice_score": 4,
+      "frontier_score": 2,
+      "score_reasoning": "LSEG工作流重设案例,产品周期缩减、员工赋能等具体数据,但属现阶段最佳实践而非前沿",
+      "total_score": 9,
       "is_featured": false
     },
     {
