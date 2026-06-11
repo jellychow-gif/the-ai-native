@@ -1,10 +1,26 @@
 {
   "issue": {
-    "number": "03",
-    "date_iso": "2026-06-05",
-    "date_label": "Jun 5, 2026"
+    "number": "04",
+    "date_iso": "2026-06-12",
+    "date_label": "Jun 12, 2026"
   },
   "issues": [
+    {
+      "number": 4,
+      "date_iso": "2026-06-12",
+      "date_label": "Jun 12, 2026",
+      "frozen_at": "2026-06-11 21:31:15",
+      "item_count": 7,
+      "item_ids": [
+        646,
+        638,
+        719,
+        697,
+        620,
+        783,
+        722
+      ]
+    },
     {
       "number": 3,
       "date_iso": "2026-06-05",
@@ -58,8 +74,8 @@
       ]
     }
   ],
-  "current_issue_number": 3,
-  "generated_at": "2026-06-11T18:19:40.936002+00:00",
+  "current_issue_number": 4,
+  "generated_at": "2026-06-11T21:31:15.286582+00:00",
   "min_score_threshold": 9,
   "item_count": 41,
   "featured_count": 7,
@@ -85,7 +101,7 @@
       "insight_class": "AI-Human Collaboration",
       "author": "Jason Lemkin",
       "published_at": "2026-06-06T14:10:06+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -114,7 +130,7 @@
       "insight_class": "Org Architecture",
       "author": "Jason Lemkin",
       "published_at": "2026-06-06T09:21:35+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -259,7 +275,7 @@
       "insight_class": "Organizational Scaling",
       "author": null,
       "published_at": "2026-06-11T00:00:00+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 3,
@@ -288,7 +304,7 @@
       "insight_class": "Decision Design",
       "author": "Jill Barth",
       "published_at": "2026-06-09T12:30:40+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 4,
@@ -375,7 +391,7 @@
       "insight_class": "AI Governance",
       "author": "Karim Al Ansari",
       "published_at": "2026-06-05T11:45:43+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 4,
@@ -636,7 +652,7 @@
       "insight_class": "Organizational Scaling",
       "author": "Josephine Tan",
       "published_at": "2026-06-11T12:15:29+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -897,7 +913,7 @@
       "insight_class": "AI-Human Collaboration",
       "author": null,
       "published_at": "2026-06-10T00:00:00+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
