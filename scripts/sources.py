@@ -77,32 +77,12 @@ SOURCES: list[dict] = [
         "type": "substack",
         "url": "https://www.notboring.co/feed",
         "section": "Organization",
-    },
-    {
-        "name": "Vercel Blog",
-        "type": "rss",
-        "url": "https://vercel.com/atom",
-        "section": "Organization",
-    },
-    {
+    },    {
         "name": "Stanford HAI",
         "type": "rss",
         "url": "https://hai.stanford.edu/news/rss.xml",
         "section": "Organization",
-    },
-    {
-        "name": "Latent Space",
-        "type": "substack",
-        "url": "https://www.latent.space/feed",
-        "section": "Organization",
-    },
-    {
-        "name": "SemiAnalysis",
-        "type": "substack",
-        "url": "https://semianalysis.com/feed",
-        "section": "Organization",
-    },
-    {
+    },    {
         "name": "Shreyas Doshi",
         "type": "rss",
         "url": "https://www.shreyasdoshi.com/feed",
@@ -119,14 +99,7 @@ SOURCES: list[dict] = [
         "type": "substack",
         "url": "https://reidhoffman.org/feed/",
         "section": "Organization",
-    },
-    {
-        "name": "Duolingo Blog",
-        "type": "rss",
-        "url": "https://blog.duolingo.com/feed/",
-        "section": "Organization",
-    },
-    {
+    },    {
         "name": "McKinsey Insights",
         "type": "rss",
         "url": "https://www.mckinsey.com/insights/rss",
@@ -139,20 +112,7 @@ SOURCES: list[dict] = [
         "type": "rss",
         "url": "https://blog.gregbrockman.com/rss/",
         "section": "Organization",
-    },
-    {
-        "name": "Andrej Karpathy",
-        "type": "rss",
-        "url": "https://karpathy.github.io/feed.xml",
-        "section": "Organization",
-    },
-    {
-        "name": "Google DeepMind",
-        "type": "rss",
-        "url": "https://www.deepmind.com/blog/rss.xml",
-        "section": "Organization",
-    },
-    # Individual blogs — high-leverage editor / founder voices (June 2026)
+    },    # Individual blogs — high-leverage editor / founder voices (June 2026)
     {
         "name": "Patty McCord",
         "type": "rss",
@@ -270,30 +230,6 @@ SOURCES: list[dict] = [
         "name": "SaaStr",
         "type": "rss",
         "url": "https://www.saastr.com/feed/",
-        "section": "Industry",
-    },
-    {
-        "name": "Stripe Blog",
-        "type": "rss",
-        "url": "https://stripe.com/blog/feed.rss",
-        "section": "Industry",
-    },
-    {
-        "name": "GitHub Blog",
-        "type": "rss",
-        "url": "https://github.blog/feed/",
-        "section": "Industry",
-    },
-    {
-        "name": "Databricks Blog",
-        "type": "rss",
-        "url": "https://www.databricks.com/blog/feed.xml",
-        "section": "Industry",
-    },
-    {
-        "name": "HubSpot Marketing",
-        "type": "rss",
-        "url": "https://blog.hubspot.com/marketing/rss.xml",
         "section": "Industry",
     },
 ]
