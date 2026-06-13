@@ -57,7 +57,7 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-12T16:53:23.455352+00:00",
+  "generated_at": "2026-06-13T12:22:49.464284+00:00",
   "min_score_threshold": 9,
   "item_count": 41,
   "featured_count": 6,
@@ -147,7 +147,7 @@
       "frontier_score": 4,
       "score_reasoning": "Vercel组织重构案例:96%营销、93%支持由AI代理处理,SDR团队重新部署,具体数据和架构深度",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 629,
@@ -263,7 +263,7 @@
       "frontier_score": 4,
       "score_reasoning": "AI时代CS组织根本重组：从CSM到FDE转变，多家快速成长公司实战数据支撑",
       "total_score": 12,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 697,
