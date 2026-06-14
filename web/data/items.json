@@ -57,7 +57,7 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-13T12:22:49.464284+00:00",
+  "generated_at": "2026-06-14T12:42:25.192339+00:00",
   "min_score_threshold": 9,
   "item_count": 41,
   "featured_count": 6,
@@ -118,7 +118,7 @@
       "frontier_score": 4,
       "score_reasoning": "SaaStr具体案例展示营销组织如何被AI代理重构,从20+员工降至3人;CEO视角阐述AI与人类并行决策模式,深度数据支撑。",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 638,
@@ -872,7 +872,7 @@
       "frontier_score": 3,
       "score_reasoning": "大规模员工AI使用数据揭示管理开销问题,对HR重组和工作设计有直接指导意义",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 783,
