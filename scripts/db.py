@@ -64,6 +64,12 @@ MIGRATIONS = [
     # freeze. Once set, the binding is permanent so issue archives don't
     # mutate over time. NULL = not yet bound (still in candidate pool).
     "ALTER TABLE items ADD COLUMN issue_number INTEGER",
+    # ANO Framework 8 dimensions (June 2026 — replaces insight_class as
+    # the canonical taxonomy. insight_class column kept for backward compat
+    # but ano_dimension is the displayed field.)
+    "ALTER TABLE items ADD COLUMN ano_dimension TEXT",
+    # Source-tier S/A/B/C — internal ranking only, never externally shown.
+    "ALTER TABLE items ADD COLUMN source_tier TEXT",
 ]
 
 # Issue metadata table — tracks each weekly issue's masthead info.
@@ -102,7 +108,7 @@ def upsert_item(conn: sqlite3.Connection, item: dict) -> bool:
     """Insert a new item. Returns True if inserted, False if URL already exists."""
     cols = [
         "url", "title", "source", "source_type", "section",
-        "author", "published_at", "raw_excerpt",
+        "author", "published_at", "raw_excerpt", "source_tier",
     ]
     values = [item.get(c) for c in cols]
     placeholders = ",".join("?" * len(cols))

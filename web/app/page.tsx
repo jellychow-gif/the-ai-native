@@ -41,18 +41,17 @@ export default async function Home() {
         </div>
         <h1 className="title">The AI Native</h1>
         <div className="observatory-line">
-          AI Native Organization Observatory
+          全球 CEO、CHRO 和组织负责人研究 AI Native Company 的第一站
         </div>
         <p className="subtitle-en">
-          Tracking how frontier companies redesign talent, coordination, and
-          management in the age of intelligent systems.
+          The first stop for global CEOs, CHROs, and org leaders researching
+          AI Native Companies — signals, insights, frameworks, actions.
         </p>
         <p className="subtitle-zh">
-          追踪前沿公司如何在智能系统时代重塑人才、协作与管理。
+          每周追踪 AI Native 公司的领导力、组织设计、人才、绩效、知识、Agent 团队、决策与运行系统。
         </p>
         <p className="masthead-support">
-          Built for leaders designing organizations where humans and intelligent
-          systems work as one operating model.
+          Built on the ANO Framework — 8 dimensions of an AI Native Organization.
         </p>
         <StatStrip />
         {currentIssue && (

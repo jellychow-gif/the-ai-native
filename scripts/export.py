@@ -75,7 +75,7 @@ def main() -> None:
               id, url, title, source, source_type, section, hr_module,
               sub_tag, hook, summary, implication,
               what_happened, why_matters, org_implication, talent_implication,
-              hr_operating_implication, prediction, insight_class,
+              hr_operating_implication, prediction, ano_dimension,
               author, published_at, issue_number,
               perspective_score, practice_score, frontier_score, score_reasoning,
               COALESCE(perspective_score, 0)

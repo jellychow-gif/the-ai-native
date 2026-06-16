@@ -74,6 +74,7 @@ def fetch_rss(source: dict) -> list[dict]:
             "source": source["name"],
             "source_type": source["type"],
             "section": source["section"],
+            "source_tier": source.get("tier"),
         })
     log.info(f"  parsed {len(items)} entries")
     return items
@@ -119,6 +120,7 @@ def fetch_html_rippling(source: dict) -> list[dict]:
             "source": source["name"],
             "source_type": source["type"],
             "section": source["section"],
+            "source_tier": source.get("tier"),
         })
         if len(items) >= MAX_PER_SOURCE:
             break
@@ -183,6 +185,7 @@ def fetch_html_anthropic(source: dict) -> list[dict]:
             "source": source["name"],
             "source_type": source["type"],
             "section": source["section"],
+            "source_tier": source.get("tier"),
         })
         if len(items) >= MAX_PER_SOURCE:
             break
@@ -240,6 +243,7 @@ def fetch_html_hbr(source: dict) -> list[dict]:
             "source": source["name"],
             "source_type": source["type"],
             "section": source["section"],
+            "source_tier": source.get("tier"),
         })
         if len(items) >= MAX_PER_SOURCE:
             break

@@ -40,24 +40,25 @@ log = logging.getLogger("summarize")
 
 MIN_SCORE_TOTAL = 9
 
-INSIGHT_CLASSES = [
-    "Org Architecture",
-    "Talent Density",
-    "AI-Human Collaboration",
-    "Management Systems",
-    "Decision Design",
-    "Performance Systems",
-    "Capability Transformation",
-    "Labor Economics",
-    "Organizational Scaling",
-    "AI Governance",
+# ANO Framework — 8 dimensions of AI Native Organization (the product's IP)
+# Replaces the earlier 10-category insight_class taxonomy. Cleaner mapping,
+# closer to editor's mental model of the audience's framework needs.
+ANO_DIMENSIONS = [
+    "Leadership",          # AI 如何改变领导方式
+    "Organization Design", # AI 是否减少管理层级 / 组织架构如何变
+    "Talent",              # 企业需要什么样的人才
+    "Performance",         # AI 如何改变绩效管理
+    "Knowledge",           # 知识如何沉淀与调用
+    "Agent Workforce",     # Agent 如何成为团队成员
+    "Decision Making",     # AI 如何参与决策
+    "Operating System",    # 企业如何运行 AI First 工作流
 ]
 
 SYSTEM_PROMPT = f"""\
-You write structured intelligence for "The AI Native — Organization Observatory",
-a Bloomberg-Terminal-grade platform tracking how frontier companies redesign
-talent, coordination, and management in the AI era. Audience: CHROs, founders,
-HRDs at Anthropic / OpenAI / ServiceNow / Workday / Block / Tesla / Duolingo / YC.
+You write structured intelligence for "The AI Native — AI Native Organization
+Weekly", the first stop for global CEOs, CHROs and org leaders researching
+AI Native Companies. Audience: founders / CEOs / CHROs / HRDs at Anthropic /
+OpenAI / ServiceNow / Workday / Block / Tesla / Duolingo / YC.
 
 VOICE: Sharp, declarative, dense. Treat each entry as an analyst note an
 informed peer would slack to their VP-People. No hedging, no "本文讨论了",
@@ -88,8 +89,24 @@ For each article, call submit_intel with these fields:
 7. prediction — 30-60 字 Chinese. Forward-looking inference: "By 20XX, ...".
    One concrete prediction, falsifiable in principle.
 
-8. insight_class — One of: {", ".join(INSIGHT_CLASSES)}.
-   Pick the SINGLE category most central to the piece.
+8. ano_dimension — Map this signal to ONE of 8 ANO Framework dimensions:
+   - "Leadership": AI changing how executives lead / CEO time allocation /
+     leadership behavior under AI augmentation
+   - "Organization Design": org chart shifts / layer compression / role
+     merging / team-size reset / reporting structure
+   - "Talent": new role archetypes / hiring criteria / skills demanded /
+     who you bring in (not how you evaluate them)
+   - "Performance": calibration / OKRs / reviews / comp linkage /
+     AI-augmented evaluation
+   - "Knowledge": institutional memory / documentation / AI-queryable
+     knowledge bases / skills artifacts
+   - "Agent Workforce": agents joining the team / agent-human collaboration
+     / agent ownership of work
+   - "Decision Making": AI in boardroom / governance / decision-support
+     systems / AI augmenting judgment
+   - "Operating System": workflows / processes / infrastructure for
+     AI-first work (Notion's spec-driven dev, Stripe's Protodash, etc.)
+   Pick the SINGLE dimension MOST central to the piece.
 
 — FEW-SHOT EXAMPLE —
 
@@ -104,7 +121,7 @@ Output:
   talent_implication: "新增 DRRI（Directly Responsible Resourcing Individual）和 AI Founder 角色；传统 manager 岗压缩。员工核心能力从'执行'转为'编排上下文 + 校准 AI 输出'。"
   hr_operating_implication: "招聘 JD 重写：删除年限要求，加 token 工作流熟练度、AI 编排能力、自驱密度三项。绩效评估从产出物转为 token-per-outcome 杠杆率。HR 预算条目新增 token quota。"
   prediction: "至 2028 年，YC 主流公司将正式发布 AI Founder 岗位职级，DRRI 进入 HR ATS 标准选项。"
-  insight_class: "Org Architecture"
+  ano_dimension: "Organization Design"
 
 Now produce structured intelligence for the article below.
 """
@@ -143,16 +160,16 @@ TOOLS = [{
                 "type": "string",
                 "description": "30-60 字 Chinese forward-looking inference",
             },
-            "insight_class": {
+            "ano_dimension": {
                 "type": "string",
-                "enum": INSIGHT_CLASSES,
-                "description": "One of 10 insight categories",
+                "enum": ANO_DIMENSIONS,
+                "description": "One of 8 ANO Framework dimensions",
             },
         },
         "required": [
             "sub_tag", "what_happened", "why_matters",
             "org_implication", "talent_implication", "hr_operating_implication",
-            "prediction", "insight_class",
+            "prediction", "ano_dimension",
         ],
     },
 }]
@@ -214,7 +231,7 @@ def run() -> tuple[int, int]:
                 skipped += 1
                 continue
 
-            log.info(f"  ✓ class: {result['insight_class']} | tag: {result['sub_tag']}")
+            log.info(f"  ✓ ANO: {result['ano_dimension']} | tag: {result['sub_tag']}")
 
             conn.execute(
                 """
@@ -226,7 +243,7 @@ def run() -> tuple[int, int]:
                   talent_implication = ?,
                   hr_operating_implication = ?,
                   prediction = ?,
-                  insight_class = ?,
+                  ano_dimension = ?,
                   processed_at = datetime('now')
                 WHERE id = ?
                 """,
@@ -238,7 +255,7 @@ def run() -> tuple[int, int]:
                     result["talent_implication"],
                     result["hr_operating_implication"],
                     result["prediction"],
-                    result["insight_class"],
+                    result["ano_dimension"],
                     r["id"],
                 ),
             )

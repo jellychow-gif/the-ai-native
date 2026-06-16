@@ -893,9 +893,13 @@ a {
   margin-bottom: 24px;
 }
 
-/* Insight classification chip — small pill */
+/* ANO Framework dimension chip — small pill with bilingual label.
+   English half is the canonical dimension name; Chinese gloss follows
+   after a thin divider for non-English readers. */
 .insight-chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 4px 10px;
   font-size: 10px;
   font-weight: 500;
@@ -905,6 +909,15 @@ a {
   background: rgba(139, 92, 246, 0.08); /* fallback purple-tinted */
   border: 1px solid var(--accent);
   border-radius: 999px;
+}
+
+.insight-chip-zh {
+  display: inline-block;
+  padding-left: 6px;
+  border-left: 1px solid currentColor;
+  opacity: 0.65;
+  letter-spacing: 0.08em;
+  text-transform: none;
 }
 
 /* Each section's chip background uses its accent in low alpha */

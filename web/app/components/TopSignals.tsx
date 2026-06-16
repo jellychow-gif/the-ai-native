@@ -1,4 +1,4 @@
-import { getTopSignals } from "@/lib/db";
+import { getTopSignals, ANO_DIMENSION_LABELS } from "@/lib/db";
 
 /**
  * Homepage hero per PRD v2 §4 — compact top-N signals digest.
@@ -35,8 +35,11 @@ export function TopSignals() {
 
             <div className="topsignals-body">
               <div className="topsignals-meta">
-                {item.insight_class && (
-                  <span className="insight-chip">{item.insight_class}</span>
+                {item.ano_dimension && (
+                  <span className="insight-chip" title={ANO_DIMENSION_LABELS[item.ano_dimension]}>
+                    {item.ano_dimension}
+                    <span className="insight-chip-zh">{ANO_DIMENSION_LABELS[item.ano_dimension]}</span>
+                  </span>
                 )}
                 <span className="topsignals-source">{item.source}</span>
               </div>

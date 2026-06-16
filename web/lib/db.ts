@@ -31,18 +31,30 @@ export const HR_MODULE_ORDER: HRModule[] = [
   "招聘",
 ];
 
-// 10-category insight classification (PRD v2 §3)
-export type InsightClass =
-  | "Org Architecture"
-  | "Talent Density"
-  | "AI-Human Collaboration"
-  | "Management Systems"
-  | "Decision Design"
-  | "Performance Systems"
-  | "Capability Transformation"
-  | "Labor Economics"
-  | "Organizational Scaling"
-  | "AI Governance";
+// ANO Framework — 8 dimensions of an AI Native Organization (the
+// product's proprietary lens, June 2026). Replaces the earlier
+// 10-category insight_class taxonomy.
+export type AnoDimension =
+  | "Leadership"
+  | "Organization Design"
+  | "Talent"
+  | "Performance"
+  | "Knowledge"
+  | "Agent Workforce"
+  | "Decision Making"
+  | "Operating System";
+
+/** Chinese gloss displayed alongside each ANO dimension on cards. */
+export const ANO_DIMENSION_LABELS: Record<AnoDimension, string> = {
+  Leadership: "领导力",
+  "Organization Design": "组织设计",
+  Talent: "人才",
+  Performance: "绩效",
+  Knowledge: "知识",
+  "Agent Workforce": "Agent 团队",
+  "Decision Making": "决策",
+  "Operating System": "运行系统",
+};
 
 export type Item = {
   id: number;
@@ -64,7 +76,7 @@ export type Item = {
   talent_implication: string | null;
   hr_operating_implication: string | null;
   prediction: string | null;
-  insight_class: InsightClass | null;
+  ano_dimension: AnoDimension | null;
   author: string | null;
   published_at: string | null;
   issue_number: number | null;

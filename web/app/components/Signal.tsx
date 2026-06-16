@@ -1,10 +1,10 @@
-import { type Item } from "@/lib/db";
+import { type Item, ANO_DIMENSION_LABELS } from "@/lib/db";
 
 /**
  * Structured-intelligence card per PRD v2 §3.
  *
  * Layout (top → bottom):
- *   [insight class chip]
+ *   [ANO dimension chip]
  *   Title (clickable)
  *   source · date
  *   ───────────────────────
@@ -26,8 +26,11 @@ export function Signal({ item }: { item: Item }) {
   return (
     <article className="signal">
       <div className="signal-top-meta">
-        {item.insight_class && (
-          <span className="insight-chip">{item.insight_class}</span>
+        {item.ano_dimension && (
+          <span className="insight-chip" title={ANO_DIMENSION_LABELS[item.ano_dimension]}>
+            {item.ano_dimension}
+            <span className="insight-chip-zh">{ANO_DIMENSION_LABELS[item.ano_dimension]}</span>
+          </span>
         )}
         {item.sub_tag && <span className="signal-tag">{item.sub_tag}</span>}
       </div>
