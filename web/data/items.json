@@ -57,10 +57,10 @@
     }
   ],
   "current_issue_number": 3,
-  "generated_at": "2026-06-16T20:10:07.867337+00:00",
+  "generated_at": "2026-06-17T17:52:18.211255+00:00",
   "min_score_threshold": 9,
-  "item_count": 42,
-  "featured_count": 5,
+  "item_count": 43,
+  "featured_count": 4,
   "items": [
     {
       "id": 646,
@@ -234,7 +234,7 @@
       "frontier_score": 4,
       "score_reasoning": "多家AI独角兽重构CS职能的深度对标,从职能重命名、活动关联度、交付周期到工具堆栈自建,有具体数据和财务成果支撑",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 697,
@@ -585,6 +585,35 @@
       "is_featured": false
     },
     {
+      "id": 885,
+      "url": "https://hrexecutive.com/metas-zuckerberg-weve-made-mistakes-in-ai-transformation/",
+      "title": "Meta’s Zuckerberg: ‘We’ve made mistakes’ in AI transformation",
+      "source": "HR Executive",
+      "source_type": "rss",
+      "section": "HR",
+      "hr_module": "组织设计",
+      "sub_tag": "组织重构代价 / AI RESTRUCTURING COST",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Meta CEO 扎克伯格在内部备忘录中承认 AI 转型中\"犯了错误\"，并警告\"几乎肯定还会再犯\"。2026 年春，Meta 裁员约 8,000 人、内部转岗 7,000 人，其中约 1/3 裁员来自中层管理层。7,000 名转岗员工被调配至 AI 项目团队。Forrester 预测今年约半数被裁岗位将被重新招聘，但通常在离岸地区或以更低薪酬录用。全行业层面，2026 年初以来已有约 12.8 万名科技从业者遭裁员，其中 77% 发生在美国公司。",
+      "why_matters": "Meta 案例是 AI 驱动裁员\"激进重构-快速回调\"周期的最高规格样本。扎克伯格公开认错，意味着即便资源最充裕的 AI 原生公司，也无法用速度换掉组织韧性。中层管理层的知识损耗正在成为可量化的战略风险，而非仅是成本节约项。",
+      "org_implication": "大规模压缩中层后，Meta 被迫重新投资团队建设并降低管理幅度——这证明\"去层级化\"并非线性可逆操作。Robert Half 调研显示 40% 的雇主因 AI 无法复制离职员工的情境知识与机构记忆而重新招聘，中层管理层作为知识路由节点的组织价值被低估。决策链条拉长，而非压缩。",
+      "talent_implication": "新兴关键角色：AI 项目转岗员工（需具备跨域上下文迁移能力）、中层知识持有者（不可被 AI 替代的隐性知识载体）。\"回旋镖员工\"（Boomerang Talent）成为正式人才供给策略。企业需重新定义中层 manager 的核心价值主张：从执行监督转向 AI 输出校准与机构记忆锚定。",
+      "hr_operating_implication": "HR 操作模型须同步建立\"裁员-转岗-回聘\"三轨并行的劳动力规划体系，而非单向裁员流程。离职知识审计（offboarding knowledge audit）应成为标准动作，防止机构记忆随人员流失。针对中层管理层须建立专项保留策略与知识外化机制（文档化、AI 可查询化）。绩效框架需区分\"AI 可替代任务\"与\"情境判断任务\"，为后者设立差异化薪酬锚点，防止低价回聘造成能力降级。",
+      "prediction": "至 2027 年，超过 60% 完成大规模 AI 裁员的科技公司将正式设立\"知识保留官\"（Chief Knowledge Retention Officer）或同等职能，中层管理层净裁员比例将从高点回调至 15% 以下。",
+      "ano_dimension": "Organization Design",
+      "author": "Jen Colletta",
+      "published_at": "2026-06-17T12:00:43+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 4,
+      "frontier_score": 3,
+      "score_reasoning": "Meta案例+具体数据(8K裁员、7K转岗、40%经理层)，展现AI时代组织重构的真实挑战与反思",
+      "total_score": 11,
+      "is_featured": true
+    },
+    {
       "id": 753,
       "url": "https://hrexecutive.com/how-hr-leaders-can-turn-the-silver-tsunami-into-a-talent-advantage/",
       "title": "How HR leaders can turn the ‘silver tsunami’ into a talent advantage",
@@ -843,7 +872,7 @@
       "frontier_score": 3,
       "score_reasoning": "Disney、Meta等实际案例+HR治理框架,但框架通用性强,非paradigm级",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 836,
