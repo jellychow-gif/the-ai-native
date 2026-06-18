@@ -1,10 +1,23 @@
 {
   "issue": {
-    "number": "03",
-    "date_iso": "2026-06-05",
-    "date_label": "Jun 5, 2026"
+    "number": "04",
+    "date_iso": "2026-06-19",
+    "date_label": "Jun 19, 2026"
   },
   "issues": [
+    {
+      "number": 4,
+      "date_iso": "2026-06-19",
+      "date_label": "Jun 19, 2026",
+      "frozen_at": "2026-06-18 21:29:40",
+      "item_count": 4,
+      "item_ids": [
+        885,
+        751,
+        842,
+        836
+      ]
+    },
     {
       "number": 3,
       "date_iso": "2026-06-05",
@@ -56,8 +69,8 @@
       ]
     }
   ],
-  "current_issue_number": 3,
-  "generated_at": "2026-06-17T17:52:18.211255+00:00",
+  "current_issue_number": 4,
+  "generated_at": "2026-06-18T21:29:40.430930+00:00",
   "min_score_threshold": 9,
   "item_count": 43,
   "featured_count": 4,
@@ -605,7 +618,7 @@
       "ano_dimension": "Organization Design",
       "author": "Jen Colletta",
       "published_at": "2026-06-17T12:00:43+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -640,7 +653,7 @@
       "frontier_score": 3,
       "score_reasoning": "Cohesity CPO具体阐述组织重设:技能优先、分布式信任、跨代协作、文化系统化",
       "total_score": 11,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 751,
@@ -663,7 +676,7 @@
       "ano_dimension": "Organization Design",
       "author": "Jill Barth",
       "published_at": "2026-06-12T11:30:42+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 3,
@@ -866,13 +879,13 @@
       "ano_dimension": "Performance",
       "author": "Jill Barth",
       "published_at": "2026-06-16T12:00:07+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
       "score_reasoning": "Disney、Meta等实际案例+HR治理框架,但框架通用性强,非paradigm级",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 836,
@@ -895,7 +908,7 @@
       "ano_dimension": "Agent Workforce",
       "author": "Jason Lemkin",
       "published_at": "2026-06-15T09:38:03+00:00",
-      "issue_number": null,
+      "issue_number": 4,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
