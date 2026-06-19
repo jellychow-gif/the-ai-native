@@ -70,9 +70,9 @@
     }
   ],
   "current_issue_number": 4,
-  "generated_at": "2026-06-18T21:29:40.430930+00:00",
+  "generated_at": "2026-06-19T16:43:25.240466+00:00",
   "min_score_threshold": 9,
-  "item_count": 43,
+  "item_count": 44,
   "featured_count": 4,
   "items": [
     {
@@ -682,7 +682,7 @@
       "frontier_score": 3,
       "score_reasoning": "L&D去中心化重组趋势，多企业数据支撑，CEO视角分析组织权力转移。",
       "total_score": 11,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 522,
@@ -857,6 +857,35 @@
       "score_reasoning": "Bolt CEO明确阐述HR部门消除、People Ops重组的组织改造逻辑与执行细节",
       "total_score": 11,
       "is_featured": false
+    },
+    {
+      "id": 917,
+      "url": "https://hrexecutive.com/the-chros-next-ai-challenge-closing-the-confidence-gap/",
+      "title": "The CHRO’s next AI challenge: Closing the confidence gap",
+      "source": "HR Executive",
+      "source_type": "rss",
+      "section": "HR",
+      "hr_module": "员工体验",
+      "sub_tag": "AI信心差距 / CONFIDENCE GAP",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "McKinsey 2024数据显示72%企业已在至少一个业务功能中使用AI，但BCG同期发现仅4%企业实现跨职能AI能力落地。SnapLogic 2025研究揭示经理层AI自信度达70%，非经理层仅43%。Slingshot 2026报告显示34%员工担心使用AI被视为\"走捷径\"，27%担心被评判。Gartner指出仅7%企业为员工提供明确的AI节省时间使用指引。核心矛盾：能力培训持续推进，自我信任却同步下滑。",
+      "why_matters": "AI投资回报的天花板不是技术采购预算，也不是培训完成率——是员工在AI参与决策时对自身判断力的信任程度。这一\"信心差距\"是组织AI ROI无法兑现的真实瓶颈，且当前绝大多数CHRO的测量体系对此完全盲视。",
+      "org_implication": "组织需将AI推广架构从\"培训驱动\"切换为\"工作重设计驱动\"：先厘清哪些决策由AI增强、哪些保留人类判断权，再配套学习路径。中层管理者成为文化传导节点——Perceptyx数据显示77%员工认为经理已准备好领导AI变革，但仅64%经理在主动帮助团队适应，这13%的落差是当前最高杠杆干预点。",
+      "talent_implication": "IT/工程师类岗位的核心能力定义须重写：从\"掌握答案\"转为\"判断AI输出是否正确、安全、符合场景\"。MIT Sloan EPOCH框架中的\"判断力\"成为最稀缺能力项。新增高价值能力标签：AI输出评估、情境校准、公开学习（learning in public）。资深工程师的职业焦虑需通过重新定义\"深度专业性\"来解锁，而非仅靠鼓励。",
+      "hr_operating_implication": "立即停用\"AI证书完成率\"作为主要KPI，转向三项信心指标：①实验频率（团队是否主动探索新用例）；②开放度指数（跨层级分享AI使用的自在程度）；③日常采用率（AI融入日常工作流的员工占比）。绩效评估中移除AI使用的\"通过/失败\"框架，改为成长导向评估。领导力发展项目须加入\"公开展示AI中间过程\"的行为示范模块。超过5小时实操培训的员工AI常态使用率达79%，低于5小时仅67%——培训设计须以实操深度而非覆盖广度为导向。",
+      "prediction": "至2027年，头部企业CHRO将把\"员工AI自信度指数\"纳入董事会季度汇报的标准人才健康指标，替代现行的AI license激活率，成为衡量组织AI就绪度的首要proxy。",
+      "ano_dimension": "Performance",
+      "author": "Sridhar Krishnamurthy",
+      "published_at": "2026-06-18T11:45:34+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 3,
+      "frontier_score": 3,
+      "score_reasoning": "CHRO视角的AI信心差文化转型论,具体案例单一但框架有启发力",
+      "total_score": 10,
+      "is_featured": true
     },
     {
       "id": 842,
