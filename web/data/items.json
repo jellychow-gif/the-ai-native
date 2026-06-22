@@ -70,9 +70,9 @@
     }
   ],
   "current_issue_number": 4,
-  "generated_at": "2026-06-21T12:52:49.296827+00:00",
+  "generated_at": "2026-06-22T19:23:59.482855+00:00",
   "min_score_threshold": 9,
-  "item_count": 45,
+  "item_count": 48,
   "featured_count": 5,
   "items": [
     {
@@ -248,6 +248,35 @@
       "score_reasoning": "创业公司用$257/月AI agents替代营销+CS职能,明确重组岗位,有具体数据和实施路径。",
       "total_score": 13,
       "is_featured": false
+    },
+    {
+      "id": 958,
+      "url": "https://www.lennysnewsletter.com/p/building-the-most-ai-pilled-engineering",
+      "title": "Building the most AI-pilled engineering team in the world | Fiona Fung (Manager of the Claude Code and Cowork Teams)",
+      "source": "Lenny's Newsletter",
+      "source_type": "substack",
+      "section": "HR",
+      "hr_module": "组织设计",
+      "sub_tag": "AI原生工程管理 / AI-NATIVE ENG MGMT",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Anthropic Claude Code & Cowork 团队负责人 Fiona Fung（前微软 Visual Studio/TypeScript、Meta Facebook Marketplace 创始人、Instagram 基础设施负责人）在 Lenny's Newsletter 披露：Anthropic 工程师当前每季度代码产出是 2021-2025 年均值的 8 倍。她详述了 Claude\"例程（routines）\"如何重塑管理行为，并预判 AI 将率先颠覆的下一批角色。",
+      "why_matters": "8 倍代码产出不是效率优化，是组织产能的量级重构。当单工程师产能跃迁，团队规模逻辑、Span of Control、HC 规划模型全部失效——这是 CHRO 必须正视的结构性信号，而非 PM 的技术新闻。",
+      "org_implication": "8 倍产能意味着同等输出所需 HC 压缩至原来的 1/8 理论上限。Fiona 直接管理 Boris Cherny 及全部工程+PM 团队，管理层级趋于扁平。Claude routines 承接了部分上下文传递与协调工作，中层 EM 的\"信息路由\"职能被系统性替代，Span of Control 可大幅拉宽。",
+      "talent_implication": "工程师核心能力从\"写代码\"迁移至\"编排 AI 工作流 + 校准输出质量\"；新增\"AI Routine 设计者\"非正式角色，负责将管理 SOP 封装为可复用 Claude 例程。25 年以上工程经验的 Fiona 本人成为\"人机协作范式建立者\"的原型——招聘标准须纳入 AI 工作流熟练度。",
+      "hr_operating_implication": "HC 规划模型须从\"功能点/人头\"切换至\"产出杠杆率/人头\"，基准年份（2021-2025）数据作废。JD 新增强制项：Claude/AI 工作流实操经验、例程设计与管理能力。绩效校准引入代码产出速率与质量双维度，OKR 吞吐量目标须同步上调 3-5 倍以匹配新产能基线。L&D 最高优先级转为\"AI 编排实战训练营\"，替代传统编程语言培训。",
+      "prediction": "至 2027 年，头部 AI 原生公司将正式将\"AI 例程架构师（AI Routine Architect）\"列入工程序列职级，工程团队 Headcount 规划文件将标配\"AI 杠杆系数\"作为法定输入变量。",
+      "ano_dimension": "Operating System",
+      "author": "Lenny Rachitsky",
+      "published_at": "2026-06-21T12:31:43+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 4,
+      "frontier_score": 4,
+      "score_reasoning": "Anthropic工程团队8倍代码产出、Claude例程改变管理模式,具体组织实践案例",
+      "total_score": 12,
+      "is_featured": true
     },
     {
       "id": 739,
@@ -627,6 +656,35 @@
       "is_featured": false
     },
     {
+      "id": 954,
+      "url": "https://www.saastr.com/ripplings-ai-bet-the-data-graph-is-the-moat/",
+      "title": "Rippling’s AI Bet: The Data Graph Is the Moat",
+      "source": "SaaStr",
+      "source_type": "rss",
+      "section": "Industry",
+      "hr_module": null,
+      "sub_tag": "数据图即护城河 / DATA GRAPH AS MOAT",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Rippling AI 产品负责人 Luke Prokopiak 在 SaaStr 演示中披露：Rippling 将旗下 25+ 产品（薪酬、HR、招聘、绩效、IT、支出等）统一构建于单一员工数据图之上，超过 100 万个可查询字段，无任何收购拼接。演示分三阶段推进：洞察（生成高潜人才报告，发现 71% 顶级员工司龄 ≥6 年）、行动（自然语言完成晋升至 IC7/Staff SE）、主动工作流（设置月度 HRBP 推送）。产品上线约两个月，已产生 400+ 条 LinkedIn 用户反馈。",
+      "why_matters": "Rippling 用十年拒绝收购的\"无聊决策\"，在 AI 时代兑现为结构性护城河。竞争对手数据层碎片化，AI 只能做报表；Rippling 的统一图让 AI 可信地执行写操作。这是\"系统性记录\"向\"系统性智能\"跃迁的第一个有真实规模验证的 HR SaaS 案例。",
+      "org_implication": "HRBP 角色从\"数据搜集者\"转为\"AI 工作流触发者\"——系统每月主动推送高绩效成长报告，HRBP 无需手动提数。中层管理者对人员决策的信息垄断被打破：IC 级别、晋升包、留任风险列表在同一 workspace 内对授权角色实时可见，决策权下沉速度加快。",
+      "talent_implication": "HR 体系内新增\"AI 工作流架构师\"需求：能定义触发条件、权限规则与强类型数据映射，而非仅操作 UI。传统 HR Analyst 若无法从\"取数\"升级为\"编排推送逻辑\"，将被 Rippling AI 的主动工作流直接替代。Staff/IC7 级别的工程师晋升决策链路压缩，审批协作能力要求上升。",
+      "hr_operating_implication": "HR 运营模型需做三项重写：① 招聘 JD 中 HR 数据分析师须加\"数据权限设计\"与\"强类型字段建模\"能力要求；② 绩效校准流程引入 AI 生成的留任风险名单（如：顶级绩效 + 高潜力 + 无晋升 + 多任经理 = 高危）作为 calibration 前置输入；③ HRBP KPI 从\"完成多少次数据拉取\"转为\"触发多少条主动工作流并驱动行动\"，配套激励结构随之调整。",
+      "prediction": "至 2027 年，HR SaaS 市场将出现明显的\"数据图溢价\"：具备统一员工图架构的平台（Rippling 模式）在企业客户 ARR 续约率上将比拼接式竞品高出 15 个百分点以上，迫使 Workday、SAP SuccessFactors 加速数据层整合或架构重写。",
+      "ano_dimension": "Operating System",
+      "author": "Jason Lemkin",
+      "published_at": "2026-06-22T09:51:16+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 4,
+      "frontier_score": 3,
+      "score_reasoning": "Rippling数据图架构重塑HR AI应用,展现系统化实践;多具体案例但非首创洞见",
+      "total_score": 11,
+      "is_featured": true
+    },
+    {
       "id": 885,
       "url": "https://hrexecutive.com/metas-zuckerberg-weve-made-mistakes-in-ai-transformation/",
       "title": "Meta’s Zuckerberg: ‘We’ve made mistakes’ in AI transformation",
@@ -888,6 +946,35 @@
       "is_featured": false
     },
     {
+      "id": 971,
+      "url": "https://www.hrdive.com/spons/the-hidden-cost-of-bigger-buying-committees-how-ld-can-keep-personalizati/822518/",
+      "title": "The hidden cost of bigger buying committees: How L&D can keep personalization on track",
+      "source": "HR Dive",
+      "source_type": "rss",
+      "section": "Industry",
+      "hr_module": null,
+      "sub_tag": "采购委员会膨胀 / BUYING COMMITTEE BLOAT",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Go1 对950名IT、财务、法务高管的调查显示：65%认为AI提升了对L&D能力的信任，但仅17%认为L&D/HR应主导AI学习工具的采购决策。85%的跨职能负责人表示比两三年前更深度介入学习工具选型；80%的IT负责人发现学习或AI工具在未经审批下已被采用，70%的法务/合规负责人遭遇同样情况。采购权已从L&D实质性转移至IT、法务、财务、合规的多部门委员会。",
+      "why_matters": "AI学习平台将采购性质从\"课程质量判断\"升级为数据安全、系统集成、合规风险的多维决策——这不是流程繁琐，而是组织决策权的结构性重组。L&D在信任度上升的同时失去决策权，是HR职能地位困境的典型截面。",
+      "org_implication": "学习工具采购已成事实上的跨职能治理议题：48%的组织为通过审批而简化培训内容，45%将合规培训全球标准化而非本地化，40%只提供单一语言版本。委员会结构性地偏向最保守方案，个性化学习成为第一个被牺牲的功能。L&D需从内容生产者重新定位为跨职能协调者。",
+      "talent_implication": "L&D负责人的核心能力必须扩展至\"商业论证构建\"与\"跨职能利益对齐\"——懂得向IT讲数据安全、向法务讲合规边界、向财务讲ROI。纯粹的教学设计师正在失去席位，具备平台整合视角与风险语言能力的\"L&D业务架构师\"角色需求上升。",
+      "hr_operating_implication": "HR需将\"争取采购委员会支持\"纳入L&D项目立项的标准流程，而非视为最终障碍。具体动作：①在立项阶段同步拉入IT/法务/财务；②建立AI学习工具的统一风险评估模板，减少各方重复审查摩擦；③72%的受访者将减少工具数量列为高优先级，平台整合型方案比新增工具更易获批——预算策略应向consolidation倾斜。",
+      "prediction": "至2027年，头部企业将正式设立\"学习技术治理委员会\"常设机构，L&D负责人将作为共同召集人与CIO、CLO并列，个性化学习SLA将成为平台采购合同标准条款。",
+      "ano_dimension": "Decision Making",
+      "author": null,
+      "published_at": "2026-06-22T05:00:00-04:00",
+      "issue_number": null,
+      "perspective_score": 3,
+      "practice_score": 4,
+      "frontier_score": 3,
+      "score_reasoning": "L&D职能内部决策权下沉,多部门采购委会制约个性化培训——HR管理者必知的组织重构现象",
+      "total_score": 10,
+      "is_featured": false
+    },
+    {
       "id": 917,
       "url": "https://hrexecutive.com/the-chros-next-ai-challenge-closing-the-confidence-gap/",
       "title": "The CHRO’s next AI challenge: Closing the confidence gap",
@@ -943,7 +1030,7 @@
       "frontier_score": 3,
       "score_reasoning": "Disney、Meta等实际案例+HR治理框架,但框架通用性强,非paradigm级",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 836,
@@ -972,7 +1059,7 @@
       "frontier_score": 3,
       "score_reasoning": "销售组织AI改造案例,展示代理模式如何重新设计销售角色,但仍属厂商主张,缺乏独立验证",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 754,
