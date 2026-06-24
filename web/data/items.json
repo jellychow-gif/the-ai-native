@@ -70,9 +70,9 @@
     }
   ],
   "current_issue_number": 4,
-  "generated_at": "2026-06-23T16:37:53.423442+00:00",
+  "generated_at": "2026-06-24T14:22:17.856329+00:00",
   "min_score_threshold": 9,
-  "item_count": 50,
+  "item_count": 51,
   "featured_count": 5,
   "items": [
     {
@@ -711,7 +711,7 @@
       "frontier_score": 3,
       "score_reasoning": "Meta案例+具体数据(8K裁员、7K转岗、40%经理层)，展现AI时代组织重构的真实挑战与反思",
       "total_score": 11,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 753,
@@ -944,6 +944,35 @@
       "score_reasoning": "Bolt CEO明确阐述HR部门消除、People Ops重组的组织改造逻辑与执行细节",
       "total_score": 11,
       "is_featured": false
+    },
+    {
+      "id": 1002,
+      "url": "https://hrexecutive.com/the-chros-impossible-mandate-move-fast-on-ai-slow-down-on-risk/",
+      "title": "The CHRO’s impossible mandate: Move fast on AI, slow down on risk",
+      "source": "HR Executive",
+      "source_type": "rss",
+      "section": "HR",
+      "hr_module": "HRBP",
+      "sub_tag": "CHRO双重授权困境 / DUAL MANDATE TENSION",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "HR Executive 撰文指出，当前 CHRO 同时承受两股对立压力：ELT 要求压缩成本、全面嵌入 AI、向董事会交付效率叙事；法务与合规要求放慢节奏、完成偏见测试、建立治理文档。与此同时，HR 技术供应商格局正在被平台整合与 AI 原生挑战者双向压缩——薪酬、招聘、学习、绩效、技能等全品类点解决方案同步承压，买方行为已从完整评估转向短周期试点或默认接受平台内置能力。",
+      "why_matters": "这不是 CHRO 的执行力问题，而是组织治理结构性缺口的显性化。AI 采购节奏与合规验证周期之间的错位，正在把风险决策个人化压到 CHRO 身上。谁能把这个张力制度化，谁就掌握了 AI 时代 HR 的真实战略杠杆。",
+      "org_implication": "HR 组织内部必须新设\"AI 采购决策委员会\"或类似的跨职能审议机制，将 ELT、法务、CISO、CHRO 的决策权边界显式化。否则 CHRO 将持续作为张力的个人缓冲器，而非系统性解决者。点解决方案 vs 平台能力的续约判断，需从单次谈判升级为持续性战略评估流程。",
+      "talent_implication": "CHRO 办公室需引入\"HR 技术战略师\"角色，具备平台路线图评估、监管暴露量化、AI 供应商尽调三项能力；现有 HR Tech 负责人如仅擅长实施而非战略评估，将面临能力断层。全球复杂合规环境下（如 22 国制造商案例），点解决方案的合规深度仍是人才配置的关键变量。",
+      "hr_operating_implication": "HR 运营模型须引入两项新决策协议：①每次点解决方案续约前强制执行\"平台追赶速度评估\"，输入变量为监管暴露度 × 平台 roadmap 可信度；②建立 AI 供应商治理台账，记录偏见测试结果、数据处理条款、合规文档状态。绩效与预算分配上，重度监管行业 CHRO 应获得更高的\"减速授权\"，轻监管行业 CHRO 则需在绩效 OKR 中承担更明确的 AI 加速指标。",
+      "prediction": "至 2027 年，头部企业将普遍设立独立的\"HR AI 治理委员会\"，CHRO 不再独自承担 ELT 加速与合规制约的张力，该委员会成为 AI 采购决策的正式制度出口。",
+      "ano_dimension": "Decision Making",
+      "author": "George LaRocque",
+      "published_at": "2026-06-24T12:30:25+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 3,
+      "frontier_score": 3,
+      "score_reasoning": "CHRO战略视角:ELT加速vs合规制约的张力与供应商重塑",
+      "total_score": 10,
+      "is_featured": true
     },
     {
       "id": 985,
