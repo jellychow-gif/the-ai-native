@@ -70,11 +70,40 @@
     }
   ],
   "current_issue_number": 4,
-  "generated_at": "2026-06-24T14:22:17.856329+00:00",
+  "generated_at": "2026-06-25T09:16:42.828660+00:00",
   "min_score_threshold": 9,
-  "item_count": 51,
+  "item_count": 52,
   "featured_count": 5,
   "items": [
+    {
+      "id": 1016,
+      "url": "https://www.saastr.com/paypal-put-agentforce-on-8000-leads-a-month-no-human-was-going-to-call-conversions-jumped-50/",
+      "title": "PayPal Put Agentforce on 8,000 Leads a Month No Human Was Going to Call. Conversions Jumped 50%.",
+      "source": "SaaStr",
+      "source_type": "rss",
+      "section": "Industry",
+      "hr_module": null,
+      "sub_tag": "智能体销售团队 / AI SDR AT SCALE",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "PayPal 在 SaaStr AI 2026 披露：部署 Salesforce Agentforce AI SDR 仅 14 周，已覆盖 200 名销售代表的全组织。针对每月 8,000 条人工无法跟进的线索，执行 10 步触达节奏，会议转化率较纯人工提升 50%。PayPal 北美中市场销售负责人 Eitan Saban 确认，智能体定位为\"会议预订机器\"，人类销售接手已被充分暖热的线索。",
+      "why_matters": "这不是 AI 替代销售的叙事，而是首个在 200 人规模团队验证的\"智能体喂料 + 人类成交\"分工闭环。50% 转化提升源于消灭了\"线索黑洞\"而非提升个人销售能力，揭示组织设计本身才是杠杆点。",
+      "org_implication": "销售漏斗顶部从\"人力覆盖\"切换为\"智能体覆盖\"，中低意向线索的决策权实质上已交给 Agent。人类代表的工作起点后移至漏斗中段，团队结构从\"广覆盖 + 浅转化\"重组为\"窄接触 + 深成单\"，100 人规模的 SDR 梯队存在性受到直接冲击。",
+      "talent_implication": "SDR 初级岗位（L1-L2 外呼、线索筛选）需求萎缩；新增\"Agent Trainer / 智能体调教师\"职能——需具备销售话术设计、提示词迭代、Gong 转录数据分析三项交叉能力。AE（客户主管）的核心价值回归至高语境对话与关系成单，其准入门槛实质性抬高。",
+      "hr_operating_implication": "招聘 JD 需删除\"冷呼叫量\"KPI，改以\"智能体-人工接力成单率\"作为 AE 核心绩效指标。新增 Agent Onboarding Owner 岗，负责持续调优 Agent 话术与上下文注入（类比 Salesforce 内部\"virtual mom\"角色）。劳动力规划须将 Agent 覆盖线索量纳入 headcount 替代计算，按月滚动更新 ROI 模型；Gong 转录数据正式纳入绩效评估数据源。",
+      "prediction": "至 2027 年底，SaaS 行业 200 人以上销售团队中，超过 60% 将把 SDR 初级岗编制冻结或削减，同步新增\"Agent Operations Manager\"职级作为正式 HC 纳入销售组织架构。",
+      "ano_dimension": "Agent Workforce",
+      "author": "Jason Lemkin",
+      "published_at": "2026-06-24T14:10:35+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 5,
+      "frontier_score": 4,
+      "score_reasoning": "PayPal案例展示AI SDR重组销售组织的具体实践：200人团队、8000条线索月度转化率提升50%，揭示团队-智能体协作范式转移。",
+      "total_score": 13,
+      "is_featured": true
+    },
     {
       "id": 941,
       "url": "https://www.saastr.com/snowflakes-cmo-runs-marketing-for-700-people-she-starts-her-day-by-talking-to-her-data-not-a-dashboard/",
@@ -682,7 +711,7 @@
       "frontier_score": 3,
       "score_reasoning": "Rippling数据图架构重塑HR AI应用,展现系统化实践;多具体案例但非首创洞见",
       "total_score": 11,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 885,
