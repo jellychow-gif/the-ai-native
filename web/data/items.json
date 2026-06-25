@@ -1,10 +1,24 @@
 {
   "issue": {
-    "number": "04",
-    "date_iso": "2026-06-19",
-    "date_label": "Jun 19, 2026"
+    "number": "05",
+    "date_iso": "2026-06-26",
+    "date_label": "Jun 26, 2026"
   },
   "issues": [
+    {
+      "number": 5,
+      "date_iso": "2026-06-26",
+      "date_label": "Jun 26, 2026",
+      "frozen_at": "2026-06-25 19:31:12",
+      "item_count": 5,
+      "item_ids": [
+        1016,
+        941,
+        958,
+        1002,
+        985
+      ]
+    },
     {
       "number": 4,
       "date_iso": "2026-06-19",
@@ -69,8 +83,8 @@
       ]
     }
   ],
-  "current_issue_number": 4,
-  "generated_at": "2026-06-25T09:16:42.828660+00:00",
+  "current_issue_number": 5,
+  "generated_at": "2026-06-25T19:31:12.776327+00:00",
   "min_score_threshold": 9,
   "item_count": 52,
   "featured_count": 5,
@@ -96,7 +110,7 @@
       "ano_dimension": "Agent Workforce",
       "author": "Jason Lemkin",
       "published_at": "2026-06-24T14:10:35+00:00",
-      "issue_number": null,
+      "issue_number": 5,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -125,7 +139,7 @@
       "ano_dimension": "Operating System",
       "author": "Jason Lemkin",
       "published_at": "2026-06-19T22:29:41+00:00",
-      "issue_number": null,
+      "issue_number": 5,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -299,7 +313,7 @@
       "ano_dimension": "Operating System",
       "author": "Lenny Rachitsky",
       "published_at": "2026-06-21T12:31:43+00:00",
-      "issue_number": null,
+      "issue_number": 5,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 4,
@@ -995,7 +1009,7 @@
       "ano_dimension": "Decision Making",
       "author": "George LaRocque",
       "published_at": "2026-06-24T12:30:25+00:00",
-      "issue_number": null,
+      "issue_number": 5,
       "perspective_score": 4,
       "practice_score": 3,
       "frontier_score": 3,
@@ -1024,7 +1038,7 @@
       "ano_dimension": "Performance",
       "author": "Jen Colletta",
       "published_at": "2026-06-23T11:30:34+00:00",
-      "issue_number": null,
+      "issue_number": 5,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
