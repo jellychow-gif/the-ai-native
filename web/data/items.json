@@ -1,10 +1,20 @@
 {
   "issue": {
-    "number": "05",
-    "date_iso": "2026-06-26",
-    "date_label": "Jun 26, 2026"
+    "number": "06",
+    "date_iso": "2026-07-02",
+    "date_label": "Jul 2, 2026"
   },
   "issues": [
+    {
+      "number": 6,
+      "date_iso": "2026-07-02",
+      "date_label": "Jul 2, 2026",
+      "frozen_at": "2026-07-02 15:10:18",
+      "item_count": 1,
+      "item_ids": [
+        657
+      ]
+    },
     {
       "number": 5,
       "date_iso": "2026-06-26",
@@ -83,11 +93,11 @@
       ]
     }
   ],
-  "current_issue_number": 5,
-  "generated_at": "2026-06-25T19:31:12.776327+00:00",
+  "current_issue_number": 6,
+  "generated_at": "2026-07-02T15:10:18.524269+00:00",
   "min_score_threshold": 9,
   "item_count": 52,
-  "featured_count": 5,
+  "featured_count": 0,
   "items": [
     {
       "id": 1016,
@@ -116,7 +126,7 @@
       "frontier_score": 4,
       "score_reasoning": "PayPal案例展示AI SDR重组销售组织的具体实践：200人团队、8000条线索月度转化率提升50%，揭示团队-智能体协作范式转移。",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 941,
@@ -145,7 +155,7 @@
       "frontier_score": 4,
       "score_reasoning": "具体企业营销组织重构案例,700人规模,成本/机会成本降30%,数据驱动决策变革。",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 646,
@@ -319,7 +329,7 @@
       "frontier_score": 4,
       "score_reasoning": "Anthropic工程团队8倍代码产出、Claude例程改变管理模式,具体组织实践案例",
       "total_score": 12,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 739,
@@ -1015,7 +1025,7 @@
       "frontier_score": 3,
       "score_reasoning": "CHRO战略视角:ELT加速vs合规制约的张力与供应商重塑",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 985,
@@ -1044,7 +1054,7 @@
       "frontier_score": 3,
       "score_reasoning": "State Farm补偿结构重组案例,展现AI驱动下的角色价值重估与薪酬体系变革",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 983,
@@ -1415,7 +1425,7 @@
       "ano_dimension": "Organization Design",
       "author": null,
       "published_at": null,
-      "issue_number": null,
+      "issue_number": 6,
       "perspective_score": 4,
       "practice_score": 2,
       "frontier_score": 3,
