@@ -72,4 +72,11 @@ jobs:
         # This mirrors the working manual deploy invocation.
         run: |
           cd web
-          npx -y vercel --yes --prod --token=$VERCEL_TOKEN
+          # Capture the deployment URL, then point the canonical domain at it.
+          # Historically --prod aliased to an auto-generated *.vercel.app URL and
+          # left the-ai-native.vercel.app frozen on an old build (2026-07 incident).
+          DEPLOY_URL=$(npx -y vercel --yes --prod --token=$VERCEL_TOKEN | tail -n1 | tr -d '[:space:]')
+          echo "Deployed: $DEPLOY_URL"
+          npx -y vercel alias set "$DEPLOY_URL" the-ai-native.vercel.app --token=$VERCEL_TOKEN \
+            && echo "Aliased the-ai-native.vercel.app -> $DEPLOY_URL" \
+            || echo "::warning::alias to the-ai-native.vercel.app failed — domain may be held by another project; reassign in Vercel dashboard"
