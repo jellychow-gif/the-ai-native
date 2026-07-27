@@ -76,15 +76,22 @@ def main() -> None:
               sub_tag, hook, summary, implication,
               what_happened, why_matters, org_implication, talent_implication,
               hr_operating_implication, prediction, ano_dimension,
+              long_form_zh, preview_hook,
               author, published_at, issue_number,
               perspective_score, practice_score, frontier_score, score_reasoning,
               COALESCE(perspective_score, 0)
                 + COALESCE(practice_score, 0)
                 + COALESCE(frontier_score, 0) AS total_score
             FROM items
-            WHERE perspective_score IS NOT NULL
-              AND (perspective_score + practice_score + frontier_score) >= ?
-              AND (summary IS NOT NULL OR what_happened IS NOT NULL)
+            -- Issue-bound items are permanent snapshots and always export,
+            -- regardless of their current score. Everything else must clear
+            -- the candidate gate (scored + relevant + summarized).
+            WHERE issue_number IS NOT NULL
+               OR (
+                 perspective_score IS NOT NULL
+                 AND (perspective_score + practice_score + frontier_score) >= ?
+                 AND (summary IS NOT NULL OR what_happened IS NOT NULL)
+               )
             ORDER BY
               CASE WHEN what_happened IS NOT NULL THEN 0 ELSE 1 END,
               total_score DESC, id DESC

@@ -1146,3 +1146,157 @@ a {
   color: var(--text-tertiary);
   line-height: 1.6;
 }
+
+/* ═════════════════════════════════════════════════════════════════
+   v5 LaterCast pivot — long-form article page + compact card
+   ═════════════════════════════════════════════════════════════════ */
+
+/* Compact card mode (has long_form_zh) */
+.signal--card {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.signal--card .signal-title {
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.25;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.signal--card .signal-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.signal--card .signal-title a:hover {
+  opacity: 0.65;
+}
+
+.signal-hook {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 12px 0;
+}
+
+.signal-readmore {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+}
+.signal-readmore:hover {
+  text-decoration: underline;
+}
+
+/* Article page */
+.article-container {
+  max-width: 720px;
+  padding-top: 40px;
+}
+
+.article-header {
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  text-decoration: none;
+}
+.article-back:hover {
+  color: var(--accent);
+}
+
+.article-eyebrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.article-title {
+  font-family: "Newsreader", "Noto Serif SC", Georgia, serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px 0;
+  color: var(--text-primary);
+}
+
+.article-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  font-weight: 300;
+}
+
+.article-source {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Body — the long-form narrative itself */
+.article-body {
+  font-family: "Noto Serif SC", "Newsreader", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-primary);
+}
+
+.article-body p {
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+.article-h2 {
+  font-family: "Newsreader", "Noto Serif SC", Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 44px 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.article-pullquote {
+  margin: 32px 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: rgba(139, 92, 246, 0.04);
+  font-family: "Noto Serif SC", "Newsreader", Georgia, serif;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.article-footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.article-source-line {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-weight: 300;
+}
+
+.article-source-line a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-tertiary);
+}
+.article-source-line a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}

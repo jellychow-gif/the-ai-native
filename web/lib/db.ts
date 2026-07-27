@@ -77,6 +77,11 @@ export type Item = {
   hr_operating_implication: string | null;
   prediction: string | null;
   ano_dimension: AnoDimension | null;
+  // v5 LaterCast-style long-form Chinese narrative (2500-3500 chars).
+  // When present, it's the primary reader surface — cards link to the
+  // full article page. `preview_hook` is a one-line teaser for the card.
+  long_form_zh: string | null;
+  preview_hook: string | null;
   author: string | null;
   published_at: string | null;
   issue_number: number | null;
@@ -144,6 +149,24 @@ export function getAllItems(): Item[] {
 export function getFeatured(section?: Section): Item[] {
   const items = loadPayload().items.filter((i) => i.is_featured);
   return section ? items.filter((i) => i.section === section) : items;
+}
+
+/** Items bound to the current (latest) published Issue. */
+function currentIssueItems(): Item[] {
+  const issue = getCurrentIssue();
+  return issue ? getIssueItems(issue.number) : [];
+}
+
+/**
+ * Homepage section block: prefer the fresh weekly featured set, but fall
+ * back to the current Issue's items for this section when no fresh set
+ * exists — so the homepage is never empty just because the pipeline
+ * hasn't run this week. Issue pages remain the permanent record.
+ */
+export function getHomeSignals(section: Section): Item[] {
+  const featured = getFeatured(section);
+  if (featured.length > 0) return featured;
+  return currentIssueItems().filter((i) => i.section === section);
 }
 
 /**
@@ -222,9 +245,16 @@ export function getIssueItems(issueNumber: number): Item[] {
  *      structural guarantee for CEO/founder一号位 audience (PRD v3, June 2026)
  */
 export function getTopSignals(n: number = 5): Item[] {
-  const items = loadPayload().items.filter(
+  let items = loadPayload().items.filter(
     (i) => i.is_featured && i.what_happened,
   );
+
+  // Fallback: when the weekly pipeline hasn't produced a fresh featured set
+  // (e.g. no items in the 7-day window), surface the current published
+  // Issue's items instead so the hero is never empty.
+  if (items.length === 0) {
+    items = currentIssueItems().filter((i) => i.what_happened);
+  }
 
   // Pass 1 — try to seat at least 1 Organization item (highest-scored, fresh,
   // featured). If found, lock it in before diversity/score-ranking the rest.

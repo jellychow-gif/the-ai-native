@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   getCurrentIssue,
-  getFeatured,
+  getHomeSignals,
   getBySection,
   loadPayload,
   SECTION_META,
@@ -40,19 +40,10 @@ export default async function Home() {
           Latest update · {todayLabel} BJT
         </div>
         <h1 className="title">The AI Native</h1>
-        <div className="observatory-line">
-          全球 CEO、CHRO 和组织负责人研究 AI Native Company 的第一站
-        </div>
         <p className="subtitle-en">
-          The first stop for global CEOs, CHROs, and org leaders researching
-          AI Native Companies — signals, insights, frameworks, actions.
+          Weekly signals on how organizations are being rebuilt around AI.
         </p>
-        <p className="subtitle-zh">
-          每周追踪 AI Native 公司的领导力、组织设计、人才、绩效、知识、Agent 团队、决策与运行系统。
-        </p>
-        <p className="masthead-support">
-          Built on the ANO Framework — 8 dimensions of an AI Native Organization.
-        </p>
+        <p className="subtitle-zh">每周筛选全球 AI 原生组织的前沿信号。</p>
         <StatStrip />
         {currentIssue && (
           <Link
@@ -72,7 +63,7 @@ export default async function Home() {
           Issue NN pages still hold permanent weekly snapshots. */}
       {SECTION_ORDER.map((key) => {
         const meta = SECTION_META[key];
-        const featured = getFeatured(key);
+        const featured = getHomeSignals(key);
         const totalInSection = getBySection(key).length;
         const path = `/${key.toLowerCase()}`;
 

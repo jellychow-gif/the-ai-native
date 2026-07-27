@@ -21,7 +21,7 @@ export function TopSignals() {
         </h2>
         <p className="topsignals-criteria">
           入选标准：AI Native 相关性硬过滤 · 三轴评分（范式视角 + 实践锚点 + 全球前沿）≥ 9 / 15 ·
-          发表于近 <strong>7 天</strong>（v3.4 收紧从 180 天）· 每源最多 1 条 ·
+          本周最新信号优先，取自<strong>当期 Issue</strong> · 每源最多 1 条 ·
           至少 1 条来自 Organization 板块。
         </p>
       </header>

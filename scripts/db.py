@@ -70,6 +70,15 @@ MIGRATIONS = [
     "ALTER TABLE items ADD COLUMN ano_dimension TEXT",
     # Source-tier S/A/B/C — internal ranking only, never externally shown.
     "ALTER TABLE items ADD COLUMN source_tier TEXT",
+    # Long-form Chinese narrative summary (June 2026 — LaterCast-style).
+    # 2500-3500 char narrative reading, replaces card-based structured
+    # intel as the primary reader-facing content. The 6-field fields
+    # (what_happened/why_matters/etc.) are kept for backward compat and
+    # for the compact TopSignals hero.
+    "ALTER TABLE items ADD COLUMN long_form_zh TEXT",
+    # Homepage/list preview hook (~40-60 chars). One-line teaser
+    # extracted from the long-form to sit under the card title.
+    "ALTER TABLE items ADD COLUMN preview_hook TEXT",
 ]
 
 # Issue metadata table — tracks each weekly issue's masthead info.
