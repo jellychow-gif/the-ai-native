@@ -35,6 +35,12 @@ SOURCES: list[dict] = [
     {"name": "Stratechery",            "type": "rss",            "url": "https://stratechery.com/feed/",                      "section": "Organization", "tier": "A"},
     {"name": "Sarah Tavel",            "type": "substack",       "url": "https://sarahtavel.substack.com/feed",               "section": "Organization", "tier": "A"},
     {"name": "Dwarkesh Podcast",       "type": "rss",            "url": "https://www.dwarkesh.com/feed",                      "section": "Organization", "tier": "A"},
+    # Text-rich podcast/newsletter feeds (verified full content:encoded, not audio-only
+    # show notes). True audio podcasts (No Priors, Acquired) publish <500 chars of notes
+    # and need the transcript pipeline before they're usable — deferred.
+    {"name": "Latent Space",           "type": "substack",       "url": "https://www.latent.space/feed",                      "section": "Organization", "tier": "A"},
+    {"name": "One Useful Thing",       "type": "substack",       "url": "https://www.oneusefulthing.org/feed",                "section": "Organization", "tier": "A"},
+    {"name": "Exponential View",       "type": "substack",       "url": "https://www.exponentialview.co/feed",                "section": "Organization", "tier": "B"},
 
     # ═════════════════════════════════════════════════════════════════
     # B TIER — 25% weight target
