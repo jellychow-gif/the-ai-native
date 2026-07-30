@@ -45,8 +45,11 @@ def _load_issues(conn) -> list[dict]:
     for issue in issues:
         item_ids = [
             r["id"] for r in conn.execute(
+                # Freshest-first within an issue: a frontier-signals site must
+                # never lead with a months-old piece just because it scored high.
                 "SELECT id FROM items WHERE issue_number = ? "
-                "ORDER BY (perspective_score+practice_score+frontier_score) DESC, id DESC",
+                "ORDER BY published_at DESC, "
+                "(perspective_score+practice_score+frontier_score) DESC, id DESC",
                 (issue["number"],),
             ).fetchall()
         ]
