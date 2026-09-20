@@ -72,10 +72,14 @@ jobs:
         # This mirrors the working manual deploy invocation.
         run: |
           cd web
-          # Capture the deployment URL, then point the canonical domain at it.
-          # Historically --prod aliased to an auto-generated *.vercel.app URL and
-          # left the-ai-native.vercel.app frozen on an old build (2026-07 incident).
-          DEPLOY_URL=$(npx -y vercel --yes --prod --token=$VERCEL_TOKEN | tail -n1 | tr -d '[:space:]')
+          # Build LOCALLY in the runner and upload the prebuilt output. Vercel's
+          # remote build (plain `vercel --prod`) began hanging at "Building…"
+          # until the job timed out (2026-08/09 incident), freezing the live
+          # site. `vercel build` runs here (fast, reliable); `deploy --prebuilt`
+          # just uploads. Then alias the canonical domain to the new deployment.
+          npx -y vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          npx -y vercel build --prod --token=$VERCEL_TOKEN
+          DEPLOY_URL=$(npx -y vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN | tail -n1 | tr -d '[:space:]')
           echo "Deployed: $DEPLOY_URL"
           npx -y vercel alias set "$DEPLOY_URL" the-ai-native.vercel.app --token=$VERCEL_TOKEN \
             && echo "Aliased the-ai-native.vercel.app -> $DEPLOY_URL" \
