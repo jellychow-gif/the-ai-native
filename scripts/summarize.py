@@ -20,10 +20,15 @@ Idempotent: skips items already having what_happened (the canonical v2 field).
 from __future__ import annotations
 
 import logging
+import os
 import time
 
 from db import get_conn
 from llm import extract_json, WRITER_MODEL
+
+# Per-run cap — long-form on the writer model is the slow step (~20-40s each),
+# so bound it hard. Highest-scoring, newest items first. Override with SUMMARIZE_MAX.
+MAX_PER_RUN = int(os.environ.get("SUMMARIZE_MAX", "15"))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -251,11 +256,15 @@ def run() -> tuple[int, int]:
             "WHERE what_happened IS NULL "             # v2 canonical gate
             "AND perspective_score IS NOT NULL "
             "AND (perspective_score + practice_score + frontier_score) >= ? "
-            "ORDER BY (perspective_score + practice_score + frontier_score) DESC, id",
-            (MIN_SCORE_TOTAL,),
+            "ORDER BY (perspective_score + practice_score + frontier_score) DESC, id DESC "
+            "LIMIT ?",
+            (MIN_SCORE_TOTAL, MAX_PER_RUN),
         ).fetchall()
 
-        log.info(f"Found {len(rows)} items needing v2 intelligence (threshold {MIN_SCORE_TOTAL}).")
+        log.info(
+            f"Summarizing up to {MAX_PER_RUN} (threshold {MIN_SCORE_TOTAL}); "
+            f"{len(rows)} queued this run."
+        )
 
         for r in rows:
             content = r["body"] or r["raw_excerpt"] or ""

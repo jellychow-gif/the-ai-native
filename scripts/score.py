@@ -13,10 +13,14 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import time
 
 from db import get_conn
 from llm import extract_json, FAST_MODEL
+
+# Per-run cap (newest first) so a backlog can't blow the CI timeout.
+MAX_PER_RUN = int(os.environ.get("SCORE_MAX", "80"))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -176,10 +180,11 @@ def run() -> tuple[int, int, int]:
             "SELECT id, url, title, source, section, body, raw_excerpt "
             "FROM items "
             "WHERE perspective_score IS NULL "
-            "ORDER BY id"
+            "ORDER BY id DESC LIMIT ?",
+            (MAX_PER_RUN,),
         ).fetchall()
 
-        log.info(f"Found {len(rows)} items needing scoring.")
+        log.info(f"Scoring up to {MAX_PER_RUN} newest; {len(rows)} queued this run.")
 
         for r in rows:
             content = r["body"] or r["raw_excerpt"] or ""

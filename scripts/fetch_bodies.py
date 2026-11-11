@@ -5,12 +5,18 @@ Idempotent: only fetches items where body IS NULL. Run after scrape.py.
 from __future__ import annotations
 
 import logging
+import os
 import time
 
 import requests
 import trafilatura
 
 from db import get_conn
+
+# Per-run cap so one run always finishes under the CI timeout. Newest items are
+# fetched first; a months-old backlog drains over subsequent daily runs instead
+# of blowing a single run's budget. Override with env BODIES_MAX.
+MAX_PER_RUN = int(os.environ.get("BODIES_MAX", "40"))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -26,7 +32,7 @@ HTTP_HEADERS = {
         "Chrome/130.0.0.0 Safari/537.36"
     ),
 }
-TIMEOUT = 25
+TIMEOUT = 15  # bound worst-case per-request time so a run can't stall on slow hosts
 DELAY_SEC = 1.0  # polite delay between requests
 
 
@@ -58,10 +64,11 @@ def run() -> tuple[int, int]:
         rows = conn.execute(
             "SELECT id, url, title, source FROM items "
             "WHERE body IS NULL OR length(body) < 200 "
-            "ORDER BY id"
+            "ORDER BY id DESC LIMIT ?",
+            (MAX_PER_RUN,),
         ).fetchall()
 
-        log.info(f"Found {len(rows)} items needing body fetch.")
+        log.info(f"Fetching up to {MAX_PER_RUN} newest; {len(rows)} queued this run.")
 
         for r in rows:
             log.info(f"[{r['id']:>3}] {r['source']}: {r['title'][:70]}")
