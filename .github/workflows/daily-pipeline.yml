@@ -2,8 +2,8 @@ name: Daily scrape + score + summarize + publish
 
 # Runs every day at 06:00 UTC (14:00 Beijing).
 # Full pipeline: scrape → fetch_bodies → score → summarize → classify_hr →
-# export → commit → Vercel deploy. Issue freezing remains weekly (Thursdays
-# via weekly-draft.yml).
+# export → commit → (GitHub Pages deploy via pages-deploy.yml). Issue freezing
+# remains weekly (Thursdays via weekly-draft.yml).
 on:
   schedule:
     - cron: "0 6 * * *"
@@ -40,21 +40,21 @@ jobs:
         run: python scripts/fetch_bodies.py
         working-directory: ${{ github.workspace }}
 
-      - name: Score new items with Claude Haiku
+      - name: Score new items with DeepSeek
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/score.py
         working-directory: ${{ github.workspace }}
 
-      - name: Summarize new high-scoring items with Claude Sonnet
+      - name: Summarize new high-scoring items with DeepSeek
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/summarize.py
         working-directory: ${{ github.workspace }}
 
       - name: Classify new HR items into sub-modules
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/classify_hr.py
         working-directory: ${{ github.workspace }}
 
@@ -74,11 +74,8 @@ jobs:
             git push
           fi
 
-      - name: Deploy to Vercel production
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          cd web
-          npx -y vercel --yes --prod --token=$VERCEL_TOKEN
+      # Publishing is handled by pages-deploy.yml, which runs on workflow_run
+      # after this pipeline completes (a bot push with GITHUB_TOKEN can't trigger
+      # the Pages workflow's own `on: push`, so we chain it via workflow_run).
+      # The old Vercel deploy step was removed — Vercel's build hung for months
+      # and froze the site; the project now serves from GitHub Pages.

@@ -11,14 +11,8 @@ from __future__ import annotations
 import logging
 import time
 
-from dotenv import load_dotenv
-from anthropic import Anthropic
-
 from db import get_conn
-
-load_dotenv(override=True)
-client = Anthropic()
-MODEL = "claude-haiku-4-5"
+from llm import extract_json, FAST_MODEL
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)-7s | %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("classify_ano")
@@ -63,6 +57,7 @@ TOOLS = [{
         "required": ["ano_dimension"],
     },
 }]
+SCHEMA = TOOLS[0]["input_schema"]
 
 
 def classify(title, sub_tag, what_happened, why_matters):
@@ -72,19 +67,14 @@ def classify(title, sub_tag, what_happened, why_matters):
         f"What happened: {what_happened or ''}\n"
         f"Why matters: {why_matters or ''}"
     )
-    try:
-        resp = client.messages.create(
-            model=MODEL, max_tokens=80, system=SYSTEM_PROMPT,
-            tools=TOOLS, tool_choice={"type": "tool", "name": "classify"},
-            messages=[{"role": "user", "content": user_msg}],
-        )
-    except Exception as e:
-        log.error(f"  ! API error: {e}")
+    data = extract_json(
+        SYSTEM_PROMPT, user_msg, SCHEMA,
+        model=FAST_MODEL, max_tokens=80, temperature=0.0,
+    )
+    if not data:
         return None
-    for block in resp.content:
-        if block.type == "tool_use" and block.name == "classify":
-            return block.input.get("ano_dimension")
-    return None
+    dim = data.get("ano_dimension")
+    return dim if dim in ANO_DIMENSIONS else None
 
 
 def run():

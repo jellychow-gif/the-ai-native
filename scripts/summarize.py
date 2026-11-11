@@ -22,14 +22,8 @@ from __future__ import annotations
 import logging
 import time
 
-from dotenv import load_dotenv
-from anthropic import Anthropic
-
 from db import get_conn
-
-load_dotenv(override=True)
-client = Anthropic()
-MODEL = "claude-sonnet-4-6"
+from llm import extract_json, WRITER_MODEL
 
 logging.basicConfig(
     level=logging.INFO,
@@ -134,7 +128,7 @@ substance, do NOT write a long-form essay. Return only structured fields.
 FIELDS TO SUBMIT
 ═══════════════════════════════════════════════════════════════════
 
-Call submit_intel with these fields:
+Provide these fields:
 
 1. sub_tag — Bilingual tag "中文范式概念 / ENGLISH CORE CONCEPT" (~10-15 chars total).
    English half UPPERCASE. Example: "组织范式重构 / AI AS OPERATING SYSTEM".
@@ -221,6 +215,7 @@ TOOLS = [{
         ],
     },
 }]
+SCHEMA = TOOLS[0]["input_schema"]
 
 
 def summarize_item(source: str, section: str, title: str, content: str, scoring_note: str) -> dict | None:
@@ -230,24 +225,19 @@ def summarize_item(source: str, section: str, title: str, content: str, scoring_
         f"Scoring rationale: {scoring_note}\n\n"
         f"Content:\n{content[:7000]}"
     )
-    try:
-        resp = client.messages.create(
-            model=MODEL,
-            max_tokens=6000,  # long-form 3500 chars + 6-field structured
-            system=SYSTEM_PROMPT,
-            tools=TOOLS,
-            tool_choice={"type": "tool", "name": "submit_intel"},
-            messages=[{"role": "user", "content": user_msg}],
-        )
-    except Exception as e:
-        log.error(f"  ! API error: {e}")
+    # The stronger writer model, higher temperature for narrative voice. Generous
+    # max_tokens so the long-form essay + 9 fields never truncate (truncation
+    # would break the JSON).
+    data = extract_json(
+        SYSTEM_PROMPT, user_msg, SCHEMA,
+        model=WRITER_MODEL, max_tokens=12000, temperature=1.0,
+    )
+    if data is None:
         return None
-
-    for block in resp.content:
-        if block.type == "tool_use" and block.name == "submit_intel":
-            return block.input
-    log.error("  ! No tool_use block in response")
-    return None
+    # Guard the one enum the frontend/db rely on.
+    if data.get("ano_dimension") not in ANO_DIMENSIONS:
+        data["ano_dimension"] = "Operating System"  # safe default bucket
+    return data
 
 
 def run() -> tuple[int, int]:

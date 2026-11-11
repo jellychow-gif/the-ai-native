@@ -13,14 +13,8 @@ from __future__ import annotations
 import logging
 import time
 
-from dotenv import load_dotenv
-from anthropic import Anthropic
-
 from db import get_conn
-
-load_dotenv(override=True)
-client = Anthropic()
-MODEL = "claude-haiku-4-5"
+from llm import extract_json, FAST_MODEL
 
 logging.basicConfig(
     level=logging.INFO,
@@ -66,6 +60,7 @@ TOOLS = [{
         "required": ["hr_module"],
     },
 }]
+SCHEMA = TOOLS[0]["input_schema"]
 
 
 def classify(title: str, summary: str, sub_tag: str | None) -> str | None:
@@ -74,22 +69,14 @@ def classify(title: str, summary: str, sub_tag: str | None) -> str | None:
         f"Sub-tag: {sub_tag or '-'}\n\n"
         f"Summary:\n{summary or '(no summary)'}"
     )
-    try:
-        resp = client.messages.create(
-            model=MODEL,
-            max_tokens=80,
-            system=SYSTEM_PROMPT,
-            tools=TOOLS,
-            tool_choice={"type": "tool", "name": "classify"},
-            messages=[{"role": "user", "content": user_msg}],
-        )
-    except Exception as e:
-        log.error(f"  ! API error: {e}")
+    data = extract_json(
+        SYSTEM_PROMPT, user_msg, SCHEMA,
+        model=FAST_MODEL, max_tokens=80, temperature=0.0,
+    )
+    if not data:
         return None
-    for block in resp.content:
-        if block.type == "tool_use" and block.name == "classify":
-            return block.input.get("hr_module")
-    return None
+    module = data.get("hr_module")
+    return module if module in MODULES else None
 
 
 def run() -> tuple[int, int]:

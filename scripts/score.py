@@ -15,14 +15,8 @@ import json
 import logging
 import time
 
-from dotenv import load_dotenv
-from anthropic import Anthropic
-
 from db import get_conn
-
-load_dotenv(override=True)
-client = Anthropic()
-MODEL = "claude-haiku-4-5"
+from llm import extract_json, FAST_MODEL
 
 logging.basicConfig(
     level=logging.INFO,
@@ -109,10 +103,12 @@ FRONTIER (全球前沿性):
 The bar is brutally high — 5 should be rare. Aggressively filter out company
 news, hiring announcements, generic listicles, product changelogs, marketing.
 
-Call the submit_score tool with your scores and a brief Chinese reasoning
-(≤50 chars). For OFF-TOPIC items, start the reasoning with "OFF-TOPIC:".
+Provide your scores and a brief Chinese reasoning (≤50 chars). For OFF-TOPIC
+items, start the reasoning with "OFF-TOPIC:".
 """
 
+# Kept as the single source of truth for the output shape; llm.extract_json
+# renders this schema into the JSON instruction.
 TOOLS = [{
     "name": "submit_score",
     "description": "Submit scores for an article",
@@ -142,6 +138,7 @@ TOOLS = [{
         "required": ["perspective", "practice", "frontier", "reasoning"],
     },
 }]
+SCHEMA = TOOLS[0]["input_schema"]
 
 
 def score_item(source: str, section: str, title: str, content: str) -> dict | None:
@@ -150,24 +147,22 @@ def score_item(source: str, section: str, title: str, content: str) -> dict | No
         f"Title: {title}\n\n"
         f"Content:\n{content[:6000]}"
     )
-    try:
-        resp = client.messages.create(
-            model=MODEL,
-            max_tokens=400,
-            system=SYSTEM_PROMPT,
-            tools=TOOLS,
-            tool_choice={"type": "tool", "name": "submit_score"},
-            messages=[{"role": "user", "content": user_msg}],
-        )
-    except Exception as e:
-        log.error(f"  ! API error: {e}")
+    data = extract_json(
+        SYSTEM_PROMPT, user_msg, SCHEMA,
+        model=FAST_MODEL, max_tokens=400, temperature=0.0,
+    )
+    if data is None:
         return None
-
-    for block in resp.content:
-        if block.type == "tool_use" and block.name == "submit_score":
-            return block.input
-    log.error(f"  ! No tool_use block in response: {resp.content}")
-    return None
+    # Coerce scores to clamped ints — JSON mode doesn't enforce the schema's
+    # integer/range constraints.
+    try:
+        for k in ("perspective", "practice", "frontier"):
+            data[k] = max(0, min(5, int(data[k])))
+        data["reasoning"] = str(data.get("reasoning", ""))
+    except (KeyError, ValueError, TypeError) as e:
+        log.error(f"  ! bad score payload {data}: {e}")
+        return None
+    return data
 
 
 def run() -> tuple[int, int, int]:
