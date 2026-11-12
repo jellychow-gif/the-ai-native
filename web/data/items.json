@@ -1,10 +1,25 @@
 {
   "issue": {
-    "number": "07",
-    "date_iso": "2026-07-27",
-    "date_label": "Jul 27, 2026"
+    "number": "08",
+    "date_iso": "2026-11-13",
+    "date_label": "Nov 13, 2026"
   },
   "issues": [
+    {
+      "number": 8,
+      "date_iso": "2026-11-13",
+      "date_label": "Nov 13, 2026",
+      "frozen_at": "2026-11-12 20:36:51",
+      "item_count": 6,
+      "item_ids": [
+        1210,
+        1216,
+        1118,
+        1150,
+        1122,
+        1123
+      ]
+    },
     {
       "number": 7,
       "date_iso": "2026-07-27",
@@ -108,8 +123,8 @@
       ]
     }
   ],
-  "current_issue_number": 7,
-  "generated_at": "2026-11-12T14:28:55.658731+00:00",
+  "current_issue_number": 8,
+  "generated_at": "2026-11-12T20:36:51.404936+00:00",
   "min_score_threshold": 9,
   "item_count": 82,
   "featured_count": 6,
@@ -137,7 +152,7 @@
       "preview_hook": "CEO 亲自写代码，六个月的 App 重构压缩到两周，转化率涨 32.5%——Holiday Extras 把客户洞察直接变成上线功能。",
       "author": null,
       "published_at": "2026-11-12T09:30:00+00:00",
-      "issue_number": null,
+      "issue_number": 8,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -385,7 +400,7 @@
       "preview_hook": "10K的AI VP从未给Canva开过权限，Canva的MCP接口上线时，10K已经在用Gamma和Higgsfield了。智能体一旦选好工具就不再回头。",
       "author": "Jason Lemkin",
       "published_at": "2026-11-11T18:09:46+00:00",
-      "issue_number": null,
+      "issue_number": 8,
       "perspective_score": 4,
       "practice_score": 4,
       "frontier_score": 4,
@@ -943,7 +958,7 @@
       "preview_hook": "企业冻结入门级招聘，用AI填坑。但十年后谁来当经理？HRD正在制造一条断掉的晋升阶梯。",
       "author": "Kathryn Moody",
       "published_at": "2026-11-10T12:16:00-05:00",
-      "issue_number": null,
+      "issue_number": 8,
       "perspective_score": 4,
       "practice_score": 3,
       "frontier_score": 4,
@@ -974,7 +989,7 @@
       "preview_hook": "斯坦福CS146S让学生直接改进真实开源仓库，期末用Claude Code五小时贡献代码。",
       "author": "Latent.Space",
       "published_at": "2026-11-08T21:23:29+00:00",
-      "issue_number": null,
+      "issue_number": 8,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 4,
@@ -1408,7 +1423,7 @@
       "preview_hook": "Resend 把文档页面变成 Agent 可调用的 API 参数说明书，Claude Code 直接在里面选型下单",
       "author": "swyx .ai",
       "published_at": "2026-11-10T20:05:17+00:00",
-      "issue_number": null,
+      "issue_number": 8,
       "perspective_score": 3,
       "practice_score": 3,
       "frontier_score": 4,
@@ -1966,7 +1981,7 @@
       "preview_hook": "斯坦福课堂里，学生用一份prompt跑完编程课期末项目，Monaco工程团队按同样逻辑拆解任务，验收标准从代码行数变成模型调用链质量。",
       "author": "swyx .ai",
       "published_at": "2026-11-08T21:41:44+00:00",
-      "issue_number": null,
+      "issue_number": 8,
       "perspective_score": 3,
       "practice_score": 3,
       "frontier_score": 3,
