@@ -74,8 +74,58 @@ jobs:
             git push
           fi
 
-      # Publishing is handled by pages-deploy.yml, which runs on workflow_run
-      # after this pipeline completes (a bot push with GITHUB_TOKEN can't trigger
-      # the Pages workflow's own `on: push`, so we chain it via workflow_run).
-      # The old Vercel deploy step was removed — Vercel's build hung for months
-      # and froze the site; the project now serves from GitHub Pages.
+      # NOTE: publishing is NOT chained via workflow_run (that cross-workflow
+      # trigger proved unreliable — it never fired after the bot's commits). The
+      # deploy job below runs in THIS workflow instead, so every pipeline run
+      # publishes end to end. The old Vercel deploy was removed — it hung for
+      # months and froze the site; the project now serves from GitHub Pages.
+
+  # Build the static export from the freshly-committed content and publish it to
+  # GitHub Pages. Self-contained (no workflow_run), so new content always goes
+  # live in the same run that generated it.
+  deploy:
+    needs: pipeline
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read   # checkout
+      pages: write     # publish to Pages
+      id-token: write  # OIDC for deploy-pages
+    # Share the Pages concurrency group with the standalone deploy workflow so
+    # two deploys never race.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main  # pull the commit the pipeline job just pushed
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web
+
+      - name: Build static export (root path, for the custom domain)
+        run: EXPORT=1 BASE_PATH= npm run build
+        working-directory: web
+
+      - name: Serve on the custom domain
+        run: echo "the-ai-native.com" > web/out/CNAME
+
+      - name: Disable Jekyll (keep Next's /_next assets)
+        run: touch web/out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/out
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

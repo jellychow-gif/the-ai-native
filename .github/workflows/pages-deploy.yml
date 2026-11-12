@@ -15,14 +15,11 @@ on:
     paths:
       - "web/**"
       - ".github/workflows/pages-deploy.yml"
-  # The daily/weekly pipelines push new content with GITHUB_TOKEN, which can't
-  # trigger the `push` event above (GitHub blocks that to prevent loops). So we
-  # also deploy whenever those pipelines finish.
-  workflow_run:
-    workflows:
-      - "Daily scrape + score + summarize + publish"
-      - "Weekly draft + publish"
-    types: [completed]
+  # Manual trigger. The daily/weekly pipelines publish their own content via a
+  # deploy job inside each of those workflows (a bot push with GITHUB_TOKEN can't
+  # trigger the `push` event above, and the cross-workflow `workflow_run` trigger
+  # proved unreliable — it never fired). This workflow now only handles manual
+  # redeploys and pushes that touch web/** directly.
   workflow_dispatch:
 
 permissions:
@@ -30,10 +27,12 @@ permissions:
   pages: write
   id-token: write
 
-# Never let two deploys race; the newest push wins.
+# Share the Pages concurrency group with the pipelines' deploy jobs so no two
+# deploys run at once. Don't cancel in progress — let an in-flight content
+# deploy finish rather than losing it to a manual/web push.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:

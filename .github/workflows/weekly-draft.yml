@@ -63,6 +63,54 @@ jobs:
             git push
           fi
 
-      # Publishing is handled by pages-deploy.yml (runs on workflow_run after this
-      # completes). The old Vercel deploy was removed: its build hung for months
-      # and froze the live site; the project now serves from GitHub Pages.
+      # NOTE: publishing is NOT chained via workflow_run (that cross-workflow
+      # trigger proved unreliable — it never fired after the bot's commits). The
+      # deploy job below runs in THIS workflow instead. The old Vercel deploy was
+      # removed: it hung for months and froze the site; we now use GitHub Pages.
+
+  # Build the static export from the freshly-frozen Issue and publish it to
+  # GitHub Pages, in the same run (no workflow_run dependency).
+  deploy:
+    needs: draft
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main  # pull the commit the draft job just pushed
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web
+
+      - name: Build static export (root path, for the custom domain)
+        run: EXPORT=1 BASE_PATH= npm run build
+        working-directory: web
+
+      - name: Serve on the custom domain
+        run: echo "the-ai-native.com" > web/out/CNAME
+
+      - name: Disable Jekyll (keep Next's /_next assets)
+        run: touch web/out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/out
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
