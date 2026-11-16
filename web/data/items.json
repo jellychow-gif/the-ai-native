@@ -124,9 +124,9 @@
     }
   ],
   "current_issue_number": 8,
-  "generated_at": "2026-11-15T13:21:56.655526+00:00",
+  "generated_at": "2026-11-16T14:28:49.664075+00:00",
   "min_score_threshold": 9,
-  "item_count": 111,
+  "item_count": 112,
   "featured_count": 7,
   "items": [
     {
@@ -159,6 +159,37 @@
       "score_reasoning": "微软自愿离职非裁员，是AI时代管理新范式，CHRO必读",
       "total_score": 14,
       "is_featured": false
+    },
+    {
+      "id": 1275,
+      "url": "https://www.saastr.com/hubspot-is-refounding-as-the-customer-harness-company-heres-what-that-means-for-us-right-now-in-november-2026/",
+      "title": "HubSpot Is Refounding as the “Customer Harness Company.” Here’s What That Means for Us, Right Now, in November 2026",
+      "source": "SaaStr",
+      "source_type": "rss",
+      "section": "Industry",
+      "hr_module": null,
+      "sub_tag": "客户缰绳 / CUSTOMER HARNESS",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "SaaStr 创始人 Jason Lemkin 在 HubSpot 宣布重构为 Customer Harness Company 后，公开了自家 3 人 + 20+ 智能体的 GTM 实践：CRM 完全无头化，人类不再登录；过去 60 天彻底弃用传统营销自动化，全部邮件由智能体 10K 动态生成和发送；主界面是自己训练的全上下文智能体 10K，而不是 Claude 或 ChatGPT。",
+      "why_matters": "这验证了 B2B 软件商业模式正在从「卖给人登录的 seat」转向「智能体通过 API 调用数据和动作」。当客户不再登录 UI，产品价值从界面转移到背后的数据和 action 层，营销自动化的锁定效应消失，平台忠诚度瓦解，智能体成为新的决策和行动主体。",
+      "org_implication": "人类团队与智能体在同一上下文里协作，呈现 multiplayer 组织形态。CRM 从人类工作台变成智能体的系统记录，人类通过对话智能体间接操作系统。组织不再围绕「谁登录哪个软件」设计，而是围绕「谁拥有最完整的客户上下文」来分配权力。",
+      "talent_implication": "招聘标准从「会用 HubSpot/Salesforce」转向「能训练、评估、指挥智能体」。新角色如 AI VP of Revenue（如 10K 的定位）出现，人类员工的工作是 define evals、判断智能体输出、处理例外。Headcount 预算将同时覆盖人类和智能体两种「员工」。",
+      "hr_operating_implication": "HR 需要管理混合劳动力：评估智能体的绩效、成本、风险（如 agent churn 带来的静默供应商流失）。供应商管理从合同续约转向用量监控。培训体系从软件操作转向 prompt 设计、agent evals 和上下文管理。薪酬设计可能需要覆盖「智能体指挥能力」这一新的能力维度。",
+      "prediction": "到 2027 年底，头部 B2B 公司中超过 30% 的 GTM 团队将不再有人类登录 CRM 或营销自动化软件，智能体通过 API 直接操作系统，seat 定价模式加速瓦解。",
+      "ano_dimension": "Agent Workforce",
+      "long_form_zh": "Jason Lemkin 打开的第一个画面是 HubSpot 的公告。Brian Halligan 和 Dharmesh Shah 宣布把公司重新定义为「Customer Harness Company」。Lemkin 看完之后说，这就像是有人把 SaaStr 过去一年的路线图公开出版了一样。\n\nSaaStr 现在有 3 个人类员工，20 多个 AI 智能体在生产环境里跑 GTM。CRM 完全无头化。营销自动化软件在过去 60 天里被彻底弃用。Lemkin 说：「我们永远不会再登录 B2B 软件了。我们的智能体会登录，我们跟智能体对话。」这句话值得每一个 CHRO 停下来重读三遍。\n\n「没有人登录我们的 CRM 了，包括我。」10K——SaaStr 的 AI 收入副总裁——通过 MCP 和 API 读写 CRM。CRM 还是系统记录，但人类不去了。20 多年来，B2B 软件都是围绕登录的人类来定价、设计和销售的：seat 数、dashboard、登录频率当健康度指标、adoption 当 CSM 每个季度追的 KPI。这个模型在 SaaStr 已经死亡。\n\n「如果你的产品价值大部分在 UI 而不是背后的数据和动作，对越来越多的客户来说，UI 部分的价值正在归零。」营销自动化的弃用更彻底。45 万人的列表，数百万封邮件，活动、内容、产品的一切外发，全部移交给智能体。没有模板——10K 动态重建每一次发送的邮件模板。没有 journey builder——拖拽式工作流、分支逻辑、手工维护的 nurture track 全部消失。个性化是逐人逐封的，基于 45 万条记录里对每个人的已知信息，远超 merge field。\n\n「consent 和 deliverability 现在是可以从顶级供应商那里按 API 调用的服务。它们不再把你锁进一套营销自动化套件里。」旧锁定是模板、工作流、列表逻辑和发送声誉都在一个地方。一旦智能体拥有模板和逻辑，发送只是一个 API，锁定就没了。Lemkin 的结论很直接：「我们永远不会再买营销自动化软件。它是给人类操作的，而我们没有人类在操作它。」\n\n「我们的主界面是 10K，不是 Claude、ChatGPT 或 Slack。」原因只有一个：multiplayer。人类和智能体在同一个地方，共享同一个上下文。10K 有全部业务上下文、历史、以及来自 CRM、QuickBooks、Bill 和其他系统的数据。Lemkin 说：「10K 像一个永远不会停、而且会犯很多错误的人类。我们就把它当人对话。」\n\n「如果 Customer Harness 对我们来说有一个意思，那就是：谁拥有关于客户和业务的最完整上下文，谁就变成缰绳。」对智能体的选择逻辑也变了——没有平台忠诚度。每个具体任务挑最好的智能体，能快速部署的就上，用自己的数据和 workflow 做 evals，过了就 go。这是跟「标准化在一个平台上、用平台自带的模块」完全不同的动作。平台仍然是系统记录和数据层，但上面的智能体是一个任务一个任务地选，按性能选。\n\n「对在位者来说，这是真正的风险。拥有数据过去意味着你会拥有建立在它上面的每一个新 workflow。现在，拥有数据可能只是意味着别人的智能体调用你的 API。」更危险的是没有 agent loyalty。SaaStr 一个核心供应商宕机 48 小时，10K 绕过去了，再也没回来。没有会议决策，没有 RFP，没有续约谈判。智能体找到一条能工作的路径，工作继续完成，旧供应商从循环里掉出去。这种流失不会在续约时显示为取消，用量直接归零。\n\n写在最后：\n\n周一早上，CHRO 应该做三件事。第一，审计公司里还有多少人在登录核心 B2B 系统——如果这个数字没有在下降，说明你的 AI 转型还没有开始。第二，把「agent churn」加进供应商风险清单：不是合同取消，而是用量静默归零。第三，重新定义「seat」：你的下一个 headcount 预算可能是买智能体的，不是招人的。\n\nLemkin 给所有 B2B 软件公司的问题值得贴在 HR 作战室里：「你的产品价值到底有多少在 UI 里，有多少在数据和动作背后？」对越来越多的客户来说，UI 部分正在归零。那些还在卖 seat 的公司，卖的是给人类的软件——而人类正在退出登录。",
+      "preview_hook": "SaaStr 创始人 Jason Lemkin 说，他的团队永远不会再登录 CRM 或买营销自动化软件——3 个人类加 20 多个智能体如何重构一家公司的 GTM。",
+      "author": "Jason Lemkin",
+      "published_at": "2026-11-15T15:00:08+00:00",
+      "issue_number": null,
+      "perspective_score": 4,
+      "practice_score": 5,
+      "frontier_score": 4,
+      "score_reasoning": "SaaStr以3人20+智能体重构GTM组织，CRM无头化、弃用营销自动化，为组织重构提供具体数据锚点",
+      "total_score": 13,
+      "is_featured": true
     },
     {
       "id": 1267,
@@ -251,7 +282,7 @@
       "frontier_score": 4,
       "score_reasoning": "以ACV翻倍为锚，多案例数据揭示AI代理重构定价与人力预算，对HRD有范式启发",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1210,
@@ -1305,7 +1336,7 @@
       "frontier_score": 4,
       "score_reasoning": "斯坦福CS146S以真实开源仓库训练AI原生工程师，为组织培养AI人才提供范式参考",
       "total_score": 11,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1074,
@@ -2576,7 +2607,7 @@
       "frontier_score": 3,
       "score_reasoning": "小型公司用Codex让PM/BD直接原型开发，工程产出+25%、营收翻倍，属组织角色重塑案例，但偏产品营销",
       "total_score": 9,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 1228,
