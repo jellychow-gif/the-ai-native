@@ -124,9 +124,9 @@
     }
   ],
   "current_issue_number": 8,
-  "generated_at": "2026-11-17T15:19:07.274665+00:00",
+  "generated_at": "2026-11-18T14:55:07.701474+00:00",
   "min_score_threshold": 9,
-  "item_count": 116,
+  "item_count": 117,
   "featured_count": 6,
   "items": [
     {
@@ -2080,7 +2080,7 @@
       "frontier_score": 4,
       "score_reasoning": "开发者工具公司围绕AI agent重构产品与文档设计，属组织实践前沿，但非HR核心议题。",
       "total_score": 10,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1075,
@@ -2608,6 +2608,37 @@
       "score_reasoning": "Nadella战略框架高度,但案例深度不足,需完整playbook验证",
       "total_score": 10,
       "is_featured": false
+    },
+    {
+      "id": 1331,
+      "url": "https://www.mckinsey.com/capabilities/business-building/our-insights/infrastructure-entrepreneurs-how-hochtief-captures-growth-in-the-ai-age",
+      "title": "Infrastructure entrepreneurs: How HOCHTIEF captures growth with AI",
+      "source": "McKinsey Insights",
+      "source_type": "rss",
+      "section": "Organization",
+      "hr_module": null,
+      "sub_tag": "组织增长架构 / AI AS GROWTH ENGINE",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "McKinsey 合伙人 Jerome Königsfeld 访谈 HOCHTIEF PPP Solutions 两位高管，揭示这家 150 年工程公司如何通过 AI 驱动增长。核心是组织创新：设立「Infrastructure Entrepreneur」角色，让项目总经理对 AI 收入负责，AI 专家嵌入项目部并享有 Growth Engineer 头衔，绩效与合同额直接挂钩。",
+      "why_matters": "证明了 AI 的商业价值释放取决于组织设计与问责机制，而非技术复杂性。AI 从成本中心转化为收入引擎，需要将决策权、预算与考核下放到离客户最近的一线单元，倒逼传统企业重新分配增长职责。",
+      "org_implication": "总部职能从控制转向赋能，业务单元承接 AI 增长的完整闭环。需要设立跨部门增长委员会，重塑 P&L 结构以单列 AI 收入，并将 AI 专家编制从中央技术部门分散到前线项目公司，让组织架构匹配合同价值创造路径。",
+      "talent_implication": "出现「Growth Engineer」这类混合角色，要求既懂业务又懂数据的复合人才。传统招聘标准失效，需通过短期 AI 产品思维课程和现场轮岗来培养内部人才，考核指标从技术交付转向业务收入贡献。",
+      "hr_operating_implication": "HR 必须重构岗位序列和绩效体系，为嵌入业务的 AI 角色设计新的职业路径，同时管理跨学科团队的协作机制，如工程经理与数据科学家的组织融合，以及建立基于业务成果的激励方案。",
+      "prediction": "未来 18 个月内，非科技行业头部公司会把 AI 收入指标纳入事业部负责人的正式绩效合同，AI 专家的编制从中央创新部门向业务线转移的比例将超过 50%。",
+      "ano_dimension": "Organization Design",
+      "long_form_zh": "汉堡港的清晨，HOCHTIEF PPP Solutions 的 CIO 打开系统，屏幕上的增长记分卡跳动着 47 条活跃 AI 用例，每一条都标着预估合同额。这家 150 岁的德国工程公司没有把 AI 放在总部创新实验室里，而是把数据科学家派进了机场、公路、医院的每一个项目部。\n\nMcKinsey 合伙人 Jerome Königsfeld 在最新一期访谈里问了一个问题：一家以水泥和钢筋为生的公司，怎么突然成了增长冠军。HOCHTIEF 的答案不在模型层，在组织层。他们发明了一个叫「Infrastructure Entrepreneur」的角色，让每个项目总经理对 AI 驱动的收入线负责，而不是对流程优化负责。\n\n「我们不是用 AI 削减成本，我们用 AI 创造新的基础设施服务合同。」这句话来自 HOCHTIEF PPP Solutions 的董事总经理。他举了 A1 高速公路项目的例子：项目团队用历史车流数据和天气模型训练了一个动态维护调度器，把道路封闭时间从夜间 8 小时压缩到 4 小时，然后拿着这个数据去找州政府，签了一份基于「可用性提升」的增值合同。AI 不是后台系统，是销售武器。\n\n这家公司的组织设计有几个硬动作。第一，董事会层面设了 Growth and AI 委员会，每季度审一次 AI 项目的合同额和毛利，不是看模型准确率。第二，每条业务线的 P&L 里单独开一个「AI-enabled revenue」科目，逼着项目总经理想办法把 AI 变成客户愿意付钱的东西。第三，数据科学家的编制不在总部，而在项目公司，他们跟工程经理坐同一个办公室，每天看的是工地图纸而不是 Jupyter Notebook。\n\n「如果 AI 团队向 CTO 汇报，他们会优化流程；如果向项目总经理汇报，他们会优化合同。」Königsfeld 把这句话写进了 McKinsey 的案例摘要。HOCHTIEF 的做法印证了这一点：他们的 AI 专家头衔不是 Data Scientist，是 Growth Engineer，绩效评估里 40% 的权重绑定项目收入增长。\n\n这种组织方式引发了一个反常识的结果：项目总工程师开始主动要求 AI 资源。在传统工程公司，一线经理把 AI 视为成本中心，能躲就躲。但在 HOCHTIEF，A14 隧道项目的总工在一次季度会上说：「给我两个 Growth Engineer，我能把维护合同报价降低 15%，同时多赚 5 个点毛利。」他算的是投标竞争力，不是技术先进性。\n\n人才市场也发生了变化。HOCHTIEF 的 HR 发现，招聘「同时懂岩土力学和梯度提升树」的人不现实，于是拆成两个动作：让工程经理上 6 周 AI 产品思维课，让数据科学家跟着项目组下工地 3 个月。两条线在项目里碰撞，产出的是「能用水泥语言解释的机器学习方案」，而不是总部派下来的黑盒系统。\n\n「增长不是 AI 部门的事，是每个项目经理的事。」这是 HOCHTIEF 内部流传最广的一句话。它背后的组织假设是：AI 的商业模式价值发生在合同签订的那一刻，而不是模型训练完成的那一刻。所以权力、预算、考核都必须跟着合同走，而不是跟着技术栈走。\n\n写在最后\n\n如果你是一家非技术公司的 CEO 或 CHRO，从周一开始做三件事。第一，把 AI 项目的汇报线从 CTO 移到业务 P&L 负责人，哪怕 CTO 嚷嚷数据架构不统一。第二，在业务预算里单列 AI-enabled revenue 科目，让每个 BU 头头在季度会上解释这个数字为什么没动。第三，把 AI 专家的工位搬到离客户最近的地方——项目现场、销售团队、运营中心——而不是总部创新部。HOCHTIEF 证明了一件事：150 岁的公司也能靠组织设计跑赢 AI 原生公司，前提是你敢把增长的责任压到一线，而不是护在总部。",
+      "preview_hook": "HOCHTIEF 把 AI 专家塞进每个项目部，董事会用增长记分卡追踪每条 AI 用例的合同额。",
+      "author": null,
+      "published_at": "2026-11-18T00:00:00",
+      "issue_number": null,
+      "perspective_score": 3,
+      "practice_score": 3,
+      "frontier_score": 3,
+      "score_reasoning": "老牌工程企业用AI驱动增长的组织创新案例，有具体实践但偏业务层",
+      "total_score": 9,
+      "is_featured": true
     },
     {
       "id": 1259,
