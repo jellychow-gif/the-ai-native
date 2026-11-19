@@ -1,10 +1,24 @@
 {
   "issue": {
-    "number": "08",
-    "date_iso": "2026-11-13",
-    "date_label": "Nov 13, 2026"
+    "number": "09",
+    "date_iso": "2026-11-20",
+    "date_label": "Nov 20, 2026"
   },
   "issues": [
+    {
+      "number": 9,
+      "date_iso": "2026-11-20",
+      "date_label": "Nov 20, 2026",
+      "frozen_at": "2026-11-19 21:07:21",
+      "item_count": 5,
+      "item_ids": [
+        1341,
+        1334,
+        1331,
+        1295,
+        1288
+      ]
+    },
     {
       "number": 8,
       "date_iso": "2026-11-13",
@@ -123,11 +137,11 @@
       ]
     }
   ],
-  "current_issue_number": 8,
-  "generated_at": "2026-11-19T15:03:19.019636+00:00",
+  "current_issue_number": 9,
+  "generated_at": "2026-11-19T21:07:21.576166+00:00",
   "min_score_threshold": 9,
   "item_count": 122,
-  "featured_count": 6,
+  "featured_count": 5,
   "items": [
     {
       "id": 1047,
@@ -183,7 +197,7 @@
       "preview_hook": "Anthropic 用 5300 人做到 810 亿美元 run-rate，Q3 算力吃掉 58% 收入，人力只占 10%。",
       "author": "Jason Lemkin",
       "published_at": "2026-11-18T15:00:22+00:00",
-      "issue_number": null,
+      "issue_number": 9,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -214,7 +228,7 @@
       "preview_hook": "SaaStr 用 3 个人和 20 个智能体跑公司，其中一个供应商因为太贵被智能体绕开，调用量暴跌 90%。",
       "author": "Jason Lemkin",
       "published_at": "2026-11-16T15:00:24+00:00",
-      "issue_number": null,
+      "issue_number": 9,
       "perspective_score": 4,
       "practice_score": 5,
       "frontier_score": 4,
@@ -1919,7 +1933,7 @@
       "preview_hook": "Revolut 用 Codex 把编码时间砍掉 30-60%，金融犯罪调查团队规模不变却吞吐量翻倍。",
       "author": null,
       "published_at": "2026-11-16T09:30:00+00:00",
-      "issue_number": null,
+      "issue_number": 9,
       "perspective_score": 3,
       "practice_score": 4,
       "frontier_score": 3,
@@ -2756,7 +2770,7 @@
       "preview_hook": "日本寿险巨头住友生命的执行役员们自己先用 ChatGPT Enterprise，用真实业务场景示范给团队看，把 AI 从口号变成每日工作流。",
       "author": null,
       "published_at": "2026-11-18T08:00:00+00:00",
-      "issue_number": null,
+      "issue_number": 9,
       "perspective_score": 3,
       "practice_score": 3,
       "frontier_score": 3,
@@ -2787,7 +2801,7 @@
       "preview_hook": "HOCHTIEF 把 AI 专家塞进每个项目部，董事会用增长记分卡追踪每条 AI 用例的合同额。",
       "author": null,
       "published_at": "2026-11-18T00:00:00",
-      "issue_number": null,
+      "issue_number": 9,
       "perspective_score": 3,
       "practice_score": 3,
       "frontier_score": 3,
@@ -2948,7 +2962,7 @@
       "frontier_score": 3,
       "score_reasoning": "产品团队用AI代理重构研发流程的案例，数据具体，但偏产品交付而非组织/HR变革",
       "total_score": 9,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1221,
