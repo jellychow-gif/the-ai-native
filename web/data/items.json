@@ -156,9 +156,9 @@
     }
   ],
   "current_issue_number": 10,
-  "generated_at": "2026-11-26T22:04:02.243176+00:00",
+  "generated_at": "2026-11-27T15:58:23.566251+00:00",
   "min_score_threshold": 9,
-  "item_count": 145,
+  "item_count": 147,
   "featured_count": 9,
   "items": [
     {
@@ -221,7 +221,7 @@
       "frontier_score": 4,
       "score_reasoning": "Linear以agent占半数工作、无SDR、AI预算重塑销售与定价，为组织重构提供一手数据",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1394,
@@ -283,7 +283,7 @@
       "frontier_score": 4,
       "score_reasoning": "SaaStr用自身及Anthropic等真实数据，揭示AI时代销售组织重构：SDR先裁、GTM团队缩20-43%、自服务触达企业。",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1366,
@@ -314,7 +314,7 @@
       "frontier_score": 4,
       "score_reasoning": "Linear以agent占半数工作、无SDR、AI预算驱动GTM重构组织，CHRO可直接借鉴",
       "total_score": 13,
-      "is_featured": true
+      "is_featured": false
     },
     {
       "id": 1341,
@@ -872,7 +872,7 @@
       "frontier_score": 4,
       "score_reasoning": "以Anthropic 6000人对比谷歌Meta，提出AI原生组织最小团队规划法，含多案例与数据，对CHRO有范式启发。",
       "total_score": 12,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 1399,
@@ -1555,6 +1555,37 @@
       "score_reasoning": "Sendbird CEO的AI采纳框架:游戏化内部市场、Token治理、AI人才识别,直接重塑组织运作模式",
       "total_score": 12,
       "is_featured": false
+    },
+    {
+      "id": 1465,
+      "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/",
+      "title": "How Clay Builds GTM Agents — Jeff Barg, Head of AI",
+      "source": "Latent Space",
+      "source_type": "substack",
+      "section": "Organization",
+      "hr_module": null,
+      "sub_tag": "GTM Agent 组织设计 / AGENT-NATIVE GTM ORG",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "Clay 的 Head of AI Jeff Barg 在 Latent Space 播客中披露其 agent 团队从 1 人扩展到支撑 600 人公司的路径：Sculptor 从工具循环重建为 Pi harness 上的 coding agent，Clay 自建 BullMQ 栈，客户与内部 GTM 团队同时使用 Clay agent 与外部 harness，使用量接近五五开。",
+      "why_matters": "Clay 证明 GTM 组织可以围绕 agent 重建，销售和增长团队直接在 Cursor / Claude Code / Codex 中工作，模型路由和后训练时机由推理支出规模决定，且 agent 使用量五五开意味着企业必须支持外部 harness，不能只押注自有 UI。",
+      "org_implication": "GTM 团队从使用 SaaS 工具转向在编码 harness 中直接操作数据，组织需要设立类似 Clay 的 MCP/CLI 团队，将销售、市场、客户成功的工作流编码化，并允许团队选择自己的 harness 而非强制统一 UI。",
+      "talent_implication": "需要招募能在 Cursor / Claude Code / Codex 中完成真实 GTM 任务的人，而非只有传统 MarTech 背景的运营。后训练专家要在推理支出超过千万美元时才值得投入，早期团队应聚焦提示词、工具和编排。",
+      "hr_operating_implication": "HR 要重新定义 GTM 岗位的胜任力：看候选人在编码 harness 中的实际产出，而非 AI 项目头衔。绩效评估要把 agent 产出与销售结果直接挂钩，培训预算从软件操作转向 prompt 建设和 agent 调试。",
+      "prediction": "12 个月内，头部 B2B 公司的 GTM 团队将有一半以上成员在日常工作中使用 Claude Code 或 Codex，模型选择器会默认隐藏，由企业自建路由决定。",
+      "ano_dimension": "Organization Design",
+      "long_form_zh": "Jeff Barg 接手 Clay 的 AI 团队时，全公司只有一个人在碰 agent。那个人很快就离职创业了。当时 Clay 大约 50 人，他创立的 Avenue 被收购后并入，Avenue 只有 5 人。一年半后，Clay 冲到 600 人，九月完成 1.15 亿美元融资，估值 71 亿。AI 团队从头建到能同时支撑内部销售和外部客户。\n\nJeff 的第一个产品 Sculptor 在 2025 年 9 月上线，跑在 Sonnet 3.5 上。系统提示词调了很久，工具链在循环里跑。它能给表格加列，却约不到十个合格会议。评估也没抓到问题——团队用 LLM 判断调用了哪些工具，完全忽略用户真正在做什么：分析表格、拿着百万行的企业表提问。Jeff 总结出三条教训：编码 agent 极擅长 Bash 和 Python；Sculptor 的工具太窄，串起来做不了多少事；agent 看不到 CRM 数据和 campaign 结果。于是 Clay 把 Sculptor 重建成跑在 Pi harness 上的 coding agent，在云沙箱里执行 Clay CLI，新数据层 Audiences 把 CRM、Gong 和 Clay 的记录对齐，让 agent 一次看到全部上下文。\n\n「大多数公司在后训练上动手太早。」Jeff 在 Latent Space 播客里直言。Clay 内部谈了十八个月自训模型，直到最近两个月才真正可行。降本有两条路：先换开源权重模型，比 Opus 便宜一大截；再在自有工具和查询上后训练一个更小的模型，直到在自己任务上追平 Opus。他观察到两个常见错误：一是想击败前沿模型——即使在单一领域也极难；二是推理支出还没到临界值就开始后训练。他给的阈值是 1000 万到 1 亿美元之间。\n\nClay 还没把 TypeSafe 的 Jev 放进生产，但 Jeff 已经算过账。Clay 数据库有 4000 万家公司，LinkedIn 页面大约 1000 token，ICP 再加 500，用一个分类器判断每家公司是否匹配，全部跑完约 1500 美元。今天大多数客户只筛 1 万家公司。在 1500 美元的量级，你可以从整个市场起步。Jeff 给的 enrichment 预算是：合格线索 1-10 美元，约到一次通话 10-100 美元。他认为资格判断本身几乎已被解决——模型在 Clay 的评估上一年前就逼近天花板，任何过去一年发布的模型都能拉出公司最新融资轮。真正值钱的是深度 prospecting 研究和编排。「最好的 play 比普通 play 有效十倍到一百倍，」Jeff 说。\n\n客户讨厌模型选择器。每次新模型发布，用户不可能去查自己的用例评估，也不该查。Clay 即将上线自动路由，按任务选模型，不搞花哨品牌。找苹果 CEO 和找一家本地小公司 CEO 是完全不同的任务。选择器不会消失，agency 和重度用户还想手动控制。大多数用户只想干活。Clay 得先赢得信任，用户才肯开自动挡。\n\n「我们没用 Temporal，也没用 LangGraph。」Clay 大部分 agent 栈是自建的：BullMQ 保持 agent job 在跑，Postgres 和 ClickHouse 存产品数据，Snowflake 做分析。最近上了 25-30 个新集成，合同和测试比工程本身更耗时。真正的麻烦是规模——用户会按行跑 agent，一张 5 万家公司的表跑起来，推理需求瞬间爆发。团队引入 LangSmith 观测，做了节流、暂停和恢复，处理 provider 宕机或限流。更难的是公平性：一个跑十个人的 workflow 也得在企业客户 enrich 一百万行时正常运行。\n\nClay 打算发布一个沙箱化 agent，免费调用 Clay 所有工具和 building block。Jeff 希望用户从 Claude Code 里操作 Clay，效果和用 Clay 自家 agent 差不多。使用量已经比预期更接近五五开，一半来自 Clay agent，一半来自外部 harness。推动力来自内部：Clay 自己的 GTM 团队住在 Cursor 里不肯走，逼着团队出了 CLI。MCP 团队转去开发 CLI，销售团队现在用 Codex 做 deal prep。那为什么还要做第一方 agent？因为大量客户就活在 Clay UI 里，需要一个贴身的 agent。\n\n「在 600 人规模改计划，比 50 人时更需要勇气。」Jeff 说。Clay 曾是 ChatGPT apps 的 launch partner。季度中，公司调了四分之一工程师做了一个月集成。上线前两天，OpenAI 无限期推迟。团队没有崩溃，继续按自己的节奏推进。\n\n写在最后：CHRO 要做的不是招『AI 产品经理』，而是把 GTM 团队自己用的工具推向全公司。Clay 的销售团队在 Cursor 和 Codex 里做 deal prep，逼出 CLI，又把 MCP 团队转去写 CLI——这是一个组织在 agent 上自我重塑的路径。先让一线用起来，再把他们的需求变成公司级基础设施。招聘上，看候选人有没有在 Cursor / Claude Code / Codex 里完成真实工作的记录，而不是有没有『AI 项目经验』。评估上，把 agent 的产出和销量直接挂钩，别再写长篇 JD。",
+      "preview_hook": "Clay 的 GTM 团队住在 Cursor 里不肯出来，逼着公司把 MCP 团队调去写 CLI；销售用 Codex 做 deal prep。",
+      "author": "Basil Chatha",
+      "published_at": "2026-11-26T23:02:48+00:00",
+      "issue_number": null,
+      "perspective_score": 3,
+      "practice_score": 4,
+      "frontier_score": 4,
+      "score_reasoning": "Clay的GTM agent组织实践：团队从50到600人、自建agent栈、模型路由与后训练阈值，对HRD有参考价值",
+      "total_score": 11,
+      "is_featured": true
     },
     {
       "id": 1451,
@@ -2267,7 +2298,7 @@
       "frontier_score": 3,
       "score_reasoning": "麦肯锡论AI价值需重构角色与选对问题，高管视角但案例偏泛。",
       "total_score": 10,
-      "is_featured": false
+      "is_featured": true
     },
     {
       "id": 1410,
@@ -3166,6 +3197,37 @@
       "frontier_score": 3,
       "score_reasoning": "Nadella战略框架高度,但案例深度不足,需完整playbook验证",
       "total_score": 10,
+      "is_featured": false
+    },
+    {
+      "id": 1461,
+      "url": "https://www.saastr.com/whats-hot-in-b2b-adtech-yes-adtech/",
+      "title": "What’s Hot in B2B? Adtech. Yes, Adtech.",
+      "source": "SaaStr",
+      "source_type": "rss",
+      "section": "Industry",
+      "hr_module": null,
+      "sub_tag": "结果定价重构组织 / OUTCOME PRICING",
+      "hook": null,
+      "summary": null,
+      "implication": null,
+      "what_happened": "AppLovin Q3 2026 收入 21.85 亿美元，同比增长 55%，净利润率 66%，员工仅 898 人，人均季度收入超 240 万美元。增长几乎全部来自价格提升，安装量仅增 2%。Zeta 有机增长加速至 30%，超级客户 ARPU 达 200 万美元。The Trade Desk 同期收入下滑 0.5%。",
+      "why_matters": "广告科技表明 AI 的最大杠杆不是降本，而是改变收入结构。结果定价让更好的模型直接变成更高的价格，销售费用占比降至 3%，人效提升一个数量级。传统座位制软件正经历相反的效应：AI 变成 COGS，利润率承压。",
+      "org_implication": "结果定价公司的组织设计围绕模型和数据，而非销售流程。销售团队极小，角色转向模型训练、数据工程师和高接触客户服务。随产品成熟，人效可从数十万美元跃升至数百万美元，组织层级和规模大幅缩减。",
+      "talent_implication": "招聘重心从 SaaS 销售转向 AI 和数据岗位。候选标准变为构建可度量结果的模型、处理数据管道、服务高价值客户。销售能力不再是核心指标，理解模型和客户结果的能力成为关键。",
+      "hr_operating_implication": "HR 运营模式需从支持销售扩张转为支持模型迭代。绩效评估与产品结果指标挂钩，而非活动量。薪酬结构从高提成转向高底薪加模型贡献分红。人才盘点聚焦数据科学和模型训练能力，而非销售管理能力。",
+      "prediction": "18 个月内，将有更多 B2B 公司从座位定价转向结果定价，率先在可量化场景落地，销售费用占比从 30% 以上降至 15% 以下。",
+      "ano_dimension": "Operating System",
+      "long_form_zh": "AppLovin 的财报电话会开完后，一位对冲基金分析师在社交媒体上贴了一组对比：这家广告科技公司本季度收入 21.85 亿美元，运营利润率 78%，员工总数 898 人，人均季度收入超过 240 万美元。同一天，The Trade Desk 公布收入同比下滑 0.5%，这是它 2016 年上市以来第一次负增长。两家公司都在卖广告技术，都在谈 AI，但一家的人效是另一家的数倍，差距不是模型精度，是收入结构。\n\nAppLovin 的增长几乎全部来自价格。安装量只增长 2%，单次安装收入增长 55%。过去九个月安装量甚至下滑了 7%，但单次安装收入涨了 68%。公司不是找到了更多用户，是同一个 AI 模型更准确地预测了谁会安装、谁会付费、谁会留存。广告主看到的回报更高，于是每个 install 愿意付更多钱。Meta 的财报也验证了这个逻辑：广告展示量涨了 10%，平均价格涨了 14%，总收入涨了 26%。\n\n「在结果定价的广告科技里，更好的模型直接变成更高的价格，同一张发票，同一个季度。没有人需要再搭一个 ROI 计算器。」\n\n对比 HubSpot 的 Q3：订阅收入增长 18%，订阅成本增长 28%，多出来的 2320 万美元主要花在 AI 功能的使用上。HubSpot 没有 AI 收入这一栏。同一波 AI，在座位制软件里变成 COGS，在结果定价的广告科技里变成价格。AppLovin 销售和营销费用只占收入 3.1%，HubSpot、Salesforce、Atlassian 的这一比例普遍在 25% 到 45%。产品自己会说话，因为结果可测量。广告主不需要销售代表解释模型为什么有效，他们只需要看到回报，然后提高预算。\n\nAppLovin 的 CEO Adam Foroughi 给出了一个重要的边界条件：这块 3% 属于成熟的游戏广告业务。电商新业务仍然非常依赖人工支持，团队服务的客户成功率远高于自助客户，小商户暂时不是目标市场。换句话说，结果定价模型的销售效率不是一招就覆盖所有产品，它是随着模型成熟度演进的。\n\nZeta 的财报讲了另一侧的故事。这家公司卖给企业营销团队一个平台，而不是广告网络。本季度收入增长 46%，剔除收购和政治广告后有机增长 30%，比上季度的 28% 提速。超级规模客户有 212 个，数量增长 18%，每个客户平均贡献 200 万美元，增长 22%。CFO 把这些客户的扩张归功于 AI agent，使用多个用例的客户数量同比翻倍。\n\n「营销人员终于开始意识到这个问题不是要买软件，而是要买结果。如果我能给你带来 1.5 倍回报，你为什么不把预算全部给我？」\n\nZeta 的 David Steinberg 在电话会上说。这句话点破了结果定价公司与传统 B2B 公司的本质区别：它们争夺的是客户的营销预算，不是软件预算。软件预算要看功能、看 IT 审批、看 seat 数，营销预算只看回报。当 AI 模型能把回报率算清楚，预算会从软件采购流到效果广告。\n\n对 CEO 和 CHRO 来说，AppLovin 和 Zeta 给出的组织信号非常直接。一家 898 人的公司收入 80 亿美元，人均收入 900 万美元。这不是因为员工更努力，是因为收入结构变了。AI 模型取代了销售代表、客户成功经理和交付团队的大部分工作，留下来的角色变成模型训练、数据工程和少量的高接触客户服务。当一家公司的销售费用占比只有 3%，它的组织设计一定和销售费用占比 40% 的公司完全不同。\n\n「如果你招人的时候还在写 '5 年以上 SaaS 销售经验'，你招的人会被一家不需要销售的对手打穿。」\n\n写在最后：从下周一开始，你只需要做一件事。打开你的 P&L，找到三条线：销售和营销费用占收入的比例，毛利或 COGS 的变化趋势，以及是否有任何收入项目可以直接归因于 AI 改进。如果你还在卖座位，COGS 会在 AI 时代上涨，销售费用降不下来，人均收入停在 30 到 50 万美元。如果你的产品结果是可测量的，试着把定价从每个座位改成每个结果，哪怕只从一个 SKU 开始。AppLovin 花了多年才把模型训练到可以支撑结果定价，但第一步是让 CEO 和 CHRO 意识到：AI 的真正革命不是降本，是把公司从卖软件变成卖结果。",
+      "preview_hook": "AppLovin 898 人创造 22 亿美元季度收入，销售费用只占 3%。AI 把增长写进价格，而不是写进 COGS。",
+      "author": "Jason Lemkin",
+      "published_at": "2026-11-27T15:00:04+00:00",
+      "issue_number": null,
+      "perspective_score": 2,
+      "practice_score": 4,
+      "frontier_score": 3,
+      "score_reasoning": "广告科技AI变现分析，非组织/HR议题，仅边缘涉及人效数据",
+      "total_score": 9,
       "is_featured": false
     },
     {
